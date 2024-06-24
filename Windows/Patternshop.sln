@@ -10,6 +10,11 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "French", "French\French.vcproj", "{0C0CAACE-EADF-4B34-9BC0-0048C1DF8475}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PatternshopCore", "PatternshopCore.vcproj", "{643C5495-C873-4A6A-9725-5FA2EC08ECFA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7F502A08-4CAB-4DF3-A3B6-72CC5BCA1AE8} = {7F502A08-4CAB-4DF3-A3B6-72CC5BCA1AE8}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Foreign", "Foreign.vcproj", "{7F502A08-4CAB-4DF3-A3B6-72CC5BCA1AE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +47,12 @@ Global
 		{643C5495-C873-4A6A-9725-5FA2EC08ECFA}.Demo|Win32.Build.0 = Demo|Win32
 		{643C5495-C873-4A6A-9725-5FA2EC08ECFA}.Release|Win32.ActiveCfg = Release|Win32
 		{643C5495-C873-4A6A-9725-5FA2EC08ECFA}.Release|Win32.Build.0 = Release|Win32
+		{7F502A08-4CAB-4DF3-A3B6-72CC5BCA1AE8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7F502A08-4CAB-4DF3-A3B6-72CC5BCA1AE8}.Debug|Win32.Build.0 = Debug|Win32
+		{7F502A08-4CAB-4DF3-A3B6-72CC5BCA1AE8}.Demo|Win32.ActiveCfg = Debug|Win32
+		{7F502A08-4CAB-4DF3-A3B6-72CC5BCA1AE8}.Demo|Win32.Build.0 = Debug|Win32
+		{7F502A08-4CAB-4DF3-A3B6-72CC5BCA1AE8}.Release|Win32.ActiveCfg = Release|Win32
+		{7F502A08-4CAB-4DF3-A3B6-72CC5BCA1AE8}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
