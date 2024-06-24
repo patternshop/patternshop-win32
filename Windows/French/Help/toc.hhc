@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Guide de l'utilisateur">
+		<param name="Local" value="help.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Vocabulaire">
+			<param name="Local" value="vocabulaire.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Pr&eacute;sentation de l'interface">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="La Barre des menus">
+				<param name="Local" value="window_menu.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="La fen&ecirc;tre Outils">
+				<param name="Local" value="window_tools.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="La fen&ecirc;tre des Calques">
+				<param name="Local" value="window_drawings.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="La fen&ecirc;tre Transformation">
+				<param name="Local" value="window_transforms.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="La fen&ecirc;tre Navigation">
+				<param name="Local" value="window_navigate.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="La fen&ecirc;tre des Pr&eacute;f&eacute;rences">
+				<param name="Local" value="window_preferences.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Fonctionalit&eacute;s">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Cr&eacute;er un nouveau document">
+				<param name="Local" value="tuto_step01.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Cr&eacute;er un r&eacute;seau">
+				<param name="Local" value="tuto_step02.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Importer un motif">
+				<param name="Local" value="tuto_step03.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Manipuler une matrice">
+				<param name="Local" value="tuto_step04.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Choisir une couleur d'arri&egrave;re plan">
+				<param name="Local" value="tuto_step05.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Importer un patron">
+				<param name="Local" value="import_patron.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Enregistrer et exporter un document">
+				<param name="Local" value="tuto_step06.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Tutoriaux">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Cr&eacute;er un motif floral">
+				<param name="Local" value="tutorial_floral.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Donner un aspect al&eacute;atoire">
+				<param name="Local" value="tutorial_floral_random.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Cr&eacute;er un motif &eacute;cossais">
+				<param name="Local" value="tutorial_ecossais.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Cr&eacute;er un patron importable">
+				<param name="Local" value="tutorial_patron.html">
+				</OBJECT>
+		</UL>
+	</UL>
+</UL>
+</BODY></HTML>

@@ -1,0 +1,65 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Patternshop", "Patternshop.vcproj", "{6FB84D6E-D07A-4BA8-B286-54AB2D89656A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{643C5495-C873-4A6A-9725-5FA2EC08ECFA} = {643C5495-C873-4A6A-9725-5FA2EC08ECFA}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "English", "English\English.vcproj", "{15968571-61DD-44DC-BB16-AD85BA66BC56}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "French", "French\French.vcproj", "{0C0CAACE-EADF-4B34-9BC0-0048C1DF8475}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PatternshopCore", "PatternshopCore.vcproj", "{643C5495-C873-4A6A-9725-5FA2EC08ECFA}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup EN", "English\Setup\Setup EN.vdproj", "{8ECEACBD-A784-4A02-913C-5D3753821992}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup FR", "French\Setup\Setup FR.vdproj", "{7BBDEE30-61DB-4069-A993-DCF4E69EBC14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Demo|Win32 = Demo|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FB84D6E-D07A-4BA8-B286-54AB2D89656A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6FB84D6E-D07A-4BA8-B286-54AB2D89656A}.Debug|Win32.Build.0 = Debug|Win32
+		{6FB84D6E-D07A-4BA8-B286-54AB2D89656A}.Demo|Win32.ActiveCfg = Demo|Win32
+		{6FB84D6E-D07A-4BA8-B286-54AB2D89656A}.Demo|Win32.Build.0 = Demo|Win32
+		{6FB84D6E-D07A-4BA8-B286-54AB2D89656A}.Release|Win32.ActiveCfg = Release|Win32
+		{6FB84D6E-D07A-4BA8-B286-54AB2D89656A}.Release|Win32.Build.0 = Release|Win32
+		{15968571-61DD-44DC-BB16-AD85BA66BC56}.Debug|Win32.ActiveCfg = Debug|Win32
+		{15968571-61DD-44DC-BB16-AD85BA66BC56}.Debug|Win32.Build.0 = Debug|Win32
+		{15968571-61DD-44DC-BB16-AD85BA66BC56}.Demo|Win32.ActiveCfg = Demo|Win32
+		{15968571-61DD-44DC-BB16-AD85BA66BC56}.Demo|Win32.Build.0 = Demo|Win32
+		{15968571-61DD-44DC-BB16-AD85BA66BC56}.Release|Win32.ActiveCfg = Release|Win32
+		{15968571-61DD-44DC-BB16-AD85BA66BC56}.Release|Win32.Build.0 = Release|Win32
+		{0C0CAACE-EADF-4B34-9BC0-0048C1DF8475}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0C0CAACE-EADF-4B34-9BC0-0048C1DF8475}.Debug|Win32.Build.0 = Debug|Win32
+		{0C0CAACE-EADF-4B34-9BC0-0048C1DF8475}.Demo|Win32.ActiveCfg = Demo|Win32
+		{0C0CAACE-EADF-4B34-9BC0-0048C1DF8475}.Demo|Win32.Build.0 = Demo|Win32
+		{0C0CAACE-EADF-4B34-9BC0-0048C1DF8475}.Release|Win32.ActiveCfg = Release|Win32
+		{0C0CAACE-EADF-4B34-9BC0-0048C1DF8475}.Release|Win32.Build.0 = Release|Win32
+		{643C5495-C873-4A6A-9725-5FA2EC08ECFA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{643C5495-C873-4A6A-9725-5FA2EC08ECFA}.Debug|Win32.Build.0 = Debug|Win32
+		{643C5495-C873-4A6A-9725-5FA2EC08ECFA}.Demo|Win32.ActiveCfg = Demo|Win32
+		{643C5495-C873-4A6A-9725-5FA2EC08ECFA}.Demo|Win32.Build.0 = Demo|Win32
+		{643C5495-C873-4A6A-9725-5FA2EC08ECFA}.Release|Win32.ActiveCfg = Release|Win32
+		{643C5495-C873-4A6A-9725-5FA2EC08ECFA}.Release|Win32.Build.0 = Release|Win32
+		{8ECEACBD-A784-4A02-913C-5D3753821992}.Debug|Win32.ActiveCfg = Debug
+		{8ECEACBD-A784-4A02-913C-5D3753821992}.Debug|Win32.Build.0 = Debug
+		{8ECEACBD-A784-4A02-913C-5D3753821992}.Demo|Win32.ActiveCfg = Demo
+		{8ECEACBD-A784-4A02-913C-5D3753821992}.Demo|Win32.Build.0 = Demo
+		{8ECEACBD-A784-4A02-913C-5D3753821992}.Release|Win32.ActiveCfg = Release
+		{8ECEACBD-A784-4A02-913C-5D3753821992}.Release|Win32.Build.0 = Release
+		{7BBDEE30-61DB-4069-A993-DCF4E69EBC14}.Debug|Win32.ActiveCfg = Debug
+		{7BBDEE30-61DB-4069-A993-DCF4E69EBC14}.Debug|Win32.Build.0 = Debug
+		{7BBDEE30-61DB-4069-A993-DCF4E69EBC14}.Demo|Win32.ActiveCfg = Demo
+		{7BBDEE30-61DB-4069-A993-DCF4E69EBC14}.Demo|Win32.Build.0 = Demo
+		{7BBDEE30-61DB-4069-A993-DCF4E69EBC14}.Release|Win32.ActiveCfg = Release
+		{7BBDEE30-61DB-4069-A993-DCF4E69EBC14}.Release|Win32.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

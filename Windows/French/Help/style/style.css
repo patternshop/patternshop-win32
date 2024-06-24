@@ -1,0 +1,90 @@
+body
+{
+	background-color: #FFFFFF;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+div.data
+{
+	padding: 16px;
+}
+
+div.data a:link, div.data a:visited
+{
+	color: #666666;
+	text-decoration: underline;
+}
+
+div.data a:hover
+{
+	color: #CCCCCC;
+	text-decoration: underline;
+}
+
+span.dataBold
+{
+	color: #666666;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-indent: 16px;
+}
+
+div.dataItem
+{
+	color: #666666;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+div.dataPar
+{
+	color: #000000;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	text-indent: 0px;
+}
+
+div.dataScreen
+{
+	text-align: center;
+}
+
+div.header
+{
+	margin: 32px 0px 32px 0px;
+}
+
+div.headerLogo
+{
+	float: left;
+	margin: 0px 16px 0px 16px;
+	position: relative;
+	top: -18px;
+}
+
+div.headerText
+{
+	background-color: #EEEEEE;
+	color: #666688;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 20px;
+	font-variant: small-caps;
+}
+
+div.title
+{
+	color: #000000;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 32px;
+	font-style: italic;
+	font-variant: small-caps;
+	font-weight: bold;
+	letter-spacing: 6px;
+	padding: 10px;
+	text-align: center;
+}

@@ -1,0 +1,5 @@
+/* Localized versions of Info.plist keys */
+
+NSHumanReadableCopyright = "© LEMCI, 2011";
+CFBundleTypeName = "Fichier Patternshop";
+CFBundleHelpBookName="Aide Patternshop";

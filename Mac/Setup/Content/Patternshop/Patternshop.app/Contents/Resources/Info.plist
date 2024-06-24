@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict> 
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>pts</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>PatternshopDoc.icns</string>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>document/pts</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Fichier Patternshop</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editeur</string>
+			<key>LSIsAppleDefaultForType</key>
+			<true/>
+		</dict>
+	</array>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>French</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFile</key>
+	<string>Patternshop</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.lemci.patternshop</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>pts0</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>Patternshop Help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>Aide Patternshop</string>
+	<key>CSResourcesFileMapped</key>
+	<true/>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+	 <dict>                 
+      <key>UTTypeIdentifier</key>                 
+      <string>com.lemci.pts</string>                 
+      <key>UTTypeDescription</key>                 
+      <string>Projet Patternshop</string>          
+      <key>UTTypeConformsTo</key>                 
+      <array>                     
+        <string>public.data</string>                     
+      </array>
+      <key>UTTypeTagSpecification</key>                 
+      <dict>
+        <key>public.filename-extension</key>                 
+        <array>
+          <string>pts</string>                     
+        </array>
+      </dict>
+    </dict>
+  </array>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.adobe.psd</string>
+			<key>UTTypeDescription</key>
+			<string>Image Photoshop</string>
+			<key>UTTypeConformsTo</key>                 
+			<array>                     
+				<string>public.image</string>                     
+			</array>			
+			<key>UTTypeTagSpecification</key>                 
+			<dict>
+				<key>public.filename-extension</key>                 
+				<array>
+				<string>acme</string>                     
+				</array>
+			</dict>
+		</dict>	
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>public.pcd</string>
+			<key>UTTypeDescription</key>
+			<string>Image Photo CD</string>			
+			<key>UTTypeConformsTo</key>                 
+			<array>                     
+				<string>public.image</string>                     
+			</array>
+			<key>UTTypeTagSpecification</key>                 
+			<dict>
+				<key>public.filename-extension</key>                 
+				<array>
+				<string>pcd</string>                     
+				</array>
+			</dict>
+		</dict>	
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>public.pcx</string>			
+			<key>UTTypeDescription</key>
+			<string>Image PCX</string>			
+			<key>UTTypeConformsTo</key>                 
+			<array>                     
+				<string>public.image</string>                     
+			</array>			
+			<key>UTTypeTagSpecification</key>                 
+			<dict>
+				<key>public.filename-extension</key>                 
+				<array>
+				<string>pcx</string>                     
+				</array>
+			</dict>
+		</dict>	
+	</array>
+</dict>
+</plist>

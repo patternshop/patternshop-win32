@@ -1,0 +1,869 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_INFO_IMAGE DIALOGEX 0, 0, 141, 142
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CHILD | WS_CAPTION
+CAPTION "Image"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Location",IDC_STATIC,0,0,141,31
+    LTEXT           "Y:",IDC_STATIC,76,12,8,8
+    LTEXT           "X:",IDC_STATIC,7,12,8,8,0,WS_EX_TRANSPARENT
+    GROUPBOX        "Rotation",IDC_STATIC,0,30,141,33
+    EDITTEXT        IDC_ANGLE2,15,41,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_X2,15,9,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Y2,84,9,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "Dimension",IDC_STATIC,0,63,141,48
+    EDITTEXT        IDC_W,15,72,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_H,84,72,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "See...",IDC_BUTTON1,15,120,40,14
+    EDITTEXT        IDC_W2,15,90,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_H2,84,90,40,14,ES_AUTOHSCROLL
+    LTEXT           "%",IDC_STATIC,128,92,8,8
+    LTEXT           "px",IDC_STATIC,128,74,9,8
+    LTEXT           "%",IDC_STATIC,58,93,8,8
+    LTEXT           "px",IDC_STATIC,58,12,9,8
+    LTEXT           "px",IDC_STATIC,128,12,9,8
+    LTEXT           "°",IDC_STATIC,58,43,8,8
+    LTEXT           "px",IDC_STATIC,58,74,9,8
+    CONTROL         "Button3",IDC_BUTTON3,"Button",BS_OWNERDRAW | WS_TABSTOP,68,91,12,11
+    LTEXT           "H:",IDC_STATIC,75,75,8,8
+    LTEXT           "W:",IDC_STATIC,6,75,8,8,0,WS_EX_TRANSPARENT
+    GROUPBOX        "",IDC_STATIC,0,110,141,28
+    PUSHBUTTON      "Update...",IDC_BUTTON2,67,120,62,14
+END
+
+IDD_INFO DIALOGEX 0, 0, 141, 202
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CHILD | WS_CAPTION
+CAPTION "Pattern"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Location",IDC_STATIC,0,0,141,27
+    LTEXT           "Y:",IDC_STATIC,72,13,8,8
+    LTEXT           "X:",IDC_STATIC,7,13,8,8
+    GROUPBOX        "Rotation and torsio",IDC_STATIC,0,28,141,54
+    EDITTEXT        IDC_ANGLE2,16,40,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_I2,26,60,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_J2,88,60,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_X2,16,10,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Y2,80,10,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "Dimension",IDC_STATIC,0,83,141,50
+    EDITTEXT        IDC_W,15,95,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_H,88,95,40,14,ES_AUTOHSCROLL
+    LTEXT           "px",IDC_STATIC,58,13,9,8
+    LTEXT           "px",IDC_STATIC,124,13,9,8
+    LTEXT           "px",IDC_STATIC,56,98,9,8
+    LTEXT           "px",IDC_STATIC,130,98,9,8
+    LTEXT           "°",IDC_STATIC,59,42,8,8
+    CONTROL         "Button3",IDC_BUTTON3,"Button",BS_OWNERDRAW | WS_TABSTOP,66,96,12,11
+    EDITTEXT        IDC_W2,15,112,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_H2,88,112,40,14,ES_AUTOHSCROLL
+    LTEXT           "%",IDC_STATIC,56,115,8,8
+    LTEXT           "%",IDC_STATIC,130,115,8,8
+    GROUPBOX        "Split",IDC_STATIC,0,134,141,41
+    CONTROL         "Activate split",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,145,118,11
+    EDITTEXT        IDC_W3,23,159,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_H3,87,159,40,14,ES_AUTOHSCROLL
+    LTEXT           "dH:",IDC_STATIC,75,162,11,8
+    LTEXT           "dW:",IDC_STATIC,9,162,14,8
+    LTEXT           "°",IDC_STATIC,69,63,8,8
+    LTEXT           "°",IDC_STATIC,132,63,8,8
+    LTEXT           "V:",IDC_STATIC,79,63,8,8
+    LTEXT           "H:",IDC_STATIC,17,63,8,8
+    LTEXT           "W:",IDC_STATIC,6,97,8,8
+    LTEXT           "H:",IDC_STATIC,80,97,8,8
+    CONTROL         "Link images to the pattern",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,185,118,11
+    GROUPBOX        "",IDC_STATIC,0,176,141,25
+END
+
+IDD_GTCOLORDIALOG_DIALOG DIALOGEX 0, 0, 245, 145
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Color selection"
+FONT 10, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,192,17,50,10
+    PUSHBUTTON      "Cancel",2,192,30,50,10
+    LTEXT           "Plan color :",IDC_STATIC,4,2,61,8
+    CONTROL         "",IDC_COLORPICKER,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,4,11,127,126
+    CONTROL         "",IDC_COLORSLIDER,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,134,9,20,130
+    CONTROL         "",IDC_COLORWELL,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,157,12,31,33
+    CONTROL         "R:",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,157,70,15,10
+    CONTROL         "G:",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,157,85,15,10
+    CONTROL         "B:",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,157,99,15,10
+    CONTROL         "T:",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,195,70,15,10
+    CONTROL         "S:",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON,195,85,14,10
+    CONTROL         "L:",IDC_RADIO6,"Button",BS_AUTORADIOBUTTON,195,99,15,10
+    EDITTEXT        1010,173,69,18,12,ES_AUTOHSCROLL
+    EDITTEXT        1011,173,83,18,12,ES_AUTOHSCROLL
+    EDITTEXT        1012,173,98,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,211,83,18,12,ES_AUTOHSCROLL
+    EDITTEXT        1014,211,69,18,12,ES_AUTOHSCROLL
+    EDITTEXT        1015,211,98,18,12,ES_AUTOHSCROLL
+    LTEXT           "°",IDC_STATIC,230,70,8,8
+    LTEXT           "%",IDC_STATIC,230,85,8,8
+    LTEXT           "%",IDC_STATIC,230,100,8,8
+END
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 217, 119
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Patternshop"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,98,7,20,20
+    CTEXT           "Patternshop",IDC_STATIC,49,28,119,8,SS_NOPREFIX
+    CTEXT           "Copyright (C) 2012 Patternshop Project",IDC_STATIC,49,47,119,12
+    PUSHBUTTON      "OK",IDOK,83,96,50,16,WS_GROUP
+    CTEXT           "Copying or reproduction of this software under GPL 3.0",IDC_STATIC,7,67,203,25
+END
+
+IDD_IMAGE DIALOGEX 500, 200, 292, 245
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_WINDOWEDGE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_TOOLS DIALOGEX 10, 30, 43, 70
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_STATICEDGE
+CAPTION "Tools"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "1",ID_TOOL1,"Button",BS_OWNERDRAW | WS_TABSTOP,2,2,18,14
+    CONTROL         "2",ID_TOOL2,"Button",BS_OWNERDRAW | WS_TABSTOP,24,2,18,14
+    CONTROL         "3",ID_TOOL3,"Button",BS_OWNERDRAW | WS_TABSTOP,2,18,18,14
+END
+
+IDD_PROJECT DIALOGEX 500, 200, 129, 175
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_WINDOWEDGE
+CAPTION "Project"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    SCROLLBAR       IDC_SCROLLBAR1,119,-1,10,175,SBS_VERT
+END
+
+IDD_OVERVIEW DIALOGEX 0, 0, 131, 110
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Navigation"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_PRINT_PREVIEW DIALOGEX 0, 0, 444, 209
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Print"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Print...",IDOK,349,20,88,12
+    PUSHBUTTON      "Cancel",2,349,37,88,12
+    GROUPBOX        "Position",IDC_STATIC,152,16,192,60
+    RTEXT           "Top :",IDC_STATIC,164,30,23,12
+    RTEXT           "Left :",IDC_STATIC,157,48,30,12
+    EDITTEXT        IDC_EDIT1,192,28,37,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,192,46,37,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO1,233,28,71,92,CBS_DROPDOWNLIST | WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,233,46,71,111,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Center image",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,217,61,69,12
+    GROUPBOX        "Scaled print area",IDC_STATIC,152,83,192,82
+    RTEXT           "Height :",IDC_STATIC,156,117,31,12
+    RTEXT           "Width :",IDC_STATIC,158,134,30,12
+    EDITTEXT        IDC_EDIT7,192,115,45,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,192,133,45,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO3,241,115,71,124,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO4,241,133,71,140,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Scale :",IDC_STATIC,156,99,31,12
+    EDITTEXT        IDC_EDIT9,192,97,45,13,ES_AUTOHSCROLL
+    CONTROL         "Fit to document",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,241,98,66,12
+    CONTROL         "Display selection box",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,192,149,110,12
+    CONTROL         192,IDC_STATIC,"Static",SS_BITMAP,317,104,7,37
+    PUSHBUTTON      "Done",IDCANCEL2,349,54,88,12,NOT WS_VISIBLE
+    PUSHBUTTON      "Document size...",IDCANCEL3,349,71,88,12,NOT WS_VISIBLE
+    CONTROL         184,IDC_STATIC,"Static",SS_BITMAP,327,116,12,11
+END
+
+IDD_NEW DIALOGEX 0, 0, 261, 103
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Document size"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,204,7,50,11
+    GROUPBOX        "",IDC_STATIC,7,7,187,88
+    RTEXT           "Width :",IDC_STATIC,36,38,32,12
+    RTEXT           "Height :",IDC_STATIC,36,56,32,12
+    EDITTEXT        IDC_EDIT1,73,36,37,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,73,54,37,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO1,114,36,71,92,CBS_DROPDOWNLIST | WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,114,54,71,111,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Resolution :",IDC_STATIC,29,73,39,12
+    EDITTEXT        IDC_EDIT10,73,72,37,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO5,114,72,71,111,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Predefined format :",IDC_STATIC,13,20,71,12
+    COMBOBOX        IDC_COMBO6,88,19,98,92,CBS_DROPDOWNLIST | WS_TABSTOP
+    PUSHBUTTON      "Cancel",2,204,24,50,11
+END
+
+IDD_CONFIG DIALOGEX 0, 0, 234, 154
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Preferences"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,58,128,50,14
+    PUSHBUTTON      "Cancel",2,172,128,50,14
+    LTEXT           "Default size of the pattern (in pixels) :",IDC_STATIC,18,17,147,9
+    EDITTEXT        IDC_W,46,30,32,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_H,133,30,32,14,ES_AUTOHSCROLL
+    LTEXT           "px",IDC_STATIC,81,33,9,8
+    LTEXT           "px",IDC_STATIC,169,33,9,8
+    LTEXT           "Width:",IDC_STATIC,20,33,23,8
+    LTEXT           "Height:",IDC_STATIC,108,33,24,8
+    LTEXT           "Limit the maximum size of windows :",IDC_STATIC,18,53,138,9
+    CONTROL         "",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,52,65,106,15
+    LTEXT           "640 x 640",IDC_STATIC,18,69,33,11
+    LTEXT           "No limitation",IDC_STATIC,159,68,47,11
+    LTEXT           "Minimum size of the pattern  (in pixels) :",IDC_STATIC,17,87,133,9
+    EDITTEXT        IDC_H2,149,84,32,14,ES_AUTOHSCROLL
+    LTEXT           "px",IDC_STATIC,184,87,9,8
+    PUSHBUTTON      "Default values",IDC_BUTTON1,111,128,58,14
+    GROUPBOX        "General",IDC_STATIC,7,3,220,144
+    LTEXT           "Language",IDC_STATIC,18,106,32,8
+    COMBOBOX        IDC_COMBOBOX_LANGUE,52,104,99,44,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_QUICKBAR DIALOGEX 0, 0, 213, 15
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Automatic selection",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,3,84,8
+    CONTROL         "Display the selection box",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,95,3,112,8
+END
+
+IDD_EXPORT DIALOGEX 0, 0, 497, 242
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Export the pattern"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Save as...",IDOK,440,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,440,26,50,14
+    GROUPBOX        "Target size",IDC_STATIC,264,7,168,73
+    RTEXT           "Height :",IDC_STATIC,269,41,31,12
+    RTEXT           "Width :",IDC_STATIC,271,58,30,12
+    EDITTEXT        IDC_EDIT7,305,39,45,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,305,57,45,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO3,355,39,71,124,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO4,355,57,71,140,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Scale :",IDC_STATIC,269,23,31,12
+    EDITTEXT        IDC_EDIT9,305,21,45,13,ES_AUTOHSCROLL
+    LTEXT           "Preview",IDC_STATIC,264,82,52,8
+    CONTROL         "Display the grid",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,264,223,80,13
+    RTEXT           "Dpi :",IDC_STATIC,354,23,17,12
+    EDITTEXT        IDC_EDIT11,374,21,45,13,ES_AUTOHSCROLL
+END
+
+IDD_PATTERN DIALOGEX 0, 0, 145, 199
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Template"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Details level",IDC_STATIC,8,170,59,9
+    CONTROL         "",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,20,178,54,15
+    LTEXT           "Low",IDC_STATIC,8,181,12,11
+    LTEXT           "Height",IDC_STATIC,74,181,18,11
+    GROUPBOX        "Translation",IDC_STATIC,7,108,68,60
+    LTEXT           "Y:",IDC_STATIC,11,136,8,8
+    LTEXT           "X:",IDC_STATIC,11,121,8,8
+    EDITTEXT        IDC_TX,19,118,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_TY,19,133,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "px",IDC_STATIC,63,121,9,8
+    LTEXT           "px",IDC_STATIC,63,136,9,8
+    LTEXT           "Z:",IDC_STATIC,11,151,8,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_TZ,20,148,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE | WS_DISABLED
+    LTEXT           "px",IDC_STATIC,63,153,9,8,NOT WS_VISIBLE
+    GROUPBOX        "Rotation",IDC_STATIC,79,108,56,60
+    LTEXT           "Y:",IDC_STATIC,83,137,8,8
+    LTEXT           "X:",IDC_STATIC,83,121,8,8
+    EDITTEXT        IDC_RX,91,118,32,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_RY,91,134,32,14,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "°",IDC_STATIC,126,121,8,8
+    LTEXT           "°",IDC_STATIC,126,137,8,8
+    LTEXT           "Z:",IDC_STATIC,83,151,8,8
+    EDITTEXT        IDC_RZ,91,148,32,14,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "°",IDC_STATIC,126,151,8,8
+    GROUPBOX        "Plans",IDC_STATIC,8,1,127,106
+    LTEXT           "Scale",IDC_STATIC,95,170,22,9
+    EDITTEXT        IDC_Z,96,179,32,14,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "%",IDC_STATIC,129,182,8,8
+END
+
+IDD_DEMO DIALOGEX 0, 0, 196, 100
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Evaluation version"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Go to online shop",IDOK,7,79,129,14
+    PUSHBUTTON      "Exit",IDCANCEL,139,79,50,14
+    LTEXT           "This evaluation version is limited to 30 days.",-1,7,67,182,11
+    CONTROL         209,-1,"Static",SS_BITMAP,7,7,177,58
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_GTCOLORDIALOG_DIALOG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 144
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 112
+    END
+
+    IDD_IMAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 285
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 238
+    END
+
+    IDD_TOOLS, DIALOG
+    BEGIN
+        RIGHTMARGIN, 42
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 69
+    END
+
+    IDD_PROJECT, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 174
+    END
+
+    IDD_OVERVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 124
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_PRINT_PREVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 437
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_NEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 254
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 96
+    END
+
+    IDD_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 227
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_QUICKBAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 10
+    END
+
+    IDD_EXPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 490
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 235
+    END
+
+    IDD_PATTERN, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 142
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 196
+    END
+
+    IDD_DEMO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 189
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 93
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CONFIG DLGINIT
+BEGIN
+    IDC_COMBOBOX_LANGUE, 0x403, 8, 0
+0x6e45, 0x6c67, 0x7369, 0x0068, 
+    IDC_COMBOBOX_LANGUE, 0x403, 9, 0
+0x7246, 0x6e61, 0x61e7, 0x7369, "\000" 
+    0
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// French (France) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+#ifdef _WIN32
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_YUV DIALOGEX 0, 0, 207, 68
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Lumière"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,93,47,50,14
+    PUSHBUTTON      "Cancel",2,148,47,50,14
+    CONTROL         "",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,51,6,87,18
+    CONTROL         "",IDC_SLIDER2,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,51,26,87,18
+    EDITTEXT        IDC_EDIT1,143,5,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDIT2,143,26,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "Puissance",IDC_STATIC,13,9,32,8
+    LTEXT           "Etendue",IDC_STATIC,13,28,28,8
+    LTEXT           "Style",IDC_STATIC,28,10,17,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_ANGLE2,128,8,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE | WS_DISABLED
+    CONTROL         173,IDC_STATIC,"Static",SS_BITMAP | NOT WS_VISIBLE,115,10,11,9
+    LTEXT           "°",IDC_STATIC,171,10,8,8,NOT WS_VISIBLE
+    LTEXT           "%",IDC_STATIC,187,29,8,8
+    LTEXT           "%",IDC_STATIC,187,9,8,8
+    COMBOBOX        IDC_COMBO1,50,8,54,30,CBS_DROPDOWN | CBS_SORT | NOT WS_VISIBLE | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SPLASH DIALOGEX 0, 0, 534, 278
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_BORDER
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         199,IDC_STATIC,"Static",SS_BITMAP,0,0,537,278
+END
+
+IDD_ACTIVATION DIALOGEX 0, 0, 197, 164
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Software activation"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Activate now",IDOK,30,122,129,14
+    PUSHBUTTON      "Abort",IDCANCEL,111,141,50,14
+    LTEXT           "To help fight against software piracy, the software needs to be activated online. It is simple and immediate, and no information will be requested.",IDC_STATIC,7,65,182,35
+    CONTROL         209,IDC_STATIC,"Static",SS_BITMAP,7,7,177,58
+    PUSHBUTTON      "Manual activation",IDCANCEL4,31,141,78,14
+    EDITTEXT        IDC_UCODE,88,102,64,14,ES_AUTOHSCROLL
+    RTEXT           "Your user code",IDC_STATIC,28,105,56,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_YUV, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 61
+    END
+
+    IDD_ACTIVATION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 190
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 157
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_YUV DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 9, 0
+0x694c, 0xe96e, 0x6961, 0x6572, "\000" 
+    0
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)\r\n"
+    "LANGUAGE 12, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""..\\res\\Patternshop.rc2""  // ressources non modifiées par Microsoft Visual C++ \r\n"
+    "#include ""afxres.rc""         // Composants standard\r\n"
+    "#include ""afxprint.rc""       // ressources impression/aperçu avant impression\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "..\\res\\Patternshop.ico"
+IDR_PatternshopTYPE     ICON                    "..\\res\\PatternshopDoc.ico"
+IDI_ICON2               ICON                    "..\\res\\icon2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_NORMAL              BITMAP                  "..\\res\\tool_normal.bmp"
+IDB_HAND                BITMAP                  "..\\res\\tool_hand.bmp"
+IDB_TOOL_MODIFY1        BITMAP                  "..\\res\\tool_modify1.bmp"
+IDB_TOOL_MODIFY3        BITMAP                  "..\\res\\tool_modify3.bmp"
+IDB_TOOL_MAGNIFY3       BITMAP                  "..\\res\\tool_magnify3.bmp"
+IDB_TOOL_SCROLL1        BITMAP                  "..\\res\\tool_scroll1.bmp"
+IDB_TOOL_SCROLL3        BITMAP                  "..\\res\\tool_scroll3.bmp"
+IDB_TOOL_MAGNIFY1       BITMAP                  "..\\res\\tool_magnify1.bmp"
+IDB_HEIGHT              BITMAP                  "..\\res\\bitmap1.bmp"
+IDB_ROTATION            BITMAP                  "..\\res\\bmp00001.bmp"
+IDB_VIEW                BITMAP                  "..\\res\\bmp00002.bmp"
+IDB_BOX                 BITMAP                  "..\\res\\view1.bmp"
+IDB_WIDTH               BITMAP                  "..\\res\\width1.bmp"
+IDB_DIRECTORY           BITMAP                  "..\\res\\bmp00003.bmp"
+IDB_OPEN                BITMAP                  "..\\res\\bmp00004.bmp"
+IDB_CLOSE               BITMAP                  "..\\res\\bmp00005.bmp"
+IDB_DIRECTORYB          BITMAP                  "..\\res\\director.bmp"
+IDB_OPENB               BITMAP                  "..\\res\\open1.bmp"
+IDB_CLOSEB              BITMAP                  "..\\res\\close1.bmp"
+IDB_MOTIF               BITMAP                  "..\\res\\bmp00006.bmp"
+IDB_NOTLOCK             BITMAP                  "..\\res\\bmp00007.bmp"
+IDB_LOCK                BITMAP                  "..\\res\\bmp00008.bmp"
+IDB_SPOT                BITMAP                  "..\\res\\bmp00009.bmp"
+IDB_PRINTLINE           BITMAP                  "..\\res\\bmp00010.bmp"
+IDB_SPLASH              BITMAP                  "..\\res\\bmp00011.bmp"
+IDB_TORSIO              BITMAP                  "..\\res\\bmp00012.bmp"
+IDB_TITLE               BITMAP                  "..\\res\\bmp00013.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAIN MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "Preferences...",              ID_FICHIER_PR32850
+        MENUITEM SEPARATOR
+        MENUITEM "Fichier récent",              ID_FILE_MRU_FILE1
+        MENUITEM SEPARATOR
+        MENUITEM "&Exit",                       ID_APP_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Documentation...\tF1",        ID_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "&About Patternshop...",       ID_APP_ABOUT
+    END
+END
+
+IDR_FRAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save as...",                  ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "Fichier récent",              ID_FILE_MRU_FILE1
+        MENUITEM SEPARATOR
+        MENUITEM "Document size...",            ID_PROJET_TAILLEDELAZONEDETRAVAIL
+        MENUITEM SEPARATOR
+        MENUITEM "Import an image...\tCtrl+D",  ID_FILE_IMAGE
+        MENUITEM "Import an free image...\tShift-Ctrl-D", ID_FICHIER_IMPORTERUNEIMAGELIBRE
+        MENUITEM "Import a template...",        ID_FILE_PATTERN
+        MENUITEM SEPARATOR
+        MENUITEM "Export the document...",      ID_FILE_EXPORT
+        MENUITEM "Export the pattern...",       ID_FILE_EXPORT_RACCORD
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM SEPARATOR
+        MENUITEM "Exit",                        ID_APP_EXIT
+    END
+    POPUP "&Edition"
+    BEGIN
+        MENUITEM "dummy",                       ID_EDIT_UNDO
+        MENUITEM "dummy",                       ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Duplicate\tCtrl+R",           ID_EDIT_CLONE
+        MENUITEM "Delete\tSuppr",               ID_EDIT_DELIMAGE
+    END
+    POPUP "Pattern"
+    BEGIN
+        MENUITEM "New pattern\tCtrl+M",         ID_MATRIX_NEW
+        MENUITEM SEPARATOR
+        MENUITEM "Reset selected pattern",      ID_MATRIX_RESET
+        MENUITEM "Change highlightment color...", ID_MATRIX_COLOR
+    END
+    POPUP "Options"
+    BEGIN
+        POPUP "Document limits"
+        BEGIN
+            MENUITEM "Display limits",              ID_OPTION_DOCUMENT_SHOW, CHECKED
+            MENUITEM "Make translucent",            ID_OPTION_DOCUMENT_BLEND, CHECKED
+        END
+        POPUP "Selection box"
+        BEGIN
+            MENUITEM "Highlight selection",         ID_OPTION_HIGHLIGHT_SHOW, CHECKED
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Preferencies...",             ID_FICHIER_PR32850
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New window",                 ID_WINDOW_NEW
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile horizontally",          ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange icons",              ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Documentation...\tF1",        ID_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "&About Patternshop...",       ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "R",            ID_EDIT_CLONE,          VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_DELIMAGE,       VIRTKEY, NOINVERT
+    "Y",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+    "D",            ID_FILE_IMAGE,          VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_F1,          ID_HELP,                VIRTKEY, NOINVERT
+    VK_DELETE,      ID_MATRIX_DEL,          VIRTKEY, CONTROL, NOINVERT
+    "M",            ID_MATRIX_NEW,          VIRTKEY, CONTROL, NOINVERT
+    "D",            ID_FICHIER_IMPORTERUNEIMAGELIBRE, VIRTKEY, SHIFT, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,5,0,0
+ PRODUCTVERSION 1,5,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Patternshop Project"
+            VALUE "FileDescription", "Patternshop"
+            VALUE "FileVersion", "1, 5, 0, 0"
+            VALUE "InternalName", "Patternshop.exe"
+            VALUE "LegalCopyright", "(c) Patternshop Project."
+            VALUE "OriginalFilename", "Patternshop.exe"
+            VALUE "ProductName", "Patternshop"
+            VALUE "ProductVersion", "1, 5, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_MOVE                CURSOR                  "..\\res\\tool_move.cur"
+IDC_SIZE1               CURSOR                  "..\\res\\tool_size1.cur"
+IDC_SIZE2               CURSOR                  "..\\res\\tool_size2.cur"
+IDC_DEFAULT             CURSOR                  "..\\res\\tool_default.cur"
+IDC_ROTATE4             CURSOR                  "..\\res\\tool_rotate4.cur"
+IDC_ROTATE1             CURSOR                  "..\\res\\tool_rotate1.cur"
+IDC_ROTATE2             CURSOR                  "..\\res\\tool_rotate2.cur"
+IDC_ROTATE3             CURSOR                  "..\\res\\tool_rotate3.cur"
+IDC_HAND1               CURSOR                  "..\\res\\tool_hand1.cur"
+IDC_MAGNIFY1            CURSOR                  "..\\res\\tool_magnify1.cur"
+IDC_HAND2               CURSOR                  "..\\res\\tool_hand2.cur"
+IDC_MAGNIFY2            CURSOR                  "..\\res\\tool_magnify2.cur"
+IDC_MAGNIFY3            CURSOR                  "..\\res\\tool_magnify3.cur"
+IDC_FINGER              CURSOR                  "..\\res\\cursor2.cur"
+IDC_COLOR               CURSOR                  "..\\res\\cur00001.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR TOOLBAR  53, 10
+BEGIN
+    BUTTON      ID_BUTTON32860
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_PatternshopTYPE     "Patternshop\nUntitled -\nDocuments Patternshop\nDocuments Patternshop (*.pts)\n.pts\nPatternshopDoc\nDocuments Patternshop"
+END
+
+#endif    // French (France) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+LANGUAGE 12, 1
+#pragma code_page(1252)
+#include "..\res\Patternshop.rc2"  // ressources non modifiées par Microsoft Visual C++ 
+#include "afxres.rc"         // Composants standard
+#include "afxprint.rc"       // ressources impression/aperçu avant impression
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
