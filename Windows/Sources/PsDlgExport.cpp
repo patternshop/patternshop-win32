@@ -101,7 +101,7 @@ int PsDlgExport::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (CDialog::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
-  if (!Initialize())
+  if (!PsDlgExportCx::Initialize())
     return -1;
 
 	return 0;

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{014e3a7d-523e-4e65-915b-2b5bc04660e1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\res\bitmap1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\bmp00001.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\bmp00002.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\bmp00003.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\bmp00004.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\bmp00005.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\bmp00006.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\bmp00007.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\bmp00008.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\bmp00009.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\bmp00010.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\bmp00011.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\bmp00012.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\bmp00013.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\close1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\director.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\icon2.ico">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\open1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\Patternshop.ico">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\PatternshopDoc.ico">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\tool_hand.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\tool_magnify1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\tool_magnify3.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\tool_modify1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\tool_modify3.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\tool_normal.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\tool_scroll1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\tool_scroll3.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\view1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\res\width1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\res\cur00001.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="..\res\cursor2.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="..\res\tool_default.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="..\res\tool_hand1.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="..\res\tool_hand2.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="..\res\tool_magnify1.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="..\res\tool_magnify2.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="..\res\tool_magnify3.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="..\res\tool_move.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="..\res\tool_rotate1.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="..\res\tool_rotate2.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="..\res\tool_rotate3.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="..\res\tool_rotate4.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="..\res\tool_size1.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="..\res\tool_size2.cur">
+      <Filter>Resources</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="English.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+</Project>

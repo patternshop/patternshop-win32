@@ -33,8 +33,10 @@ public:
 	CPatternshopApp();
 
 private:
+#ifdef LANG_DLL
    HINSTANCE            englishDLL;
    HINSTANCE            frenchDLL;
+#endif
    PsMultiDocTemplate*  docTemplate;
 
 public:
