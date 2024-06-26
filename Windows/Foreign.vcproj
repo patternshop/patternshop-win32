@@ -4,6 +4,7 @@
 	Version="8,00"
 	Name="Foreign"
 	ProjectGUID="{7F502A08-4CAB-4DF3-A3B6-72CC5BCA1AE8}"
+	RootNamespace="Foreign"
 	>
 	<Platforms>
 		<Platform
@@ -18,7 +19,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ProjectName)$(ConfigurationName)"
 			ConfigurationType="4"
-			UseOfMFC="2"
+			UseOfMFC="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -39,7 +40,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="../Foreign/FreeImage/Source/LibTIFF;../Foreign/FreeImage/Source/ZLib;../Foreign/FreeImage/Source;../Foreign/"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE"
-				RuntimeLibrary="2"
+				RuntimeLibrary="1"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
