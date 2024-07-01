@@ -543,7 +543,7 @@ void CPatternshopView::OnUpdateOptionHighlightShow(CCmdUI *pCmdUI)
 
 BOOL CPatternshopView::OnEraseBkgnd(CDC* pDC)
 {
-   // OGL has his own fColor erasing so tell Windows to skip (avoids flicker)
+   // OGL has his own iColor erasing so tell Windows to skip (avoids flicker)
    return TRUE;
 }
 

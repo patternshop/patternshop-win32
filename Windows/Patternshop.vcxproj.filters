@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Windows">
+      <UniqueIdentifier>{a2154484-f4fe-43b4-9954-1c227afa5a83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Main">
+      <UniqueIdentifier>{af0aae3f-3714-4fa2-9920-c81d33d2b1fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Tools">
+      <UniqueIdentifier>{f9d85aa9-5b13-40a7-9c11-97ad7b329bfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Tools\Tabs">
+      <UniqueIdentifier>{8595ff45-7287-4f68-9c7a-b22f1ab88ea4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Interface">
+      <UniqueIdentifier>{b174152b-e76e-4cdb-ae26-9378a7bb4340}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{5c502adb-38dc-498d-98ea-a13b80e99815}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sources\stdafx.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Foreign\wglext.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\ChildFrm.h">
+      <Filter>Windows\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\MainFrm.h">
+      <Filter>Windows\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\MultiDocTemplate.h">
+      <Filter>Windows\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Patternshop.h">
+      <Filter>Windows\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PatternshopDoc.h">
+      <Filter>Windows\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PatternshopView.h">
+      <Filter>Windows\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsHardware.h">
+      <Filter>Windows\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\propsht.h">
+      <Filter>Windows\Tools\Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsDlgColor.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsDlgConfig.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsDlgDocument.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsDlgExport.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsDlgInfoLight.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsDlgOpen.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsDlgPrint.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsTabInfoImage.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsTabInfoMatrix.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsTabInfoPattern.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsWin32.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsWinImage.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsWinOverview.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsWinProjectWin32.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsWinProperties.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsWinSplash.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\PsWinTools.h">
+      <Filter>Windows\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sources\ChildFrm.cpp">
+      <Filter>Windows\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\MainFrm.cpp">
+      <Filter>Windows\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\MultiDocTemplate.cpp">
+      <Filter>Windows\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Patternshop.cpp">
+      <Filter>Windows\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PatternshopDoc.cpp">
+      <Filter>Windows\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PatternshopView.cpp">
+      <Filter>Windows\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsHardware.cpp">
+      <Filter>Windows\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\propsht.cpp">
+      <Filter>Windows\Tools\Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsDlgColor.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsDlgConfig.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsDlgDocument.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsDlgExport.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsDlgInfoLight.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsDlgOpen.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsDlgPrint.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsTabInfoImage.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsTabInfoMatrix.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsTabInfoPattern.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsWin32.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsWinImage.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsWinOverview.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsWinProjectWin32.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsWinProperties.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsWinSplash.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PsWinTools.cpp">
+      <Filter>Windows\Interface</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\bmp00001.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\bmp00002.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\bmp00003.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\bmp00004.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\bmp00005.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\bmp00006.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\bmp00007.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\bmp00008.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\bmp00009.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\bmp00010.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\bmp00011.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\bmp00012.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\bmp00013.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\close1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\director.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\icon2.ico">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\open1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\Patternshop.ico">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\PatternshopDoc.ico">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\tool_hand.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\tool_magnify1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\tool_magnify3.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\tool_modify1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\tool_modify3.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\tool_normal.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\tool_scroll1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\tool_scroll3.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\view1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="res\width1.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\cur00001.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\cursor2.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\tool_default.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\tool_hand1.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\tool_hand2.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\tool_magnify1.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\tool_magnify2.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\tool_magnify3.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\tool_move.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\tool_rotate1.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\tool_rotate2.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\tool_rotate3.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\tool_rotate4.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\tool_size1.cur">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="res\tool_size2.cur">
+      <Filter>Resources</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="English\English.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

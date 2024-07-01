@@ -15,6 +15,7 @@
  * along with Patternshop.  If not, see <http://www.gnu.org/licenses/>
 */
 #pragma once
+
 #include "afxcmn.h"
 #include "afxwin.h"
 

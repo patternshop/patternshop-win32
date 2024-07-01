@@ -46,8 +46,10 @@ END_MESSAGE_MAP()
 
 CPatternshopApp::CPatternshopApp()
 {
+#ifdef LANG_DLL
    englishDLL = LoadLibrary(_T("English.dll"));
    frenchDLL = NULL;
+#endif
 }
 
 /**
@@ -55,6 +57,7 @@ CPatternshopApp::CPatternshopApp()
 */
 void CPatternshopApp::SetLanguage(PsLanguage nLanguage)
 {
+#ifdef LANG_DLL
    CString    strBuffer  = _T("");
    HINSTANCE  hInst      = NULL;
    LCID      lcid      = NULL;
@@ -128,6 +131,7 @@ void CPatternshopApp::SetLanguage(PsLanguage nLanguage)
       //------------------------
       this->docTemplate->rebuildResources();
    }
+#endif
 }
 
 BOOL CPatternshopApp::InitInstance()

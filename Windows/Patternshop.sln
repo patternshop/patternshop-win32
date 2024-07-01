@@ -1,20 +1,16 @@
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Patternshop", "Patternshop.vcproj", "{6FB84D6E-D07A-4BA8-B286-54AB2D89656A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{643C5495-C873-4A6A-9725-5FA2EC08ECFA} = {643C5495-C873-4A6A-9725-5FA2EC08ECFA}
-	EndProjectSection
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Patternshop", "Patternshop.vcxproj", "{6FB84D6E-D07A-4BA8-B286-54AB2D89656A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "English", "English\English.vcproj", "{15968571-61DD-44DC-BB16-AD85BA66BC56}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "English", "English\English.vcxproj", "{15968571-61DD-44DC-BB16-AD85BA66BC56}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "French", "French\French.vcproj", "{0C0CAACE-EADF-4B34-9BC0-0048C1DF8475}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "French", "French\French.vcxproj", "{0C0CAACE-EADF-4B34-9BC0-0048C1DF8475}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PatternshopCore", "PatternshopCore.vcproj", "{643C5495-C873-4A6A-9725-5FA2EC08ECFA}"
-	ProjectSection(ProjectDependencies) = postProject
-		{7F502A08-4CAB-4DF3-A3B6-72CC5BCA1AE8} = {7F502A08-4CAB-4DF3-A3B6-72CC5BCA1AE8}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PatternshopCore", "PatternshopCore.vcxproj", "{643C5495-C873-4A6A-9725-5FA2EC08ECFA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Foreign", "Foreign.vcproj", "{7F502A08-4CAB-4DF3-A3B6-72CC5BCA1AE8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Foreign", "Foreign.vcxproj", "{7F502A08-4CAB-4DF3-A3B6-72CC5BCA1AE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,5 +52,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9DD65969-0749-4551-B26D-95421181D416}
 	EndGlobalSection
 EndGlobal
