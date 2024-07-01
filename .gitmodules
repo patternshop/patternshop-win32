@@ -1,0 +1,3 @@
+[submodule "Foreign"]
+	path = Foreign
+	url = https://github.com/patternshop/legacy-foreign.git
