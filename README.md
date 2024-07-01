@@ -1,6 +1,6 @@
 ﻿# patternshop-legacy
 
-## Description -----------------------------------------
+## Description
 
 Patternshop is a tool to create textures for fabric design.
 
@@ -10,13 +10,13 @@ Import your images into the software and they will repeat instantaneously, adjus
 
 Preview your work in real time, export a high definition matched image, with the texture and desired dimensions.
 
-## Dependencies --------------------------------------------
+## Dependencies
 
 The project makes use of FreeImage Project:
 
 http://freeimage.sourceforge.net/
 
-## License -------------------------------------------------
+## License
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
