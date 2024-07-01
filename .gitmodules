@@ -1,6 +1,6 @@
 [submodule "Foreign"]
 	path = Foreign
-	url = https://github.com/patternshop/legacy-foreign.git
+	url = https://github.com/patternshop/patternshop-foreign.git
 [submodule "Common"]
 	path = Common
-	url = https://github.com/patternshop/legacy-common.git
+	url = https://github.com/patternshop/patternshop-common.git
