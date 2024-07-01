@@ -1,4 +1,4 @@
-﻿# patternshop-legacy
+﻿# Patternshop
 
 ## Description
 
