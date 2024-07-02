@@ -1,16 +1,16 @@
 /**
  * This file is part of Patternshop Project.
- * 
+ *
  * Patternshop is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * Patternshop is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Patternshop.  If not, see <http://www.gnu.org/licenses/>
 */
@@ -136,7 +136,7 @@ enum max_values
 	max_hsv_value = 1000
 };
 
-class GTDrawHelper  
+class GTDrawHelper
 {
 public:
 	GTDrawHelper();
@@ -163,74 +163,74 @@ public:
 	};
 
 	// Draw panel border.
-	virtual void DrawPanel(HDC hdc,int left,int top,int right,int bottom,int flags);
+	virtual void DrawPanel(HDC hdc, int left, int top, int right, int bottom, int flags);
 
 	// Draw panel border.
-	virtual void DrawPanel (HDC hdc,LPRECT rc,int flags)
+	virtual void DrawPanel(HDC hdc, LPRECT rc, int flags)
 	{
 		DrawPanel(hdc, rc->left, rc->top, rc->right, rc->bottom, flags);
 	};
 
 	// Draw triangle.
-	virtual void DrawTriangle(HDC hdc,int x,int y,enum types type,int size,COLORREF line_color,COLORREF fill_color);
+	virtual void DrawTriangle(HDC hdc, int x, int y, enum types type, int size, COLORREF line_color, COLORREF fill_color);
 
 	// Convert from hsv to rgb value.
-	int	HSV2RGB (double hue,double sat,double value,double *red,double *green,double *blue);
+	int	HSV2RGB(double hue, double sat, double value, double* red, double* green, double* blue);
 
 	// Convert from rgb to hsv value.
-	int	RGB2HSV(double red,double green,double blue,double *hue,double *sat,double *value);
+	int	RGB2HSV(double red, double green, double blue, double* hue, double* sat, double* value);
 
 	// Convert from hsv to rgb value.
-	COLORREF HSV2RGB(double hue,double sat,double value);
+	COLORREF HSV2RGB(double hue, double sat, double value);
 
 	// Get rgb value.
-	void GetRGB(DWORD *buffer,int samples,COLORREF start,COLORREF end);
+	void GetRGB(DWORD* buffer, int samples, COLORREF start, COLORREF end);
 
 	// hsv from hue.
-	void HSV_HUE(DWORD *buffer,int samples,double sat,double val);
+	void HSV_HUE(DWORD* buffer, int samples, double sat, double val);
 
 	// hsv from sat.
-	void HSV_SAT(DWORD *buffer,int samples,double hue,double val);
+	void HSV_SAT(DWORD* buffer, int samples, double hue, double val);
 
 	// hsv value.
-	void HSV_VAL(DWORD *buffer,int samples,double hue,double sat);
+	void HSV_VAL(DWORD* buffer, int samples, double hue, double sat);
 
 	// Set
-	void set(unsigned long *buffer,unsigned long value,size_t count);
+	void set(unsigned long* buffer, unsigned long value, size_t count);
 
 	// 
-	void set(unsigned long **buffer,unsigned long value,size_t count);
+	void set(unsigned long** buffer, unsigned long value, size_t count);
 
 	//
-	void copy(unsigned long *target,const unsigned long *source,size_t count);
+	void copy(unsigned long* target, const unsigned long* source, size_t count);
 
 	// 
-	void copy(unsigned long **target,const unsigned long *source,size_t count);
+	void copy(unsigned long** target, const unsigned long* source, size_t count);
 
 	//
-	void copy_reverse(unsigned long *target,const unsigned long *source,size_t count);
+	void copy_reverse(unsigned long* target, const unsigned long* source, size_t count);
 
 	//
-	void reverse(unsigned long *buffer,size_t count);
+	void reverse(unsigned long* buffer, size_t count);
 
 };
 
-inline int scaled_red (COLORREF c)
+inline int scaled_red(COLORREF c)
 {
-	return (GetRValue (c) << int_extend);
+	return (GetRValue(c) << int_extend);
 }
 
-inline int scaled_green (COLORREF c)
+inline int scaled_green(COLORREF c)
 {
-	return (GetGValue (c) << int_extend);
+	return (GetGValue(c) << int_extend);
 }
 
-inline int scaled_blue (COLORREF c)
+inline int scaled_blue(COLORREF c)
 {
-	return (GetBValue (c) << int_extend);
+	return (GetBValue(c) << int_extend);
 }
 
-template <class T, class T1> void in_range (T& x,T1 start,T1 end)
+template <class T, class T1> void in_range(T& x, T1 start, T1 end)
 {
 	if (x < static_cast <T> (start)) x = static_cast <T> (start);
 	if (x > static_cast <T> (end)) x = static_cast <T> (end);
@@ -242,7 +242,7 @@ template <class T, class T1> void in_range (T& x,T1 start,T1 end)
 const int CONTRAST_MARKER = 1;
 const int MARKER_SIZE = 5;
 
-const int	max_picker [6][3] =
+const int	max_picker[6][3] =
 {
 	{ max_rgb_red, max_rgb_blue, max_rgb_green },	// max_rgb red: Rx, B>, G^
 	{ max_rgb_green, max_rgb_blue, max_rgb_red },	// max_rgb green: Gx, B>, R^
@@ -259,18 +259,18 @@ public:
 	// Constroctor
 	GTColorSelectorWnd();
 
-// Attributes
+	// Attributes
 public:
 
 	//Create Arrow Type Window
 	BOOL Create(DWORD dwStyle,
-		CRect rcPos, 
+		CRect rcPos,
 		CWnd* pParent,
 		UINT nID,
 		int nBulletType,
 		BOOL bPopup = FALSE);
 
-// Operations
+	// Operations
 
 public:
 	int		m_nCurMode;
@@ -284,7 +284,7 @@ public:
 	bool	m_bNeedPaint;
 
 	// whether mouse is being tracked (drag)
-	bool	m_bTracking;			
+	bool	m_bTracking;
 
 	// Save color.
 	COLORREF m_crSaveColor;
@@ -300,16 +300,16 @@ public:
 	// cache DIB bitmap information
 	BITMAPINFO	bmp_info;
 	HBITMAP		bmp_handle;
-	DWORD		*bmp_data;
+	DWORD* bmp_data;
 
 	CRect	m_rcPanel;
 	CRect   m_rcPaint;
 	CRect	m_rcInteraction;
 
 	// control's m_rcFrame (bounding box)
-	CRect		m_rcFrame;	
+	CRect		m_rcFrame;
 
-	
+
 public:
 
 	// parent notification methods
@@ -324,7 +324,7 @@ public:
 	void SetControlValue(int value);
 
 	// Operations
-	void DoCalculateColors(COLORREF &lefttop,COLORREF &righttop,COLORREF &leftbottom,COLORREF &rightbottom);
+	void DoCalculateColors(COLORREF& lefttop, COLORREF& righttop, COLORREF& leftbottom, COLORREF& rightbottom);
 
 	// Draw all
 	void OnDraw(void);
@@ -348,17 +348,17 @@ public:
 	// get/set current y-axis position
 	inline int GetYPos(void) const { return (y_pos); };
 	void SetYPos(int value);
-	
+
 protected:
 
 	HCURSOR	picker_cursor;
 
 protected:
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(GTColorSelectorWnd)
-	protected:
+	// Overrides
+		// ClassWizard generated virtual function overrides
+		//{{AFX_VIRTUAL(GTColorSelectorWnd)
+protected:
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 	virtual void PreSubclassWindow();
 	virtual BOOL OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult);
@@ -395,16 +395,16 @@ protected:
 	//message map function On middle button up
 	afx_msg void OnMButtonUp(UINT nFlags, CPoint point);
 
-    //message map function On Mouse Move
+	//message map function On Mouse Move
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 
 	// message map function On keystroke  nonsystem character
 	afx_msg void OnChar(UINT nChar, UINT nRepCnt, UINT nFlags);
 
-    //message map function On window Destroyed
+	//message map function On window Destroyed
 	afx_msg void OnDestroy();
 
-   //message map function On window painted
+	//message map function On window painted
 	afx_msg void OnPaint();
 
 	//message map function On right button down
@@ -424,16 +424,16 @@ protected:
 	afx_msg void OnSysColorChange();
 	afx_msg UINT OnGetDlgCode();
 	//}}AFX_MSG
-	
+
 	//message map function On Select Day OK
 	afx_msg LONG OnSelectBulletOK(UINT wParam, LONG lParam);
 	DECLARE_MESSAGE_MAP()
 public:
 
-    // The pointer to Notify Window
-	CWnd *pNotifyWnd;
+	// The pointer to Notify Window
+	CWnd* pNotifyWnd;
 
-	CWnd *pNotifyWellWnd;
+	CWnd* pNotifyWellWnd;
 };
 /////////////////////////////////////////////////////////////////////////////
 
@@ -450,27 +450,27 @@ public:
 	// Constroctor
 	GTColorWellWnd();
 
-// Attributes
+	// Attributes
 public:
 
 	//Create Arrow Type Window
 	BOOL Create(DWORD dwStyle,
-		CRect rcPos, 
+		CRect rcPos,
 		CWnd* pParent,
 		UINT nID,
 		int nBulletType,
 		BOOL bPopup = FALSE);
 
-// Operations
+	// Operations
 
 	COLORREF m_crColor;
-	PsDlgColor *parent;
+	PsDlgColor* parent;
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(GTColorWellWnd)
-	protected:
-		
+	// Overrides
+		// ClassWizard generated virtual function overrides
+		//{{AFX_VIRTUAL(GTColorWellWnd)
+protected:
+
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 	virtual void PreSubclassWindow();
 	//}}AFX_VIRTUAL
@@ -506,16 +506,16 @@ protected:
 	//message map function On middle button up
 	afx_msg void OnMButtonUp(UINT nFlags, CPoint point);
 
-    //message map function On Mouse Move
+	//message map function On Mouse Move
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 
 	// message map function On keystroke  nonsystem character
 	afx_msg void OnChar(UINT nChar, UINT nRepCnt, UINT nFlags);
 
-    //message map function On window Destroyed
+	//message map function On window Destroyed
 	afx_msg void OnDestroy();
 
-   //message map function On window painted
+	//message map function On window painted
 	afx_msg void OnPaint();
 
 	//message map function On right button down
@@ -535,19 +535,19 @@ protected:
 	afx_msg void OnSysColorChange();
 	afx_msg UINT OnGetDlgCode();
 	//}}AFX_MSG
-	
+
 	//message map function On Select Day OK
 	afx_msg LONG OnSelectBulletOK(UINT wParam, LONG lParam);
 	DECLARE_MESSAGE_MAP()
 public:
 
-    // The pointer to Notify Window
-	CWnd *pNotifyWnd;
+	// The pointer to Notify Window
+	CWnd* pNotifyWnd;
 };
 
 
 // slider visual modes against max, max_component_1 and max_component_2
-const int max_slider [6][3] =
+const int max_slider[6][3] =
 {
 	{ max_rgb_red, max_rgb_green, max_rgb_blue },	// max_rgb red: R, G, B
 	{ max_rgb_green, max_rgb_red, max_rgb_blue },	// max_rgb green: G, R, B
@@ -564,12 +564,12 @@ public:
 	// Constroctor
 	GTColorSliderWnd();
 
-// Attributes
+	// Attributes
 public:
 
 	//Create Arrow Type Window
 	BOOL Create(DWORD dwStyle,
-		CRect rcPos, 
+		CRect rcPos,
 		CWnd* pParent,
 		UINT nID,
 		int nBulletType,
@@ -596,8 +596,8 @@ public:
 	void SetPosition(IN int value);
 
 	// get/set one-of slider additional components
-	inline int GetControlValue(int index) const { return (additional_components [index]); };
-	void SetControlValue(int index,int value);
+	inline int GetControlValue(int index) const { return (additional_components[index]); };
+	void SetControlValue(int index, int value);
 
 	// painting methods
 	void OnDraw(void);
@@ -615,7 +615,7 @@ public:
 
 public:
 
-// Operations
+	// Operations
 	enum layouts
 	{
 		layout_horizontal = 0x8000,	// horizontal slider
@@ -652,15 +652,15 @@ protected:
 	// - hsv sat - 0 is hue in [0, 3599 (3599 is 359.9 degs)], 1 is value in [0, 1000]
 	// - hsv value - 0 is hue in [0, 3599], 1 is sat in [0, 1000]
 
-	int		additional_components [4];
+	int		additional_components[4];
 
-	DWORD	*row_buffer;			// 1px-high 32-bit bitmap, having same width as blend
+	DWORD* row_buffer;			// 1px-high 32-bit bitmap, having same width as blend
 	int		m_nBuffSize;			// size of the row buffer in doublewords
 
 	// cache DIB bitmap information
 	BITMAPINFO	bmp_info;
 	HBITMAP		bmp_handle;
-	DWORD		*bmp_data;
+	DWORD* bmp_data;
 
 	CRect	m_rcFrame;				// control's m_rcFrame (bounding box)
 	CRect	m_rcInteraction;	// area, where mouse-drags will be traced (client area)
@@ -668,10 +668,10 @@ protected:
 
 public:
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(GTColorSliderWnd)
-	protected:
+	// Overrides
+		// ClassWizard generated virtual function overrides
+		//{{AFX_VIRTUAL(GTColorSliderWnd)
+protected:
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 	virtual void PreSubclassWindow();
 	virtual BOOL OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult);
@@ -708,16 +708,16 @@ protected:
 	//message map function On middle button up
 	afx_msg void OnMButtonUp(UINT nFlags, CPoint point);
 
-    //message map function On Mouse Move
+	//message map function On Mouse Move
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 
 	// message map function On keystroke  nonsystem character
 	afx_msg void OnChar(UINT nChar, UINT nRepCnt, UINT nFlags);
 
-    //message map function On window Destroyed
+	//message map function On window Destroyed
 	afx_msg void OnDestroy();
 
-   //message map function On window painted
+	//message map function On window painted
 	afx_msg void OnPaint();
 
 	//message map function On right button down
@@ -737,14 +737,14 @@ protected:
 	afx_msg void OnSysColorChange();
 	afx_msg UINT OnGetDlgCode();
 	//}}AFX_MSG
-	
+
 	//message map function On Select Day OK
 	afx_msg LONG OnSelectBulletOK(UINT wParam, LONG lParam);
 	DECLARE_MESSAGE_MAP()
 public:
 
-    // The pointer to Notify Window
-	CWnd *pNotifyWnd;
+	// The pointer to Notify Window
+	CWnd* pNotifyWnd;
 };
 
 
@@ -756,7 +756,7 @@ public:
 	PsDlgColor(CWnd* pParent = NULL);   // standard constructor
 	virtual ~PsDlgColor();
 
-// Dialog Data
+	// Dialog Data
 	enum { IDD = IDD_GTCOLORDIALOG_DIALOG };
 
 protected:
@@ -773,15 +773,15 @@ protected:
 	DECLARE_MESSAGE_MAP()
 
 public:
-  bool ShowModal();
+	bool ShowModal();
 	void SetColor(COLORREF crColor);
 	void SetColor(int, int, int);
-  void UpdateText();
+	void UpdateText();
 	COLORREF GetColor();
-  int GetColorRValue();
+	int GetColorRValue();
 	int GetColorGValue();
 	int GetColorBValue();
-	COLORREF m_crColor;	
+	COLORREF m_crColor;
 
 public:
 	GTColorSelectorWnd m_wndBulleted;

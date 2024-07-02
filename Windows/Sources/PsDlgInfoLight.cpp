@@ -1,16 +1,16 @@
 /**
  * This file is part of Patternshop Project.
- * 
+ *
  * Patternshop is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * Patternshop is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Patternshop.  If not, see <http://www.gnu.org/licenses/>
 */
@@ -73,20 +73,20 @@ void PsDlgInfoLight::Update()
 	Ee.SetWindowText(buffer);
 	sprintf(buffer, "%2.f", r);
 	R.SetWindowText(buffer);
-	
+
 	PsController::Instance().project->pattern->SetLinearLight(p, e);
 	PsController::Instance().UpdateWindow();
 }
 
 // PsDlgInfoLight message handlers
-void PsDlgInfoLight::OnNMReleasedcaptureSlider1(NMHDR *pNMHDR, LRESULT *pResult)
+void PsDlgInfoLight::OnNMReleasedcaptureSlider1(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	p = Us.GetPos() / 100.f;
 	Update();
 	*pResult = 0;
 }
 
-void PsDlgInfoLight::OnNMReleasedcaptureSlider2(NMHDR *pNMHDR, LRESULT *pResult)
+void PsDlgInfoLight::OnNMReleasedcaptureSlider2(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	e = Vs.GetPos() / 100.f;
 	Update();
@@ -95,5 +95,5 @@ void PsDlgInfoLight::OnNMReleasedcaptureSlider2(NMHDR *pNMHDR, LRESULT *pResult)
 
 bool PsDlgInfoLight::ShowModal()
 {
-  return CDialog::DoModal() == IDOK;
+	return CDialog::DoModal() == IDOK;
 }

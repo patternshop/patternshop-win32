@@ -106,6 +106,7 @@
     <ClCompile Include="..\Common\Dialogs\PsMessage.cpp" />
     <ClCompile Include="..\Common\Dialogs\PsWin.cpp" />
     <ClCompile Include="..\Common\Dialogs\PsWinProject.cpp" />
+    <ClCompile Include="..\Common\Engine\PsController.cpp" />
     <ClCompile Include="..\Common\Engine\PsMaths.cpp" />
     <ClCompile Include="..\Common\Engine\PsRender.cpp" />
     <ClCompile Include="..\Common\Engine\PsTexture.cpp" />
@@ -114,7 +115,6 @@
     <ClCompile Include="..\Common\Exporter\PsSoftRender.cpp" />
     <ClCompile Include="..\Common\FreeImage_Ext.cpp" />
     <ClCompile Include="..\Common\Projects\PsAction.cpp" />
-    <ClCompile Include="..\Common\Projects\PsController.cpp" />
     <ClCompile Include="..\Common\Projects\PsImage.cpp" />
     <ClCompile Include="..\Common\Projects\PsLayer.cpp" />
     <ClCompile Include="..\Common\Projects\PsMatrix.cpp" />
@@ -125,19 +125,19 @@
   <ItemGroup>
     <ClInclude Include="..\Common\Dialogs\DialogOverviewCx.h" />
     <ClInclude Include="..\Common\Dialogs\DialogPatternCx.h" />
-    <ClInclude Include="..\Common\Dialogs\PsDialogs.h" />
     <ClInclude Include="..\Common\Dialogs\PsDlgExportCx.h" />
     <ClInclude Include="..\Common\Dialogs\PsMessage.h" />
     <ClInclude Include="..\Common\Dialogs\PsWin.h" />
     <ClInclude Include="..\Common\Dialogs\PsWinProject.h" />
+    <ClInclude Include="..\Common\Engine\PsController.h" />
     <ClInclude Include="..\Common\Engine\PsMaths.h" />
+    <ClInclude Include="..\Common\Engine\PsOpenGL.h" />
     <ClInclude Include="..\Common\Engine\PsRender.h" />
     <ClInclude Include="..\Common\Engine\PsTexture.h" />
     <ClInclude Include="..\Common\Engine\PsTypes.h" />
     <ClInclude Include="..\Common\Exporter\PsFileTypes.h" />
     <ClInclude Include="..\Common\Exporter\PsSoftRender.h" />
     <ClInclude Include="..\Common\Projects\PsAction.h" />
-    <ClInclude Include="..\Common\Projects\PsController.h" />
     <ClInclude Include="..\Common\Projects\PsImage.h" />
     <ClInclude Include="..\Common\Projects\PsLayer.h" />
     <ClInclude Include="..\Common\Projects\PsMatrix.h" />
@@ -150,6 +150,10 @@
       <Project>{7f502a08-4cab-4df3-a3b6-72cc5bca1ae8}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagramActions.cd" />
+    <None Include="ClassDiagramCommon.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

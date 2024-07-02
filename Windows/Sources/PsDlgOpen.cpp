@@ -1,16 +1,16 @@
 /**
  * This file is part of Patternshop Project.
- * 
+ *
  * Patternshop is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * Patternshop is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Patternshop.  If not, see <http://www.gnu.org/licenses/>
 */
@@ -18,7 +18,7 @@
 #include "Patternshop.h"
 #include "PsDlgOpen.h"
 #include "Resource.h"
- 
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -26,7 +26,7 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 // self-initialization message posted
-const int MYWM_POSTINIT = WM_USER+1;
+const int MYWM_POSTINIT = WM_USER + 1;
 
 IMPLEMENT_DYNAMIC(PsDlgOpen, CFileDialog)
 BEGIN_MESSAGE_MAP(PsDlgOpen, CFileDialog)
@@ -34,10 +34,10 @@ BEGIN_MESSAGE_MAP(PsDlgOpen, CFileDialog)
 END_MESSAGE_MAP()
 
 PsDlgOpen::PsDlgOpen(BOOL bOpenFileDialog,
-	   LPCTSTR lpszDefExt, LPCTSTR lpszFileName, DWORD dwFlags,
-	   LPCTSTR lpszFilter, CWnd* pParentWnd, DWORD dwSize) 
-	   : CFileDialog(bOpenFileDialog, lpszDefExt, lpszFileName,
-	   dwFlags,lpszFilter, pParentWnd, dwSize )
+	LPCTSTR lpszDefExt, LPCTSTR lpszFileName, DWORD dwFlags,
+	LPCTSTR lpszFilter, CWnd* pParentWnd, DWORD dwSize)
+	: CFileDialog(bOpenFileDialog, lpszDefExt, lpszFileName,
+		dwFlags, lpszFilter, pParentWnd, dwSize)
 {
 }
 
@@ -45,7 +45,7 @@ PsDlgOpen::PsDlgOpen(BOOL bOpenFileDialog,
 BOOL PsDlgOpen::OnInitDialog()
 {
 	CFileDialog::OnInitDialog();
-	PostMessage(MYWM_POSTINIT,0,0);
+	PostMessage(MYWM_POSTINIT, 0, 0);
 	return TRUE;
 }
 

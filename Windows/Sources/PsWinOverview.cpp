@@ -1,16 +1,16 @@
 /**
  * This file is part of Patternshop Project.
- * 
+ *
  * Patternshop is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * Patternshop is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Patternshop.  If not, see <http://www.gnu.org/licenses/>
 */
@@ -21,7 +21,7 @@
 #include "PsProject.h"
 #include "PsController.h"
 
-PsWinOverview*	PsWinOverview::instance = 0;
+PsWinOverview* PsWinOverview::instance = 0;
 
 IMPLEMENT_DYNAMIC(PsWinOverview, CDialog)
 
@@ -34,16 +34,16 @@ PsWinOverview::~PsWinOverview()
 {
 }
 
-PsWinOverview&	PsWinOverview::Instance()
+PsWinOverview& PsWinOverview::Instance()
 {
-	if(!instance)
+	if (!instance)
 		instance = new PsWinOverview();
 	return *instance;
 }
 
 void	PsWinOverview::Delete()
 {
-	if(instance)
+	if (instance)
 	{
 		delete instance;
 		instance = 0;
@@ -58,21 +58,21 @@ int PsWinOverview::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	PsRect r;
 	GetClientRect(&r);
 
-  m_RenduImage.Create(r.right, r.bottom, 24);
+	m_RenduImage.Create(r.right, r.bottom, 24);
 	window_buffer2.Create(r.right, r.bottom, 24);
 	window_buffer.Create(r.right, r.bottom, 24);
 
-  SetTarget(&window_buffer);
-  CleanBackground();
-  
-  SetTimer(0, 100, NULL);
+	SetTarget(&window_buffer);
+	CleanBackground();
+
+	SetTimer(0, 100, NULL);
 
 	return 0;
 }
 
 BEGIN_MESSAGE_MAP(PsWinOverview, CDialog)
 	ON_WM_PAINT()
-  ON_WM_TIMER()
+	ON_WM_TIMER()
 	ON_WM_CREATE()
 	ON_WM_ERASEBKGND()
 	ON_WM_LBUTTONDOWN()
@@ -86,9 +86,9 @@ void PsWinOverview::DrawRedSelection()
 	if (!PsController::Instance().project)
 		return;
 
-	PsRect z = 
-    GetSelectionRectangle(window_buffer2.GetWidth(), 
-           window_buffer2.GetHeight());
+	PsRect z =
+		GetSelectionRectangle(window_buffer2.GetWidth(),
+			window_buffer2.GetHeight());
 
 	CPen red(PS_SOLID, 2, RGB(255, 0, 0));
 	dc->SelectObject(&red);
@@ -106,7 +106,7 @@ void PsWinOverview::UpdateNow()
 		PsController::Instance().project)
 	{
 		UpdateMiniImage();
-    Invalidate(true);
+		Invalidate(true);
 	}
 }
 
@@ -125,7 +125,7 @@ BOOL PsWinOverview::OnEraseBkgnd(CDC* pDC)
 void PsWinOverview::OnLButtonDown(UINT nFlags, CPoint point)
 {
 	OnLeftMouseButtonDown(point);
-  Invalidate();
+	Invalidate();
 	CDialog::OnLButtonDown(nFlags, point);
 }
 
@@ -144,15 +144,15 @@ void PsWinOverview::OnLButtonUp(UINT nFlags, CPoint point)
 
 void PsWinOverview::OnSysCommand(UINT nID, LPARAM lParam)
 {
-	if(nID == SC_CLOSE) return;
+	if (nID == SC_CLOSE) return;
 	CDialog::OnSysCommand(nID, lParam);
 }
 
 void PsWinOverview::OnTimer(UINT_PTR nIDEvent)
 {
-  if (!bUpdated && !PsController::Instance().bMouseButtonIsDown && !zooming && !bDragging)
+	if (!bUpdated && !PsController::Instance().bMouseButtonIsDown && !zooming && !bDragging)
 	{
 		UpdateNow();
-		bUpdated = true;   
+		bUpdated = true;
 	}
 }

@@ -321,6 +321,7 @@
     <None Include="res\tool_size2.cur">
       <Filter>Resources</Filter>
     </None>
+    <None Include="ClassDiagramWindows.cd" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="English\English.rc">

@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CAboutDlg" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sources\Patternshop.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CChildFrame" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAIAAAAAAAgCAAAhAAAAAAAEMAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sources\ChildFrm.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CMainFrame" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAUoAACAEAEAAACAAIiAAAgGAIQgEAAAIAASAAABA=</HashCode>
+      <FileName>Sources\MainFrm.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsMultiDocTemplate" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Sources\MultiDocTemplate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CPatternshopApp" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAEAIACAAABAAAAAAQAAAABgAAAAAA=</HashCode>
+      <FileName>Sources\Patternshop.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CPatternshopDoc" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAACAAAAAACAgAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Sources\PatternshopDoc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CPatternshopView" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQJEUwAIFHELBAQGKBEkABAADoMGAMFJYwAGESQAAU=</HashCode>
+      <FileName>Sources\PatternshopView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsHardware" Collapsed="true">
+    <Position X="21.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQABAAAABgAAIAAIABgAIWAAARgAADiEEEjAACAAAA=</HashCode>
+      <FileName>Sources\PsHardware.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAllControlsSheet" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAEAAAAAAAAAAAAAACAgAAAAAAQAAAAQAAAQAAA=</HashCode>
+      <FileName>Sources\propsht.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GTDrawHelper" Collapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAEAAAJAAQAAAAhAIAAAApAAAAAQAAAAAA=</HashCode>
+      <FileName>Sources\PsDlgColor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GTColorSelectorWnd" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQChUCIAAAEYBAgBggh0AgBXsBIAgkKgBgiAgAQwAQI=</HashCode>
+      <FileName>Sources\PsDlgColor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GTColorWellWnd" Collapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACBECAAAAEAAABQAAAEAABVgBKAAEAABAAAAAAQQAI=</HashCode>
+      <FileName>Sources\PsDlgColor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GTColorSliderWnd" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACjGDMAACEYBAAABghlAgBXgjIAgkhmBkAAgAAwAQI=</HashCode>
+      <FileName>Sources\PsDlgColor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsDlgColor" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAEEIQsAAACQQBAAAIAAYAAAAACAQAgACEGQASA=</HashCode>
+      <FileName>Sources\PsDlgColor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsDlgConfig" Collapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAQAAAIABAAEAALAAAAAAAAAAQAAEQAAAE=</HashCode>
+      <FileName>Sources\PsDlgConfig.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsDlgDocument" Collapsed="true">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwACBEAIAAACAAAARAAAAACAQAEACAASA4AHEAcAAA=</HashCode>
+      <FileName>Sources\PsDlgDocument.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsDlgExport" Collapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASQCBEAIAAACAAAIRAAAAACADAAAAAAAEAECEAIAgE=</HashCode>
+      <FileName>Sources\PsDlgExport.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsDlgInfoLight" Collapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASgAAEEAAAACAACARAACAABAIAEAAACCEABAACAAQA=</HashCode>
+      <FileName>Sources\PsDlgInfoLight.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsDlgOpen" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAACABAAAAAAAAIAAAAAQA=</HashCode>
+      <FileName>Sources\PsDlgOpen.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsDlgPrint" Collapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASADBEAIAAACBEAAREEIAACAqABAAgAYEhgCUAKYCE=</HashCode>
+      <FileName>Sources\PsDlgPrint.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsTabInfoImage" Collapsed="true">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASABGEAECAAACAIABBQCCEAAAAABAAAAAQgAEAIYQA=</HashCode>
+      <FileName>Sources\PsTabInfoImage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsTabInfoMatrix" Collapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASABGEAEAAEACAMBjBgCCBAQBgQAAAAIEAoAkAIYQA=</HashCode>
+      <FileName>Sources\PsTabInfoMatrix.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsTabInfoPattern" Collapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgSAAAAAAQlCAABBBJAECCBBECABkAAgKABgC0AQAAE=</HashCode>
+      <FileName>Sources\PsTabInfoPattern.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsWin32" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABGCAIMQAACAEAgIBJAAEBACADAAgAAIAAEEBAAQAII=</HashCode>
+      <FileName>Sources\PsWin32.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsWinImage" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAKAAAAAAABAgAABAAAAAAAAAAFAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Sources\PsWinImage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsWinOverview" Collapsed="true">
+    <Position X="3" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAiCAAAAAAFAAAAAAIAEAABAADFAEAAEYAAAAAAQAAA=</HashCode>
+      <FileName>Sources\PsWinOverview.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsScrollBarWin32" Collapsed="true">
+    <Position X="5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAICAgAABAAAAAAAAAgAEBAAAA=</HashCode>
+      <FileName>Sources\PsWinProjectWin32.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsWinProjectWin32" Collapsed="true">
+    <Position X="5.25" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>UAyAAACUABGAAAAAABAAAABAADMUBAEAAACAAAASAAA=</HashCode>
+      <FileName>Sources\PsWinProjectWin32.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsWinProperties" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAgAAAAAhAAAAAAgAABACAIEAFAAAAAUAgAQAAAAAA=</HashCode>
+      <FileName>Sources\PsWinProperties.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsWinSplash" Collapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAJAAAAAAASNAAAAAQAAAAAAYAAA=</HashCode>
+      <FileName>Sources\PsWinSplash.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsWinTools" Collapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAEQAQEAAAAABDAAAABAcANAAAAAQAAQAIAAAAA=</HashCode>
+      <FileName>Sources\PsWinTools.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CMDIChildWnd" Collapsed="true">
+    <Position X="24.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAADBwAWIQFCQmgACABggAAAgCAEAEJAAAACCAAAAkA=</HashCode>
+      <FileName>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\atlmfc\include\afxwin.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PsWinProjectModel" Collapsed="true">
+    <Position X="5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQQAgBcCgEHFoABAACAJACAAEAEAAACANgyAgBMAQA=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Dialogs\PsWinProject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

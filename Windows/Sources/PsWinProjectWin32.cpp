@@ -1,16 +1,16 @@
 /**
  * This file is part of Patternshop Project.
- * 
+ *
  * Patternshop is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * Patternshop is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Patternshop.  If not, see <http://www.gnu.org/licenses/>
 */
@@ -19,8 +19,8 @@
 
 IMPLEMENT_DYNAMIC(PsWinProjectWin32, PsWin32)
 
-PsWinProjectWin32::PsWinProjectWin32 (CWnd* pParent /*=NULL*/) :
-PsWin32 (PsWinProjectWin32::IDD, pParent), PsWinProjectModel()
+PsWinProjectWin32::PsWinProjectWin32(CWnd* pParent /*=NULL*/) :
+	PsWin32(PsWinProjectWin32::IDD, pParent), PsWinProjectModel()
 {
 	scrollbar = new PsScrollBarWin32(scrollbarWin32);
 }
@@ -31,9 +31,9 @@ PsWinProjectWin32::~PsWinProjectWin32()
 	delete dc;
 }
 
-void PsWinProjectWin32::DoDataExchange (CDataExchange* pDX)
+void PsWinProjectWin32::DoDataExchange(CDataExchange* pDX)
 {
-	PsWin32::DoDataExchange (pDX);
+	PsWin32::DoDataExchange(pDX);
 	DDX_Control(pDX, IDC_SCROLLBAR1, scrollbarWin32);
 }
 
@@ -118,27 +118,27 @@ void PsWinProjectWin32::OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBa
 		break;
 
 	case SB_PAGELEFT:    // Scroll one page left.
-		{
-			// Get the page size. 
-			SCROLLINFO   info;
-			scrollbarWin32.GetScrollInfo(&info, SIF_ALL);
+	{
+		// Get the page size. 
+		SCROLLINFO   info;
+		scrollbarWin32.GetScrollInfo(&info, SIF_ALL);
 
-			//if (CurPos > 0)
-			//	CurPos = max(0, CurPos - (int) info.nPage);
-			CurPos -= item_count_size / 3;
-		}
-		break;
+		//if (CurPos > 0)
+		//	CurPos = max(0, CurPos - (int) info.nPage);
+		CurPos -= item_count_size / 3;
+	}
+	break;
 
 	case SB_PAGERIGHT:      // Scroll one page right
-		{
-			// Get the page size. 
-			SCROLLINFO   info;
-			scrollbarWin32.GetScrollInfo(&info, SIF_ALL);
+	{
+		// Get the page size. 
+		SCROLLINFO   info;
+		scrollbarWin32.GetScrollInfo(&info, SIF_ALL);
 
-			//if (CurPos < 122)
-			CurPos += item_count_size / 3; //min(122, CurPos + (int) info.nPage);
-		}
-		break;
+		//if (CurPos < 122)
+		CurPos += item_count_size / 3; //min(122, CurPos + (int) info.nPage);
+	}
+	break;
 
 	case SB_THUMBPOSITION: // Scroll to absolute position. nPos is the position
 		CurPos = nPos;      // of the scroll box at the end of the drag operation.
@@ -198,7 +198,7 @@ BOOL PsWinProjectWin32::OnEraseBkgnd(CDC* pDC)
 
 void PsWinProjectWin32::OnSysCommand(UINT nID, LPARAM lParam)
 {
-	if(nID == SC_CLOSE) return;
+	if (nID == SC_CLOSE) return;
 	PsWin32::OnSysCommand(nID, lParam);
 }
 
@@ -231,7 +231,7 @@ void PsWinProjectWin32::Update()
 void PsWinProjectWin32::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	PsWin32::OnKeyDown(nChar, nRepCnt, nFlags);
-	PsProject *project = PsController::Instance().project;
+	PsProject* project = PsController::Instance().project;
 	sKeyList.insert(nChar);
 	/*
 	char buffer[1024];
@@ -243,8 +243,8 @@ void PsWinProjectWin32::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 void PsWinProjectWin32::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	PsWin32::OnKeyDown(nChar, nRepCnt, nFlags);
-	PsProject *project = PsController::Instance().project;
-	CPatternshopView * active = PsController::Instance().active;
+	PsProject* project = PsController::Instance().project;
+	CPatternshopView* active = PsController::Instance().active;
 	if (!active) return;
 
 	/*
@@ -277,7 +277,7 @@ void PsWinProjectWin32::Show()
 	ShowWindow(TRUE);
 }
 
-PsScrollBarWin32::PsScrollBarWin32(CScrollBar &scrollbar)
+PsScrollBarWin32::PsScrollBarWin32(CScrollBar& scrollbar)
 {
 	this->scrollbar = &scrollbar;
 }
@@ -291,7 +291,7 @@ int PsScrollBarWin32::GetWidth()
 
 void PsScrollBarWin32::SetSize(int iSize)
 {
-	scrollbar->SetScrollRange(0, iSize); 
+	scrollbar->SetScrollRange(0, iSize);
 }
 
 int PsScrollBarWin32::GetPos()
@@ -301,7 +301,7 @@ int PsScrollBarWin32::GetPos()
 
 void PsScrollBarWin32::Enable()
 {
-	scrollbar->EnableScrollBar(ESB_ENABLE_BOTH);	
+	scrollbar->EnableScrollBar(ESB_ENABLE_BOTH);
 }
 
 void PsScrollBarWin32::Disable()

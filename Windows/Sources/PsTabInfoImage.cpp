@@ -1,16 +1,16 @@
 /**
  * This file is part of Patternshop Project.
- * 
+ *
  * Patternshop is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * Patternshop is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Patternshop.  If not, see <http://www.gnu.org/licenses/>
 */
@@ -44,44 +44,44 @@ BOOL PsTabInfoImage::OnInitDialog()
 
 void PsTabInfoImage::Disable()
 {
-  X.Clear();
-  Y.Clear();
-  R.Clear();
-  W.Clear();
-  H.Clear();
-  W2.Clear();
-  H2.Clear();
-  X.EnableWindow(FALSE);
-  Y.EnableWindow(FALSE);
-  R.EnableWindow(FALSE);
-  W.EnableWindow(FALSE);
-  H.EnableWindow(FALSE);
-  W2.EnableWindow(FALSE);
-  H2.EnableWindow(FALSE);
-  lock.EnableWindow(FALSE);
-  ButtonShow.EnableWindow(FALSE);
-  loadButton.EnableWindow(FALSE);
-  X.SetWindowText("");
-  Y.SetWindowText("");
-  R.SetWindowText("");
-  W.SetWindowText("");
-  H.SetWindowText("");
-  W2.SetWindowText("");
-  H2.SetWindowText("");
+	X.Clear();
+	Y.Clear();
+	R.Clear();
+	W.Clear();
+	H.Clear();
+	W2.Clear();
+	H2.Clear();
+	X.EnableWindow(FALSE);
+	Y.EnableWindow(FALSE);
+	R.EnableWindow(FALSE);
+	W.EnableWindow(FALSE);
+	H.EnableWindow(FALSE);
+	W2.EnableWindow(FALSE);
+	H2.EnableWindow(FALSE);
+	lock.EnableWindow(FALSE);
+	ButtonShow.EnableWindow(FALSE);
+	loadButton.EnableWindow(FALSE);
+	X.SetWindowText("");
+	Y.SetWindowText("");
+	R.SetWindowText("");
+	W.SetWindowText("");
+	H.SetWindowText("");
+	W2.SetWindowText("");
+	H2.SetWindowText("");
 }
 
 void PsTabInfoImage::Enable()
 {
-  X.EnableWindow(TRUE);
-  Y.EnableWindow(TRUE);
-  R.EnableWindow(TRUE);
-  W.EnableWindow(TRUE);
-  H.EnableWindow(TRUE);
-  W2.EnableWindow(TRUE);
-  H2.EnableWindow(TRUE);
-  lock.EnableWindow(TRUE);
-  ButtonShow.EnableWindow(TRUE);
-  loadButton.EnableWindow(TRUE);
+	X.EnableWindow(TRUE);
+	Y.EnableWindow(TRUE);
+	R.EnableWindow(TRUE);
+	W.EnableWindow(TRUE);
+	H.EnableWindow(TRUE);
+	W2.EnableWindow(TRUE);
+	H2.EnableWindow(TRUE);
+	lock.EnableWindow(TRUE);
+	ButtonShow.EnableWindow(TRUE);
+	loadButton.EnableWindow(TRUE);
 }
 
 void PsTabInfoImage::DoDataExchange(CDataExchange* pDX)
@@ -102,16 +102,16 @@ void PsTabInfoImage::DoDataExchange(CDataExchange* pDX)
 void PsTabInfoImage::Update(PsImage* image)
 {
 	char buffer[1024];
-	
-	if (!X) return;
-	
-  PsProject *project = PsController::Instance().project;
 
-  if (!project) return;
+	if (!X) return;
+
+	PsProject* project = PsController::Instance().project;
+
+	if (!project) return;
 
 	if (image)
 	{
-    Enable();
+		Enable();
 
 		float	angle;
 		angle = image->GetAngle() * 180.0f / 3.14159265f;
@@ -121,12 +121,12 @@ void PsTabInfoImage::Update(PsImage* image)
 			angle -= 360.0f;
 		if (image->parent)
 		{
-			sprintf(buffer, "%.2f", image->x / (SHAPE_SIZE * 2) 
-				* project->matrix->w 
+			sprintf(buffer, "%.2f", image->x / (SHAPE_SIZE * 2)
+				* project->matrix->w
 				+ project->matrix->w / 2);
 			X.SetWindowTextA(buffer);
 			sprintf(buffer, "%.2f", image->y / (SHAPE_SIZE * 2)
-				* project->matrix->h 
+				* project->matrix->h
 				+ project->matrix->h / 2);
 			Y.SetWindowTextA(buffer);
 		}
@@ -152,10 +152,10 @@ void PsTabInfoImage::Update(PsImage* image)
 		else lock.LoadBitmaps(IDB_NOTLOCK);
 		lock.Invalidate(true);
 	}
-  else
-  {
-	  OnShowWindow(true, 0);
-  }
+	else
+	{
+		OnShowWindow(true, 0);
+	}
 }
 
 BEGIN_MESSAGE_MAP(PsTabInfoImage, CPropertyPage)
@@ -179,9 +179,9 @@ END_MESSAGE_MAP()
 
 void PsTabInfoImage::OnEnChangeX2()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &X) return;
-	PsProject *project = PsController::Instance().project;
+	PsProject* project = PsController::Instance().project;
 	if (X.IsTopParentActive() && project && project->image)
 	{
 		char buffer[1024];
@@ -192,7 +192,7 @@ void PsTabInfoImage::OnEnChangeX2()
 			else if (value > project->matrix->w) value = project->matrix->w;
 		float x, y;
 		project->image->GetPosition(x, y);
-		project->LogAdd (new LogMove (*project, project->image, x, y));
+		project->LogAdd(new LogMove(*project, project->image, x, y));
 		if (project->image->parent) project->image->x = (value - project->matrix->w / 2) / project->matrix->w * (SHAPE_SIZE * 2);
 		else project->image->x = value;
 		PsController::Instance().UpdateWindow();
@@ -201,9 +201,9 @@ void PsTabInfoImage::OnEnChangeX2()
 
 void PsTabInfoImage::OnEnChangeY2()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &Y) return;
-	PsProject *project = PsController::Instance().project;
+	PsProject* project = PsController::Instance().project;
 	if (project && project->image)
 	{
 		char buffer[1024];
@@ -214,7 +214,7 @@ void PsTabInfoImage::OnEnChangeY2()
 			else if (value > project->matrix->h) value = project->matrix->h;
 		float x, y;
 		project->image->GetPosition(x, y);
-		project->LogAdd (new LogMove (*project, project->image, x, y));
+		project->LogAdd(new LogMove(*project, project->image, x, y));
 		if (project->image->parent) project->image->y = (value - project->matrix->h / 2) / project->matrix->h * (SHAPE_SIZE * 2);
 		else project->image->y = value;
 		PsController::Instance().UpdateWindow();
@@ -223,30 +223,30 @@ void PsTabInfoImage::OnEnChangeY2()
 
 void PsTabInfoImage::OnEnChangeAngle2()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &R) return;
-	PsProject *project = PsController::Instance().project;
+	PsProject* project = PsController::Instance().project;
 	if (project && project->image)
 	{
 		char buffer[1024];
 		R.GetWindowTextA(buffer, 1024);
-		project->LogAdd (new LogRotate (*project, project->image, project->image->r));
-		project->image->r = (atof(buffer) * 3.14159265f) / 180.f;
+		project->LogAdd(new LogRotate(*project, project->image, project->image->r));
+		project->image->r = (atof(buffer) * 3.14159265) / 180.0;
 		PsController::Instance().UpdateWindow();
 	}
 }
 
 void PsTabInfoImage::OnEnChangeW()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &W) return;
-	PsProject *project = PsController::Instance().project;
+	PsProject* project = PsController::Instance().project;
 	if (project && project->image)
 	{
-		PsImage *image = project->image;
+		PsImage* image = project->image;
 		float x, y;
 		image->GetPosition(x, y);
-		project->LogAdd (new LogResize (*project, image, x, y, image->w, image->h));
+		project->LogAdd(new LogResize(*project, image, x, y, image->w, image->h));
 		char buffer[1024];
 		W.GetWindowTextA(buffer, 1024);
 		image->w = atof(buffer);
@@ -265,15 +265,15 @@ void PsTabInfoImage::OnEnChangeW()
 
 void PsTabInfoImage::OnEnChangeH()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &H) return;
-	PsProject *project = PsController::Instance().project;
+	PsProject* project = PsController::Instance().project;
 	if (project && project->image)
 	{
-		PsImage *image = project->image;
+		PsImage* image = project->image;
 		float x, y;
 		image->GetPosition(x, y);
-		project->LogAdd (new LogResize (*project, image, x, y, image->w, image->h));
+		project->LogAdd(new LogResize(*project, image, x, y, image->w, image->h));
 		char buffer[1024];
 		H.GetWindowTextA(buffer, 1024);
 		image->h = atof(buffer);
@@ -292,14 +292,14 @@ void PsTabInfoImage::OnEnChangeH()
 
 void PsTabInfoImage::OnEnChangeW2()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &W2) return;
-	if (PsController::Instance().project 
+	if (PsController::Instance().project
 		&& PsController::Instance().project->image)
 	{
 		char buffer[1024];
 		W2.GetWindowTextA(buffer, 1024);
-		PsImage *image = PsController::Instance().project->image;
+		PsImage* image = PsController::Instance().project->image;
 		image->w = atof(buffer) * image->GetTexture().width / 100;
 		sprintf(buffer, "%.2f", image->w);
 		W.SetWindowTextA(buffer);
@@ -317,14 +317,14 @@ void PsTabInfoImage::OnEnChangeW2()
 
 void PsTabInfoImage::OnEnChangeH2()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &H2) return;
-	if (PsController::Instance().project 
+	if (PsController::Instance().project
 		&& PsController::Instance().project->image)
 	{
 		char buffer[1024];
 		H2.GetWindowTextA(buffer, 1024);
-		PsImage *image = PsController::Instance().project->image;
+		PsImage* image = PsController::Instance().project->image;
 		image->h = atof(buffer) * image->GetTexture().height / 100;
 		sprintf(buffer, "%.2f", image->h);
 		H.SetWindowTextA(buffer);
@@ -342,7 +342,7 @@ void PsTabInfoImage::OnEnChangeH2()
 
 void PsTabInfoImage::OnBnClickedButton1()
 {
-	PsWinImage::Instance().ShowWindow (SW_SHOW);
+	PsWinImage::Instance().ShowWindow(SW_SHOW);
 }
 
 
@@ -351,7 +351,7 @@ void PsTabInfoImage::OnBnClickedButton3()
 {
 	if (PsController::Instance().project)
 	{
-		PsImage *image = PsController::Instance().project->image;
+		PsImage* image = PsController::Instance().project->image;
 		if (image)
 		{
 			if (!image->constraint)
@@ -392,16 +392,16 @@ void PsTabInfoImage::OnBnClickedButton3()
 void PsTabInfoImage::OnShowWindow(BOOL bShow, UINT nStatus)
 {
 	CPropertyPage::OnShowWindow(bShow, nStatus);
-	if (bShow && (!PsController::Instance().project || 
+	if (bShow && (!PsController::Instance().project ||
 		(PsController::Instance().project && !PsController::Instance().project->image)))
 	{
-    Disable();
+		Disable();
 	}
 	else
 	{
 		Enable();
-    if (PsController::Instance().project)
-      Update(PsController::Instance().project->image);
+		if (PsController::Instance().project)
+			Update(PsController::Instance().project->image);
 	}
 }
 

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PsAction" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAABCCQQEAgAAAAABAAgAAAAAAA=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogDelImage" Collapsed="true">
+    <Position X="14.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAQAAIAAAAQAAAAAAAAAYAlhAAAAAAQ=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogDelMatrix" Collapsed="true">
+    <Position X="19" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAQAAACAAADAYAlhAACIAAA=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogMove" Collapsed="true">
+    <Position X="23.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAEQAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogNewImage" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAAABAAAAAEAA=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogNewMatrix" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAAABAACAAAAA=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogReplace" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAQAAIAAAAQAAAAAAAAAAABAAAAAAAE=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogResize" Collapsed="true">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAEAAAQAAAAAAAAIQAhgAAAAAAA=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogRotate" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAEAAAQAAgAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogSwapImage" Collapsed="true">
+    <Position X="16.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAIAAAAAAAQAAAAAAAwAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogSwapMatrix" Collapsed="true">
+    <Position X="21.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAAQABAAAAAAA=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogTorsio" Collapsed="true">
+    <Position X="25.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAQAAAAAAAQAAAAAAAAAIAEAAAAAAAA=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogPatternAction" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAIAAAQAQAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogPatternRotate" Collapsed="true">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAQAAAAAIAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogPatternTranslate" Collapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAQAAAAQAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogPatternScale" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAQAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Dev\Patternshop\Legacy\Common\Projects\PsAction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -258,6 +258,7 @@
     <Image Include="res\width1.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagramWindows.cd" />
     <None Include="res\cur00001.cur" />
     <None Include="res\cursor2.cur" />
     <None Include="res\tool_default.cur" />

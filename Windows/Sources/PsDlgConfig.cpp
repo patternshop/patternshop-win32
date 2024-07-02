@@ -1,16 +1,16 @@
 /**
  * This file is part of Patternshop Project.
- * 
+ *
  * Patternshop is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * Patternshop is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Patternshop.  If not, see <http://www.gnu.org/licenses/>
 */
@@ -60,20 +60,20 @@ BOOL PsDlgConfig::OnInitDialog()
 	power_slider.SetRange(0, 3);
 	switch (resolution_max)
 	{
-		case 1024: power_slider.SetPos(2); break;
-		case 800: power_slider.SetPos(1); break;
-		case 640: power_slider.SetPos(0); break;
-		default: power_slider.SetPos(3); break;
+	case 1024: power_slider.SetPos(2); break;
+	case 800: power_slider.SetPos(1); break;
+	case 640: power_slider.SetPos(0); break;
+	default: power_slider.SetPos(3); break;
 	}
 
-   if ( getLanguage() == French )
-   {
-      langageBox.SetCurSel(1);
-   }
-   else
-   {
-      langageBox.SetCurSel(0);
-   }
+	if (getLanguage() == French)
+	{
+		langageBox.SetCurSel(1);
+	}
+	else
+	{
+		langageBox.SetCurSel(0);
+	}
 
 	return TRUE;
 }
@@ -92,22 +92,22 @@ void PsDlgConfig::OnOK()
 	if (h >= PsMatrix::minimum_dim) PsMatrix::default_h = h;
 	switch (power_slider.GetPos())
 	{
-		case 2: resolution_max = 1024; break;
-		case 1: resolution_max = 800; break;
-		case 0: resolution_max = 640; break;
-		default: resolution_max = 0; break;
+	case 2: resolution_max = 1024; break;
+	case 1: resolution_max = 800; break;
+	case 0: resolution_max = 640; break;
+	default: resolution_max = 0; break;
 	}
 
-   int lengSel = langageBox.GetCurSel();
-   switch ( lengSel )
-   {
-      case 1:
-         theApp.SetLanguage( French );
-         break;
-      default:
-         theApp.SetLanguage( English );
-         break;
-   }
+	int lengSel = langageBox.GetCurSel();
+	switch (lengSel)
+	{
+	case 1:
+		theApp.SetLanguage(French);
+		break;
+	default:
+		theApp.SetLanguage(English);
+		break;
+	}
 
 	CDialog::OnOK();
 }

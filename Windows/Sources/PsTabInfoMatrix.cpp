@@ -1,16 +1,16 @@
 /**
  * This file is part of Patternshop Project.
- * 
+ *
  * Patternshop is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * Patternshop is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with Patternshop.  If not, see <http://www.gnu.org/licenses/>
 */
@@ -95,16 +95,16 @@ END_MESSAGE_MAP()
 
 void PsTabInfoMatrix::OnEnChangeX2()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &X) return;
 	if (!PsController::Instance().project) return;
-	PsProject *project = PsController::Instance().project;
+	PsProject* project = PsController::Instance().project;
 	PsMatrix* matrix = project->matrix;
 	if (X.IsTopParentActive() && matrix)
 	{
 		char buffer[1024];
 		X.GetWindowTextA(buffer, 1024);
-		project->LogAdd (new LogMove (*project, matrix, matrix->x, matrix->y));
+		project->LogAdd(new LogMove(*project, matrix, matrix->x, matrix->y));
 		matrix->x = atof(buffer);
 		PsController::Instance().UpdateWindow();
 	}
@@ -112,16 +112,16 @@ void PsTabInfoMatrix::OnEnChangeX2()
 
 void PsTabInfoMatrix::OnEnChangeY2()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &Y) return;
 	if (!PsController::Instance().project) return;
-	PsProject *project = PsController::Instance().project;
+	PsProject* project = PsController::Instance().project;
 	PsMatrix* matrix = project->matrix;
 	if (matrix)
 	{
 		char buffer[1024];
 		Y.GetWindowTextA(buffer, 1024);
-		project->LogAdd (new LogMove (*project, matrix, matrix->x, matrix->y));
+		project->LogAdd(new LogMove(*project, matrix, matrix->x, matrix->y));
 		matrix->y = atof(buffer);
 		PsController::Instance().UpdateWindow();
 	}
@@ -129,16 +129,16 @@ void PsTabInfoMatrix::OnEnChangeY2()
 
 void PsTabInfoMatrix::OnEnChangeAngle2()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &R) return;
 	if (!PsController::Instance().project) return;
-	PsProject *project = PsController::Instance().project;
+	PsProject* project = PsController::Instance().project;
 	PsMatrix* matrix = project->matrix;
 	if (matrix)
 	{
 		char buffer[1024];
 		R.GetWindowTextA(buffer, 1024);
-		project->LogAdd (new LogRotate (*project, matrix, matrix->r));
+		project->LogAdd(new LogRotate(*project, matrix, matrix->r));
 		matrix->r = (atof(buffer) * 3.14159265f) / 180.f;
 		PsController::Instance().UpdateWindow();
 	}
@@ -146,9 +146,9 @@ void PsTabInfoMatrix::OnEnChangeAngle2()
 
 void PsTabInfoMatrix::OnEnChangeI2()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &Ti) return;
-	if (PsController::Instance().project 
+	if (PsController::Instance().project
 		&& PsController::Instance().project->matrix)
 	{
 		char buffer[1024];
@@ -160,9 +160,9 @@ void PsTabInfoMatrix::OnEnChangeI2()
 
 void PsTabInfoMatrix::OnEnChangeJ2()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &Tj) return;
-	if (PsController::Instance().project 
+	if (PsController::Instance().project
 		&& PsController::Instance().project->matrix)
 	{
 		char buffer[1024];
@@ -175,10 +175,10 @@ void PsTabInfoMatrix::OnEnChangeJ2()
 
 void PsTabInfoMatrix::OnEnChangeW()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &W) return;
 	if (!PsController::Instance().project) return;
-	PsProject *project = PsController::Instance().project;
+	PsProject* project = PsController::Instance().project;
 	PsMatrix* matrix = project->matrix;
 	if (matrix)
 	{
@@ -186,22 +186,22 @@ void PsTabInfoMatrix::OnEnChangeW()
 		W.GetWindowTextA(buffer, 1024);
 		if (atof(buffer) >= PsMatrix::minimum_dim)
 		{
-			project->LogAdd (new LogResize (*project, matrix, matrix->x, matrix->y, matrix->w, matrix->h));
+			project->LogAdd(new LogResize(*project, matrix, matrix->x, matrix->y, matrix->w, matrix->h));
 			if (matrix->constraint)
 				matrix->h *= atof(buffer) / matrix->w;
 			matrix->w = atof(buffer);
 			PsController::Instance().UpdateWindow();
-			Update(matrix); 
+			Update(matrix);
 		}
 	}
 }
 
 void PsTabInfoMatrix::OnEnChangeH()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &H) return;
 	if (!PsController::Instance().project) return;
-	PsProject *project = PsController::Instance().project;
+	PsProject* project = PsController::Instance().project;
 	PsMatrix* matrix = project->matrix;
 	if (matrix)
 	{
@@ -209,7 +209,7 @@ void PsTabInfoMatrix::OnEnChangeH()
 		H.GetWindowTextA(buffer, 1024);
 		if (atof(buffer) >= PsMatrix::minimum_dim)
 		{
-			project->LogAdd (new LogResize (*project, matrix, matrix->x, matrix->y, matrix->w, matrix->h));
+			project->LogAdd(new LogResize(*project, matrix, matrix->x, matrix->y, matrix->w, matrix->h));
 			if (matrix->constraint)
 				matrix->w *= atof(buffer) / matrix->h;
 			matrix->h = atof(buffer);
@@ -221,55 +221,55 @@ void PsTabInfoMatrix::OnEnChangeH()
 
 void PsTabInfoMatrix::OnEnChangeW2()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &WP) return;
 	if (!PsController::Instance().project) return;
-	PsProject *project = PsController::Instance().project;
+	PsProject* project = PsController::Instance().project;
 	PsMatrix* matrix = project->matrix;
 	if (matrix)
 	{
 		char buffer[1024];
 		WP.GetWindowTextA(buffer, 1024);
-		float w = atof(buffer) * PsMatrix::default_w / 100.f; 
+		float w = atof(buffer) * PsMatrix::default_w / 100.f;
 		if (w >= PsMatrix::minimum_dim)
 		{
-			project->LogAdd (new LogResize (*project, matrix, matrix->x, matrix->y, matrix->w, matrix->h));
+			project->LogAdd(new LogResize(*project, matrix, matrix->x, matrix->y, matrix->w, matrix->h));
 			if (matrix->constraint)
 				matrix->h *= w / matrix->w;
 			matrix->w = w;
 			PsController::Instance().UpdateWindow();
-			Update(matrix); 
+			Update(matrix);
 		}
 	}
 }
 
 void PsTabInfoMatrix::OnEnChangeH2()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &HP) return;
 	if (!PsController::Instance().project) return;
-	PsProject *project = PsController::Instance().project;
+	PsProject* project = PsController::Instance().project;
 	PsMatrix* matrix = project->matrix;
 	if (matrix)
 	{
 		char buffer[1024];
 		HP.GetWindowTextA(buffer, 1024);
-		float h = atof(buffer) * PsMatrix::default_h / 100.f; 
+		float h = atof(buffer) * PsMatrix::default_h / 100.f;
 		if (h >= PsMatrix::minimum_dim)
 		{
-			project->LogAdd (new LogResize (*project, matrix, matrix->x, matrix->y, matrix->w, matrix->h));
+			project->LogAdd(new LogResize(*project, matrix, matrix->x, matrix->y, matrix->w, matrix->h));
 			if (matrix->constraint)
 				matrix->w *= h / matrix->h;
 			matrix->h = h;
 			PsController::Instance().UpdateWindow();
-			Update(matrix); 
+			Update(matrix);
 		}
 	}
 }
 
 void PsTabInfoMatrix::Update(PsMatrix* matrix)
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 
 	if (matrix)
 	{
@@ -283,7 +283,7 @@ void PsTabInfoMatrix::Update(PsMatrix* matrix)
 			sprintf(buffer, "%.2f", x);
 			X.SetWindowText(buffer);
 		}
-		
+
 		if (c != &Y)
 		{
 			sprintf(buffer, "%.2f", y);
@@ -359,7 +359,7 @@ void PsTabInfoMatrix::Update(PsMatrix* matrix)
 		if (matrix->constraint) lock.LoadBitmaps(IDB_LOCK);
 		else lock.LoadBitmaps(IDB_NOTLOCK);
 
-		if (matrix->div_is_active) 
+		if (matrix->div_is_active)
 		{
 			DivideBox.SetCheck(BST_CHECKED);
 			OnBnClickedCheck1();
@@ -382,7 +382,7 @@ void PsTabInfoMatrix::OnBnClickedButton3()
 {
 	if (PsController::Instance().project)
 	{
-		PsMatrix *matrix = PsController::Instance().project->matrix;
+		PsMatrix* matrix = PsController::Instance().project->matrix;
 		if (matrix)
 		{
 			if (!matrix->constraint)
@@ -403,9 +403,9 @@ void PsTabInfoMatrix::OnBnClickedButton3()
 
 void PsTabInfoMatrix::OnEnChangeW3()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &dW) return;
-	if (PsController::Instance().project 
+	if (PsController::Instance().project
 		&& PsController::Instance().project->matrix)
 	{
 		char buffer[1024];
@@ -417,9 +417,9 @@ void PsTabInfoMatrix::OnEnChangeW3()
 
 void PsTabInfoMatrix::OnEnChangeH3()
 {
-	CWnd *c = GetFocus();
+	CWnd* c = GetFocus();
 	if (c != &dH) return;
-	if (PsController::Instance().project 
+	if (PsController::Instance().project
 		&& PsController::Instance().project->matrix)
 	{
 		char buffer[1024];
@@ -431,7 +431,7 @@ void PsTabInfoMatrix::OnEnChangeH3()
 
 void PsTabInfoMatrix::OnBnClickedCheck1()
 {
-	if (PsController::Instance().project 
+	if (PsController::Instance().project
 		&& PsController::Instance().project->matrix)
 	{
 		if (DivideBox.GetCheck() != BST_CHECKED)
@@ -457,12 +457,12 @@ void PsTabInfoMatrix::OnBnClickedCheck4()
 	{
 		if (reflectCheckBox.GetCheck() != BST_CHECKED)
 		{
-			PsController::Instance().SetOption (PsController::OPTION_REFLECT, false);
+			PsController::Instance().SetOption(PsController::OPTION_REFLECT, false);
 			OPTION_REFLECT_ALWAYS = false;
 		}
-		else 
+		else
 		{
-			PsController::Instance().SetOption (PsController::OPTION_REFLECT, true);
+			PsController::Instance().SetOption(PsController::OPTION_REFLECT, true);
 			OPTION_REFLECT_ALWAYS = true;
 		}
 	}
@@ -471,7 +471,7 @@ void PsTabInfoMatrix::OnBnClickedCheck4()
 void PsTabInfoMatrix::OnShowWindow(BOOL bShow, UINT nStatus)
 {
 	CPropertyPage::OnShowWindow(bShow, nStatus);
-	if (bShow && (!PsController::Instance().project || 
+	if (bShow && (!PsController::Instance().project ||
 		(PsController::Instance().project && !PsController::Instance().project->matrix)))
 	{
 		X.EnableWindow(FALSE);
