@@ -157,10 +157,10 @@ void CMainFrame::DisplaySubWindow()
 	x = pApp->GetProfileInt("PsProject", "x", xpos);
 	y = pApp->GetProfileInt("PsProject", "y", ypos);
 	winProject = new PsWinProjectWin32();
+	PsWinProject::setInstance(winProject);
 	winProject->Create(IDD_PROJECT, this);
 	winProject->GetWindowRect(&m);
 	winProject->MoveWindow(x, y, w, m.bottom - m.top);
-	PsWinProject::setInstance(winProject);
 	PsController::Instance().UpdateDialogProject();
 	winProject->ShowWindow(SW_SHOW);
 	ypos += m.bottom - m.top;

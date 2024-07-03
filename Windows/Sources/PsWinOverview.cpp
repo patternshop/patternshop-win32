@@ -26,7 +26,7 @@ PsWinOverview* PsWinOverview::instance = 0;
 IMPLEMENT_DYNAMIC(PsWinOverview, CDialog)
 
 PsWinOverview::PsWinOverview(CWnd* pParent /*=NULL*/)
-	: PsWin32(PsWinOverview::IDD, pParent), DialogOverviewCx()
+	: PsWin32(PsWinOverview::IDD, pParent), DialogOverviewCx(this)
 {
 }
 
@@ -36,8 +36,7 @@ PsWinOverview::~PsWinOverview()
 
 PsWinOverview& PsWinOverview::Instance()
 {
-	if (!instance)
-		instance = new PsWinOverview();
+	if (!instance) instance = new PsWinOverview();
 	return *instance;
 }
 
@@ -150,9 +149,84 @@ void PsWinOverview::OnSysCommand(UINT nID, LPARAM lParam)
 
 void PsWinOverview::OnTimer(UINT_PTR nIDEvent)
 {
-	if (!bUpdated && !PsController::Instance().bMouseButtonIsDown && !zooming && !bDragging)
+	bool mouseButtonIsDown = PsController::Instance().bMouseButtonIsDown;
+	if (!bUpdated && !mouseButtonIsDown && !zooming && !bDragging)
 	{
 		UpdateNow();
 		bUpdated = true;
 	}
+}
+
+void PsWinOverview::UpdateMiniImage()
+{
+	PsRender& renderer = PsController::Instance().project->renderer;
+
+	float size_x = renderer.size_x;
+	float size_y = renderer.size_y;
+	float scroll_x = renderer.scroll_x;
+	float scroll_y = renderer.scroll_y;
+	float zoom = renderer.zoom;
+	bool showbox = PsController::Instance().GetOption(PsController::OPTION_BOX_SHOW);
+	bool showmat = PsController::Instance().GetOption(PsController::OPTION_HIGHLIGHT_SHOW);
+	int height = window_buffer2.GetHeight() - 14;
+
+	PsController::Instance().SetOption(PsController::OPTION_BOX_SHOW, false);
+	PsController::Instance().SetOption(PsController::OPTION_HIGHLIGHT_SHOW, false);
+	renderer.SetSize(window_buffer2.GetWidth(), height);
+	renderer.CenterView();
+
+	PsController::Instance().project->RenderToScreen();
+	hardwareRenderer.CopyToSoftBuffer(m_RenduImage);
+
+	PsRect z; // calcul de la zone de l'image
+	z.left = (0 - renderer.x1) / (renderer.x2 - renderer.x1) * window_buffer2.GetWidth();
+	z.right = (renderer.doc_x - renderer.x1) / (renderer.x2 - renderer.x1) * window_buffer2.GetWidth();
+	z.bottom = height - (renderer.doc_y - renderer.y1) / (renderer.y2 - renderer.y1) * height;
+	z.top = height - (0 - renderer.y1) / (renderer.y2 - renderer.y1) * height;
+	r_size_x = z.right - z.left;
+	r_size_y = z.bottom - z.top;
+	r_zoom = renderer.zoom;
+
+	psWin->SetTarget(&window_buffer2);
+	CleanBackground();
+	psWin->SetTarget(NULL);
+
+	int x = FloatToInt((m_RenduImage.GetWidth() - r_size_x) / 2);
+	int y = FloatToInt((height - r_size_y) / 2);
+
+#ifdef _WINDOWS
+	CDC dc;
+	dc.CreateCompatibleDC(NULL);
+	dc.SelectObject(window_buffer2.buffer);
+	CDC dc2;
+	dc2.CreateCompatibleDC(NULL);
+	dc2.SelectObject(m_RenduImage.buffer);
+	dc.BitBlt(x, y, r_size_x, r_size_y, &dc2, z.left, m_RenduImage.buffer.GetHeight() - height + z.top, SRCCOPY);
+	dc2.DeleteDC();
+#else /* _MACOSX */
+	SetTarget(&window_buffer2);
+	CGRect subRect = CGRectMake(z.left, m_RenduImage.GetHeight() - height + z.top, r_size_x, r_size_y);
+	CGImageRef subImage = CGImageCreateWithImageInRect(m_RenduImage.buffer, subRect);
+	SoftwareBuffer sb;
+	sb.buffer = subImage;
+	DrawSoftwareBuffer(sb, x, y);
+	SetTarget(NULL);
+#endif
+
+	PsRect r;
+	r.left = x - 1;
+	r.top = y - 1;
+	r.right = x + r_size_x + 1;
+	r.bottom = y + r_size_y + 1;
+
+#ifdef _WINDOWS
+	dc.DrawEdge(&r, EDGE_SUNKEN, BF_RECT);
+#endif
+
+	PsController::Instance().SetOption(PsController::OPTION_HIGHLIGHT_SHOW, showmat);
+	PsController::Instance().SetOption(PsController::OPTION_BOX_SHOW, showbox);
+	renderer.SetSize(size_x, size_y);
+	renderer.SetZoom(zoom);
+	renderer.SetScroll(scroll_x, scroll_y);
+
 }

@@ -36,14 +36,10 @@ public:
 
 	DECLARE_MESSAGE_MAP()
 
-public:
-	void FastUpdate();
-	void DrawRedSelection();
-	void UpdateMiniImage();
-	void CleanBackground();
-
 private:
 	void UpdateNow();
+	void DrawRedSelection();
+	void UpdateMiniImage();
 
 private:
 	static PsWinOverview* instance; // Singleton
