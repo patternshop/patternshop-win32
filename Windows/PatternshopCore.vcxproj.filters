@@ -151,7 +151,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagramActions.cd" />
-    <None Include="ClassDiagramCommon.cd" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

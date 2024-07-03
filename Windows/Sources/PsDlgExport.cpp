@@ -153,7 +153,7 @@ void PsDlgExport::OnBnClickedOk()
 	Get_WRITE_FORMATS(buffer3);
 	PsDlgOpen	dialog(false, ".tif", 0, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT, _T(buffer3));
 	if (dialog.DoModal() == IDOK)
-		OnValidation(dialog.GetFileName());
+		OnValidation(dialog.GetPathName());
 	OnOK();
 }
 

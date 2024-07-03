@@ -174,7 +174,7 @@ void  CPatternshopView::MenuFileImage()
 
 	if (dialog.DoModal() == IDOK)
 	{
-		GetError(project->NewMotif((LPCTSTR)dialog.GetFileName()));
+		GetError(project->NewMotif((LPCTSTR)dialog.GetPathName()));
 		Update();
 	}
 }
@@ -191,7 +191,7 @@ void  CPatternshopView::MenuFilePattern()
 
 	if (dialog.DoModal() == IDOK)
 	{
-		GetError(project->NewPattern((LPCTSTR)dialog.GetFileName()));
+		GetError(project->NewPattern((LPCTSTR)dialog.GetPathName()));
 		//Update();
 		//dlgPropreties->FocusMatrixInformation();
 		PsController::Instance().UpdateDialogProject();
@@ -212,7 +212,7 @@ void CPatternshopView::OnFichierImporteruneimagelibre()
 
 	if (dialog.DoModal() == IDOK)
 	{
-		GetError(project->NewImage((LPCTSTR)dialog.GetFileName()));
+		GetError(project->NewImage((LPCTSTR)dialog.GetPathName()));
 		Update();
 	}
 }
@@ -307,7 +307,7 @@ void  CPatternshopView::MenuFileExport()
 	if (dialog.DoModal() == IDOK)
 	{
 		project->renderer.GetDocSize(x, y);
-		project->RenderToFile(dialog.GetFileName(), x, y);
+		project->RenderToFile(dialog.GetPathName(), x, y);
 	}
 }
 
@@ -372,7 +372,7 @@ void  CPatternshopView::MenuEditReplace()
 		{
 
 			PsWinProject::Instance().relaseThumb(&(project->image->GetTexture()));
-			GetError(project->ReplaceImage(dialog.GetFileName()));
+			GetError(project->ReplaceImage(dialog.GetPathName()));
 
 			Update();
 			PsController::Instance().UpdateDialogProject();
