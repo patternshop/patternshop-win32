@@ -23,6 +23,7 @@
 #include "PsWin32.h"
 #include "resource.h"
 #include "PsRender.h"
+#include "PsWinProject.h"
 
 #include <map>
 #include <set>
@@ -42,7 +43,7 @@ protected:
 
 };
 
-class PsWinProjectWin32 : public PsWin32, public PsWinProjectModel
+class PsWinProjectWin32 : public PsWin32, public PsWinProject
 {
 	DECLARE_DYNAMIC(PsWinProjectWin32)
 
@@ -58,16 +59,14 @@ protected:
 	DECLARE_MESSAGE_MAP()
 
 public:
-	void Show();
-	void Update();
+	virtual void Show();
+	virtual void Update();
+	virtual void UpdateMouseCursor();
 
 protected:
 	CImage backbuffer;
 	HCURSOR m_hMouseCursor, m_mouseFinger, m_mouseArrow, m_mouseMove;
 	CScrollBar scrollbarWin32;
-
-protected:
-	void UpdateMouseCursor();
 
 public:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);

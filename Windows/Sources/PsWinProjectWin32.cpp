@@ -14,13 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with Patternshop.  If not, see <http://www.gnu.org/licenses/>
 */
-#include "PsWinProject.h"
+#include "PsWinProjectWin32.h"
 #include "PatternshopView.h"
 
 IMPLEMENT_DYNAMIC(PsWinProjectWin32, PsWin32)
 
 PsWinProjectWin32::PsWinProjectWin32(CWnd* pParent /*=NULL*/) :
-	PsWin32(PsWinProjectWin32::IDD, pParent), PsWinProjectModel()
+	PsWin32(PsWinProjectWin32::IDD, pParent), PsWinProject(this)
 {
 	scrollbar = new PsScrollBarWin32(scrollbarWin32);
 }

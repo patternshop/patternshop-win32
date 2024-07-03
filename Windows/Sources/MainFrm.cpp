@@ -17,7 +17,7 @@
 #include "Patternshop.h"
 #include "PatternshopView.h"
 #include "MainFrm.h"
-#include "PsWinProject.h"
+#include "PsWinProjectWin32.h"
 #include "PsWinImage.h"
 #include "PsWinOverview.h"
 #include "PsWinTools.h"
@@ -61,6 +61,7 @@ static UINT  indicators[] =
 
 CMainFrame::CMainFrame()
 {
+	winProject = NULL;
 }
 
 CMainFrame::~CMainFrame()
@@ -155,11 +156,13 @@ void CMainFrame::DisplaySubWindow()
 	PsWinProject::Delete();
 	x = pApp->GetProfileInt("PsProject", "x", xpos);
 	y = pApp->GetProfileInt("PsProject", "y", ypos);
-	PsWinProject::Instance().Create(IDD_PROJECT, this);
-	PsWinProject::Instance().GetWindowRect(&m);
-	PsWinProject::Instance().MoveWindow(x, y, w, m.bottom - m.top);
+	winProject = new PsWinProjectWin32();
+	winProject->Create(IDD_PROJECT, this);
+	winProject->GetWindowRect(&m);
+	winProject->MoveWindow(x, y, w, m.bottom - m.top);
+	PsWinProject::setInstance(winProject);
 	PsController::Instance().UpdateDialogProject();
-	PsWinProject::Instance().ShowWindow(SW_SHOW);
+	winProject->ShowWindow(SW_SHOW);
 	ypos += m.bottom - m.top;
 
 	m_wndDlgBar.DestroyWindow();
@@ -239,7 +242,7 @@ void CMainFrame::OnClose()
 		PsWinOverview::Instance().GetWindowRect(&n);
 		pApp->WriteProfileInt("Overview", "x", n.left);
 		pApp->WriteProfileInt("Overview", "y", n.top);
-		PsWinProject::Instance().GetWindowRect(&n);
+		winProject->GetWindowRect(&n);
 		pApp->WriteProfileInt("PsProject", "x", n.left);
 		pApp->WriteProfileInt("PsProject", "y", n.top);
 
