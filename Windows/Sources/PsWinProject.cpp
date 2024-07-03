@@ -14,30 +14,48 @@
  * You should have received a copy of the GNU General Public License
  * along with Patternshop.  If not, see <http://www.gnu.org/licenses/>
 */
-#include "PsWinProjectWin32.h"
+#include "PsWinProject.h"
 #include "PatternshopView.h"
 
-IMPLEMENT_DYNAMIC(PsWinProjectWin32, PsWin32)
+IMPLEMENT_DYNAMIC(PsWinProject, PsWin32)
 
-PsWinProjectWin32::PsWinProjectWin32(CWnd* pParent /*=NULL*/) :
-	PsWin32(PsWinProjectWin32::IDD, pParent), PsWinProject(this)
+
+PsWinProject* PsWinProject::instance = 0;
+
+PsWinProject::PsWinProject(CWnd* pParent /*=NULL*/) :
+	PsWin32(PsWinProject::IDD, pParent), PsWinProjectCx(this)
 {
 	scrollbar = new PsScrollBarWin32(scrollbarWin32);
 }
 
-PsWinProjectWin32::~PsWinProjectWin32()
+PsWinProject::~PsWinProject()
 {
 	delete scrollbar;
 	delete dc;
 }
 
-void PsWinProjectWin32::DoDataExchange(CDataExchange* pDX)
+PsWinProject& PsWinProject::Instance()
+{
+	if (!instance) instance = new PsWinProject();
+	return *instance;
+}
+
+void PsWinProject::Delete()
+{
+	if (instance)
+	{
+		delete instance;
+		instance = 0;
+	}
+}
+
+void PsWinProject::DoDataExchange(CDataExchange* pDX)
 {
 	PsWin32::DoDataExchange(pDX);
 	DDX_Control(pDX, IDC_SCROLLBAR1, scrollbarWin32);
 }
 
-BEGIN_MESSAGE_MAP(PsWinProjectWin32, CDialog)
+BEGIN_MESSAGE_MAP(PsWinProject, CDialog)
 	ON_WM_CREATE()
 	ON_WM_PAINT()
 	ON_WM_VSCROLL()
@@ -52,7 +70,7 @@ BEGIN_MESSAGE_MAP(PsWinProjectWin32, CDialog)
 END_MESSAGE_MAP()
 
 
-int PsWinProjectWin32::OnCreate(LPCREATESTRUCT lpCreateStruct)
+int PsWinProject::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
 	// double buffering
 	UpdateSize();
@@ -82,14 +100,14 @@ int PsWinProjectWin32::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	return 0;
 }
 
-void PsWinProjectWin32::OnPaint()
+void PsWinProject::OnPaint()
 {
 	CPaintDC wdc(this);
 	wdc.BitBlt(0, 0, iWidth - s.right, backbuffer.GetHeight(), dc, 0, 0, SRCCOPY);
 }
 
 
-void PsWinProjectWin32::OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
+void PsWinProject::OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 {
 	int CurPos = scrollbarWin32.GetScrollPos();
 
@@ -154,7 +172,7 @@ void PsWinProjectWin32::OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBa
 	Update();
 }
 
-void PsWinProjectWin32::UpdateMouseCursor()
+void PsWinProject::UpdateMouseCursor()
 {
 	switch (mouseCursor)
 	{
@@ -165,7 +183,7 @@ void PsWinProjectWin32::UpdateMouseCursor()
 	OnSetCursor(NULL, 0, 0);
 }
 
-BOOL PsWinProjectWin32::OnSetCursor(CWnd* pWnd, UINT nHitTest, UINT message)
+BOOL PsWinProject::OnSetCursor(CWnd* pWnd, UINT nHitTest, UINT message)
 {
 	ASSERT(m_hMouseCursor != NULL);
 	::SetCursor(m_hMouseCursor);
@@ -173,36 +191,36 @@ BOOL PsWinProjectWin32::OnSetCursor(CWnd* pWnd, UINT nHitTest, UINT message)
 }
 
 
-void PsWinProjectWin32::OnLButtonDown(UINT nFlags, CPoint point)
+void PsWinProject::OnLButtonDown(UINT nFlags, CPoint point)
 {
 	OnLeftMouseButtonDown(point);
 	PsWin32::OnLButtonDown(nFlags, point);
 }
 
-void PsWinProjectWin32::OnLButtonUp(UINT nFlags, CPoint point)
+void PsWinProject::OnLButtonUp(UINT nFlags, CPoint point)
 {
 	OnLeftMouseButtonUp(point);
 	PsWin32::OnLButtonUp(nFlags, point);
 }
 
-void PsWinProjectWin32::OnMouseMove(UINT nFlags, CPoint point)
+void PsWinProject::OnMouseMove(UINT nFlags, CPoint point)
 {
 	OnMyMouseMove(point);
 	PsWin32::OnMouseMove(nFlags, point);
 }
 
-BOOL PsWinProjectWin32::OnEraseBkgnd(CDC* pDC)
+BOOL PsWinProject::OnEraseBkgnd(CDC* pDC)
 {
 	return TRUE;
 }
 
-void PsWinProjectWin32::OnSysCommand(UINT nID, LPARAM lParam)
+void PsWinProject::OnSysCommand(UINT nID, LPARAM lParam)
 {
 	if (nID == SC_CLOSE) return;
 	PsWin32::OnSysCommand(nID, lParam);
 }
 
-void PsWinProjectWin32::Update()
+void PsWinProject::Update()
 {
 	CBrush fakeBrush;
 	CBrush* pOldBrush = dc->SelectObject(&fakeBrush);
@@ -228,7 +246,7 @@ void PsWinProjectWin32::Update()
 	Invalidate(true);
 }
 
-void PsWinProjectWin32::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
+void PsWinProject::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	PsWin32::OnKeyDown(nChar, nRepCnt, nFlags);
 	PsProject* project = PsController::Instance().project;
@@ -240,7 +258,7 @@ void PsWinProjectWin32::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	*/
 }
 
-void PsWinProjectWin32::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
+void PsWinProject::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	PsWin32::OnKeyDown(nChar, nRepCnt, nFlags);
 	PsProject* project = PsController::Instance().project;
@@ -272,7 +290,7 @@ void PsWinProjectWin32::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	sKeyList.erase(nChar);
 }
 
-void PsWinProjectWin32::Show()
+void PsWinProject::Show()
 {
 	ShowWindow(TRUE);
 }

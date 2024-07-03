@@ -18,7 +18,6 @@
 #pragma once
 
 #include "PsWinProperties.h"
-#include "PsWinProjectWin32.h"
 
 class CMainFrame : public CMDIFrameWnd
 {
@@ -32,9 +31,6 @@ public:
 	CDialogBar      m_wndDlgBar;  // la barre de dialogue
 	CStatusBar      m_wndStatusBar;
 	CProgressCtrl    m_wndProgress;
-
-protected:
-	PsWinProjectWin32* winProject;
 
 	// Opérations
 public:

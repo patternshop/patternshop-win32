@@ -193,7 +193,7 @@
     <ClInclude Include="Sources\PsWin32.h" />
     <ClInclude Include="Sources\PsWinImage.h" />
     <ClInclude Include="Sources\PsWinOverview.h" />
-    <ClInclude Include="Sources\PsWinProjectWin32.h" />
+    <ClInclude Include="Sources\PsWinProject.h" />
     <ClInclude Include="Sources\PsWinProperties.h" />
     <ClInclude Include="Sources\PsWinSplash.h" />
     <ClInclude Include="Sources\PsWinTools.h" />
@@ -221,7 +221,7 @@
     <ClCompile Include="Sources\PsWin32.cpp" />
     <ClCompile Include="Sources\PsWinImage.cpp" />
     <ClCompile Include="Sources\PsWinOverview.cpp" />
-    <ClCompile Include="Sources\PsWinProjectWin32.cpp" />
+    <ClCompile Include="Sources\PsWinProject.cpp" />
     <ClCompile Include="Sources\PsWinProperties.cpp" />
     <ClCompile Include="Sources\PsWinSplash.cpp" />
     <ClCompile Include="Sources\PsWinTools.cpp" />

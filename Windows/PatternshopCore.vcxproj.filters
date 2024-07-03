@@ -57,7 +57,7 @@
     <ClCompile Include="..\Common\Dialogs\PsWin.cpp">
       <Filter>Common\Dialogs</Filter>
     </ClCompile>
-    <ClCompile Include="..\Common\Dialogs\PsWinProject.cpp">
+    <ClCompile Include="..\Common\Dialogs\PsWinProjectCx.cpp">
       <Filter>Common\Dialogs</Filter>
     </ClCompile>
     <ClCompile Include="..\Common\Projects\PsImage.cpp">
@@ -119,7 +119,7 @@
     <ClInclude Include="..\Common\Dialogs\PsWin.h">
       <Filter>Common\Dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\Common\Dialogs\PsWinProject.h">
+    <ClInclude Include="..\Common\Dialogs\PsWinProjectCx.h">
       <Filter>Common\Dialogs</Filter>
     </ClInclude>
     <ClInclude Include="..\Common\Engine\PsOpenGL.h">

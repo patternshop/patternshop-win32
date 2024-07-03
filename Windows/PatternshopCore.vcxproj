@@ -106,7 +106,7 @@
     <ClCompile Include="..\Common\Dialogs\PsDlgExportCx.cpp" />
     <ClCompile Include="..\Common\Dialogs\PsMessage.cpp" />
     <ClCompile Include="..\Common\Dialogs\PsWin.cpp" />
-    <ClCompile Include="..\Common\Dialogs\PsWinProject.cpp" />
+    <ClCompile Include="..\Common\Dialogs\PsWinProjectCx.cpp" />
     <ClCompile Include="..\Common\Engine\PsController.cpp" />
     <ClCompile Include="..\Common\Engine\PsMaths.cpp" />
     <ClCompile Include="..\Common\Engine\PsRender.cpp" />
@@ -129,7 +129,7 @@
     <ClInclude Include="..\Common\Dialogs\PsDlgExportCx.h" />
     <ClInclude Include="..\Common\Dialogs\PsMessage.h" />
     <ClInclude Include="..\Common\Dialogs\PsWin.h" />
-    <ClInclude Include="..\Common\Dialogs\PsWinProject.h" />
+    <ClInclude Include="..\Common\Dialogs\PsWinProjectCx.h" />
     <ClInclude Include="..\Common\Engine\PsController.h" />
     <ClInclude Include="..\Common\Engine\PsMaths.h" />
     <ClInclude Include="..\Common\Engine\PsOpenGL.h" />

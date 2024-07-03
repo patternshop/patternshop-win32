@@ -23,7 +23,7 @@
 #include "PsWin32.h"
 #include "resource.h"
 #include "PsRender.h"
-#include "PsWinProject.h"
+#include "PsWinProjectCx.h"
 
 #include <map>
 #include <set>
@@ -43,15 +43,23 @@ protected:
 
 };
 
-class PsWinProjectWin32 : public PsWin32, public PsWinProject
+class PsWinProject : public PsWin32, public PsWinProjectCx
 {
-	DECLARE_DYNAMIC(PsWinProjectWin32)
+	DECLARE_DYNAMIC(PsWinProject)
 
 	enum { IDD = IDD_PROJECT };
 
 public:
-	PsWinProjectWin32(CWnd* pParent = NULL);   // standard constructor
-	virtual ~PsWinProjectWin32();
+	PsWinProject(CWnd* pParent = NULL);   // standard constructor
+	virtual ~PsWinProject();
+
+
+protected:
+	static PsWinProject* instance; // Singleton
+
+public:
+	static PsWinProject& Instance();
+	static void Delete();
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support

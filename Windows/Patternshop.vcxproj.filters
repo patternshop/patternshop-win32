@@ -90,7 +90,7 @@
     <ClInclude Include="Sources\PsWinOverview.h">
       <Filter>Windows\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\PsWinProjectWin32.h">
+    <ClInclude Include="Sources\PsWinProject.h">
       <Filter>Windows\Interface</Filter>
     </ClInclude>
     <ClInclude Include="Sources\PsWinProperties.h">
@@ -170,7 +170,7 @@
     <ClCompile Include="Sources\PsWinOverview.cpp">
       <Filter>Windows\Interface</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\PsWinProjectWin32.cpp">
+    <ClCompile Include="Sources\PsWinProject.cpp">
       <Filter>Windows\Interface</Filter>
     </ClCompile>
     <ClCompile Include="Sources\PsWinProperties.cpp">
