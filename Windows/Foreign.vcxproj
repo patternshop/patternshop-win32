@@ -44,7 +44,7 @@
     <IntDir>..\Foreign\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IntDir>$(Configuration)\</IntDir>
+    <IntDir>..\Foreign\$(Configuration)\</IntDir>
     <OutDir>..\Foreign\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
