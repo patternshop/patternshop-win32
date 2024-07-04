@@ -74,19 +74,19 @@ private:
 	bool CreatePixelBuffer();
 
 private:
-	PFNWGLGETEXTENSIONSSTRINGARBPROC wglGetExtensionsStringARB;
-	PFNWGLCREATEPBUFFERARBPROC    wglCreatePbufferARB;
-	PFNWGLGETPBUFFERDCARBPROC     wglGetPbufferDCARB;
-	PFNWGLRELEASEPBUFFERDCARBPROC wglReleasePbufferDCARB;
-	PFNWGLDESTROYPBUFFERARBPROC   wglDestroyPbufferARB;
-	PFNWGLQUERYPBUFFERARBPROC     wglQueryPbufferARB;
+	PFNWGLGETEXTENSIONSSTRINGARBPROC	wglGetExtensionsStringARB;
+	PFNWGLCREATEPBUFFERARBPROC			wglCreatePbufferARB;
+	PFNWGLGETPBUFFERDCARBPROC			wglGetPbufferDCARB;
+	PFNWGLRELEASEPBUFFERDCARBPROC		wglReleasePbufferDCARB;
+	PFNWGLDESTROYPBUFFERARBPROC			wglDestroyPbufferARB;
+	PFNWGLQUERYPBUFFERARBPROC			wglQueryPbufferARB;
 	PFNWGLGETPIXELFORMATATTRIBIVARBPROC wglGetPixelFormatAttribivARB;
 	PFNWGLGETPIXELFORMATATTRIBFVARBPROC wglGetPixelFormatAttribfvARB;
 	PFNWGLCHOOSEPIXELFORMATARBPROC      wglChoosePixelFormatARB;
-	bool m_bIsLoad;
-	PBUFFER m_pbuffer;
-	int m_iBufferWidth;
-	int m_iBufferHeight;
+	bool		m_bIsLoad;
+	PBUFFER		m_pbuffer;
+	int			m_iBufferWidth;
+	int			m_iBufferHeight;
 
 private:
 	bool CreateContext();
