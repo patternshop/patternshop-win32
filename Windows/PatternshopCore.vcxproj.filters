@@ -27,7 +27,7 @@
     <ClCompile Include="..\Common\Engine\PsMaths.cpp">
       <Filter>Common\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="..\Common\Engine\PsRender.cpp">
+    <ClCompile Include="..\Common\Engine\PsRender1.cpp">
       <Filter>Common\Engine</Filter>
     </ClCompile>
     <ClCompile Include="..\Common\Engine\PsTexture.cpp">
@@ -107,6 +107,15 @@
     </ClCompile>
     <ClCompile Include="..\Common\Dialogs\PsWinProjectCx5.cpp">
       <Filter>Common\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Engine\PsRender2.cpp">
+      <Filter>Common\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Engine\PsRender3.cpp">
+      <Filter>Common\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Engine\PsRender4.cpp">
+      <Filter>Common\Engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

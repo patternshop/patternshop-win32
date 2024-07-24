@@ -114,7 +114,10 @@
     <ClCompile Include="..\Common\Dialogs\PsWinProjectCx5.cpp" />
     <ClCompile Include="..\Common\Engine\PsController.cpp" />
     <ClCompile Include="..\Common\Engine\PsMaths.cpp" />
-    <ClCompile Include="..\Common\Engine\PsRender.cpp" />
+    <ClCompile Include="..\Common\Engine\PsRender1.cpp" />
+    <ClCompile Include="..\Common\Engine\PsRender2.cpp" />
+    <ClCompile Include="..\Common\Engine\PsRender3.cpp" />
+    <ClCompile Include="..\Common\Engine\PsRender4.cpp" />
     <ClCompile Include="..\Common\Engine\PsTexture.cpp" />
     <ClCompile Include="..\Common\Engine\PsTypes.cpp" />
     <ClCompile Include="..\Common\Exporter\PsFileTypes.cpp" />
