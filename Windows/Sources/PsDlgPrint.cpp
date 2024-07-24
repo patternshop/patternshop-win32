@@ -95,7 +95,6 @@ BOOL PsDlgPrint::OnInitDialog()
 
 	x = 0;
 	y = 0;
-	PsRender& renderer = PsController::Instance().project->renderer;
 	w = project->GetWidth();
 	h = project->GetHeight();
 	z = 100;

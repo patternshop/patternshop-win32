@@ -19,18 +19,15 @@
     <Filter Include="Common\Logs">
       <UniqueIdentifier>{6389ed4d-09dd-48a5-8115-8467ff76c6f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common\Render">
+      <UniqueIdentifier>{2026f94f-0154-41ff-9059-8f721afaf6c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Common\FreeImage_Ext.cpp">
       <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="..\Common\Engine\PsMaths.cpp">
-      <Filter>Common\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Common\Engine\PsRender1.cpp">
-      <Filter>Common\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Common\Engine\PsTexture.cpp">
       <Filter>Common\Engine</Filter>
     </ClCompile>
     <ClCompile Include="..\Common\Engine\PsTypes.cpp">
@@ -108,24 +105,30 @@
     <ClCompile Include="..\Common\Dialogs\PsWinProjectCx5.cpp">
       <Filter>Common\Dialogs</Filter>
     </ClCompile>
-    <ClCompile Include="..\Common\Engine\PsRender2.cpp">
-      <Filter>Common\Engine</Filter>
+    <ClCompile Include="..\Common\Render\PsRender1.cpp">
+      <Filter>Common\Render</Filter>
     </ClCompile>
-    <ClCompile Include="..\Common\Engine\PsRender3.cpp">
-      <Filter>Common\Engine</Filter>
+    <ClCompile Include="..\Common\Render\PsRender2.cpp">
+      <Filter>Common\Render</Filter>
     </ClCompile>
-    <ClCompile Include="..\Common\Engine\PsRender4.cpp">
-      <Filter>Common\Engine</Filter>
+    <ClCompile Include="..\Common\Render\PsRender3.cpp">
+      <Filter>Common\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Render\PsRender4.cpp">
+      <Filter>Common\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Projects\PsTexture.cpp">
+      <Filter>Common\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Projects\PsProjectSave.cpp">
+      <Filter>Common\Projects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Projects\PsProjectLoad.cpp">
+      <Filter>Common\Projects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\Engine\PsMaths.h">
-      <Filter>Common\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\Engine\PsRender.h">
-      <Filter>Common\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\Engine\PsTexture.h">
       <Filter>Common\Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\Common\Engine\PsTypes.h">
@@ -155,9 +158,6 @@
     <ClInclude Include="..\Common\Dialogs\PsWinProjectCx.h">
       <Filter>Common\Dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\Common\Engine\PsOpenGL.h">
-      <Filter>Common\Engine</Filter>
-    </ClInclude>
     <ClInclude Include="..\Common\Projects\PsImage.h">
       <Filter>Common\Projects</Filter>
     </ClInclude>
@@ -181,6 +181,21 @@
     </ClInclude>
     <ClInclude Include="..\Common\Projects\PsAction.h">
       <Filter>Common\Logs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Render\PsRender.h">
+      <Filter>Common\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Render\PsOpenGL.h">
+      <Filter>Common\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Projects\PsTexture.h">
+      <Filter>Common\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Projects\PsProjectSave.h">
+      <Filter>Common\Projects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Projects\PsProjectLoad.h">
+      <Filter>Common\Projects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -35,6 +35,7 @@
 #include "PsDlgExport.h"
 #include "PsDlgDocument.h"
 #include "PsFileTypes.h"
+#include "PsProjectLoad.h"
 
 #define IMAGE_DIRECTORY "\\Image\\"
 #define TEMPLATE_DIRECTORY "\\Template\\"
@@ -272,9 +273,8 @@ BOOL  CPatternshopView::MenuFileLoad(const char* name)
 {
 	ErrID r;
 
-
-	r = project->FileLoad(name);
-
+	PsProjectLoad& loader = PsProjectLoad(*project);
+	r = loader.loadProject(name);
 
 	if (r != ERROR_NONE)
 	{

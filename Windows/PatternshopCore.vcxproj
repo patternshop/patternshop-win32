@@ -72,7 +72,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../Foreign/FreeImage/Source/LibTIFF;../Foreign/FreeImage/Source/ZLib;../Foreign/FreeImage/Source;../Foreign/;../Common/Projects/;../Common/Engine/;../Common/Exporter/;../Common/Dialogs/;../Common/Security/;../Common/;../Windows/Sources;../Windows/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Foreign/FreeImage/Source/LibTIFF;../Foreign/FreeImage/Source/ZLib;../Foreign/FreeImage/Source;../Foreign/;../Common/Projects/;../Common/Engine/;../Common/Exporter/;../Common/Dialogs/;../Common/Security/;../Common/;../Windows/Sources;../Windows/;../Common/Render/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -83,7 +83,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../Foreign/FreeImage/Source/LibTIFF;../Foreign/FreeImage/Source/ZLib;../Foreign/FreeImage/Source;../Foreign/;../Common/Projects/;../Common/Engine/;../Common/Exporter/;../Common/Dialogs/;../Common/Security/;../Common/;../Windows/Sources;../Windows/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Foreign/FreeImage/Source/LibTIFF;../Foreign/FreeImage/Source/ZLib;../Foreign/FreeImage/Source;../Foreign/;../Common/Projects/;../Common/Engine/;../Common/Exporter/;../Common/Render/;../Common/Dialogs/;../Common/Security/;../Common/;../Windows/Sources;../Windows/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
@@ -114,11 +114,6 @@
     <ClCompile Include="..\Common\Dialogs\PsWinProjectCx5.cpp" />
     <ClCompile Include="..\Common\Engine\PsController.cpp" />
     <ClCompile Include="..\Common\Engine\PsMaths.cpp" />
-    <ClCompile Include="..\Common\Engine\PsRender1.cpp" />
-    <ClCompile Include="..\Common\Engine\PsRender2.cpp" />
-    <ClCompile Include="..\Common\Engine\PsRender3.cpp" />
-    <ClCompile Include="..\Common\Engine\PsRender4.cpp" />
-    <ClCompile Include="..\Common\Engine\PsTexture.cpp" />
     <ClCompile Include="..\Common\Engine\PsTypes.cpp" />
     <ClCompile Include="..\Common\Exporter\PsFileTypes.cpp" />
     <ClCompile Include="..\Common\Exporter\PsSoftRender.cpp" />
@@ -132,7 +127,14 @@
     <ClCompile Include="..\Common\Projects\PsProject2.cpp" />
     <ClCompile Include="..\Common\Projects\PsProject3.cpp" />
     <ClCompile Include="..\Common\Projects\PsProject4.cpp" />
+    <ClCompile Include="..\Common\Projects\PsProjectLoad.cpp" />
+    <ClCompile Include="..\Common\Projects\PsProjectSave.cpp" />
     <ClCompile Include="..\Common\Projects\PsShape.cpp" />
+    <ClCompile Include="..\Common\Projects\PsTexture.cpp" />
+    <ClCompile Include="..\Common\Render\PsRender1.cpp" />
+    <ClCompile Include="..\Common\Render\PsRender2.cpp" />
+    <ClCompile Include="..\Common\Render\PsRender3.cpp" />
+    <ClCompile Include="..\Common\Render\PsRender4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\Dialogs\DialogOverviewCx.h" />
@@ -143,9 +145,6 @@
     <ClInclude Include="..\Common\Dialogs\PsWinProjectCx.h" />
     <ClInclude Include="..\Common\Engine\PsController.h" />
     <ClInclude Include="..\Common\Engine\PsMaths.h" />
-    <ClInclude Include="..\Common\Engine\PsOpenGL.h" />
-    <ClInclude Include="..\Common\Engine\PsRender.h" />
-    <ClInclude Include="..\Common\Engine\PsTexture.h" />
     <ClInclude Include="..\Common\Engine\PsTypes.h" />
     <ClInclude Include="..\Common\Exporter\PsFileTypes.h" />
     <ClInclude Include="..\Common\Exporter\PsSoftRender.h" />
@@ -155,7 +154,12 @@
     <ClInclude Include="..\Common\Projects\PsMatrix.h" />
     <ClInclude Include="..\Common\Projects\PsPattern.h" />
     <ClInclude Include="..\Common\Projects\PsProject.h" />
+    <ClInclude Include="..\Common\Projects\PsProjectLoad.h" />
+    <ClInclude Include="..\Common\Projects\PsProjectSave.h" />
     <ClInclude Include="..\Common\Projects\PsShape.h" />
+    <ClInclude Include="..\Common\Projects\PsTexture.h" />
+    <ClInclude Include="..\Common\Render\PsOpenGL.h" />
+    <ClInclude Include="..\Common\Render\PsRender.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Foreign.vcxproj">

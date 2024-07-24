@@ -21,6 +21,7 @@
 #include "PsProject.h"
 #include "PsDlgDocument.h"
 #include "PsWinSplash.h"
+#include "PsProjectSave.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -78,7 +79,11 @@ BOOL CPatternshopDoc::OnOpenDocument(LPCTSTR lpszPathName)
 BOOL CPatternshopDoc::OnSaveDocument(LPCTSTR lpszPathName)
 {
 	if (PsController::Instance().active && PsController::Instance().active->project)
-		GetError(PsController::Instance().project->FileSave(lpszPathName));
+	{
+		PsProject& project = *PsController::Instance().project;
+		PsProjectSave& saver = PsProjectSave(project);
+		GetError(saver.saveProject(lpszPathName));
+	}
 	return TRUE;
 }
 
