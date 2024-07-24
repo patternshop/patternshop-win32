@@ -111,6 +111,7 @@
     <ClCompile Include="..\Common\Dialogs\PsWinProjectCx2.cpp" />
     <ClCompile Include="..\Common\Dialogs\PsWinProjectCx3.cpp" />
     <ClCompile Include="..\Common\Dialogs\PsWinProjectCx4.cpp" />
+    <ClCompile Include="..\Common\Dialogs\PsWinProjectCx5.cpp" />
     <ClCompile Include="..\Common\Engine\PsController.cpp" />
     <ClCompile Include="..\Common\Engine\PsMaths.cpp" />
     <ClCompile Include="..\Common\Engine\PsRender.cpp" />

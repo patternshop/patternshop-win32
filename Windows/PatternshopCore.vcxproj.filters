@@ -105,6 +105,9 @@
     <ClCompile Include="..\Common\Dialogs\PsWinProjectCx4.cpp">
       <Filter>Common\Dialogs</Filter>
     </ClCompile>
+    <ClCompile Include="..\Common\Dialogs\PsWinProjectCx5.cpp">
+      <Filter>Common\Dialogs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\Engine\PsMaths.h">
