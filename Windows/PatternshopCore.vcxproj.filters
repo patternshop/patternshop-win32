@@ -48,7 +48,7 @@
     <ClCompile Include="..\Common\Dialogs\DialogPatternCx.cpp">
       <Filter>Common\Dialogs</Filter>
     </ClCompile>
-    <ClCompile Include="..\Common\Dialogs\PsDlgExportCx.cpp">
+    <ClCompile Include="..\Common\Dialogs\PsDlgExportCx1.cpp">
       <Filter>Common\Dialogs</Filter>
     </ClCompile>
     <ClCompile Include="..\Common\Dialogs\PsMessage.cpp">
@@ -57,7 +57,7 @@
     <ClCompile Include="..\Common\Dialogs\PsWin.cpp">
       <Filter>Common\Dialogs</Filter>
     </ClCompile>
-    <ClCompile Include="..\Common\Dialogs\PsWinProjectCx.cpp">
+    <ClCompile Include="..\Common\Dialogs\PsWinProjectCx1.cpp">
       <Filter>Common\Dialogs</Filter>
     </ClCompile>
     <ClCompile Include="..\Common\Projects\PsImage.cpp">
@@ -92,6 +92,18 @@
     </ClCompile>
     <ClCompile Include="..\Common\Projects\PsProject4.cpp">
       <Filter>Common\Projects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Dialogs\PsDlgExportCx2.cpp">
+      <Filter>Common\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Dialogs\PsWinProjectCx2.cpp">
+      <Filter>Common\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Dialogs\PsWinProjectCx3.cpp">
+      <Filter>Common\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Dialogs\PsWinProjectCx4.cpp">
+      <Filter>Common\Dialogs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

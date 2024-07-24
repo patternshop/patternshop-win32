@@ -103,10 +103,14 @@
   <ItemGroup>
     <ClCompile Include="..\Common\Dialogs\DialogOverviewCx.cpp" />
     <ClCompile Include="..\Common\Dialogs\DialogPatternCx.cpp" />
-    <ClCompile Include="..\Common\Dialogs\PsDlgExportCx.cpp" />
+    <ClCompile Include="..\Common\Dialogs\PsDlgExportCx1.cpp" />
+    <ClCompile Include="..\Common\Dialogs\PsDlgExportCx2.cpp" />
     <ClCompile Include="..\Common\Dialogs\PsMessage.cpp" />
     <ClCompile Include="..\Common\Dialogs\PsWin.cpp" />
-    <ClCompile Include="..\Common\Dialogs\PsWinProjectCx.cpp" />
+    <ClCompile Include="..\Common\Dialogs\PsWinProjectCx1.cpp" />
+    <ClCompile Include="..\Common\Dialogs\PsWinProjectCx2.cpp" />
+    <ClCompile Include="..\Common\Dialogs\PsWinProjectCx3.cpp" />
+    <ClCompile Include="..\Common\Dialogs\PsWinProjectCx4.cpp" />
     <ClCompile Include="..\Common\Engine\PsController.cpp" />
     <ClCompile Include="..\Common\Engine\PsMaths.cpp" />
     <ClCompile Include="..\Common\Engine\PsRender.cpp" />
