@@ -18,7 +18,7 @@
 #include "Patternshop.h"
 #include "PatternshopDoc.h"
 #include "PatternshopView.h"
-#include "PsProject.h"
+#include "PsProjectController.h"
 #include "PsDlgDocument.h"
 #include "PsWinSplash.h"
 #include "PsProjectSave.h"

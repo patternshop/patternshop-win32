@@ -17,7 +17,7 @@
 #include "Patternshop.h"
 #include "PsDlgPrint.h"
 #include "PatternshopView.h"
-#include "PsProject.h"
+#include "PsProjectController.h"
 #include "PsController.h"
 
 // PsDlgPrint dialog

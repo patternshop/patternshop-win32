@@ -16,7 +16,7 @@
 */
 #pragma once
 
-#include "PsProject.h"
+#include "PsProjectController.h"
 #include "resource.h"
 #include "afxwin.h"
 #include <atlimage.h>

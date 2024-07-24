@@ -22,7 +22,7 @@
 #include "PatternshopView.h"
 #include "PsWinOverview.h"
 #include "PsDlgPrint.h"
-#include "PsProject.h"
+#include "PsProjectController.h"
 #include "PsWinPropertiesCx.h"
 #include "PsWinTools.h"
 #include "PsController.h"

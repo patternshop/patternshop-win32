@@ -153,7 +153,7 @@
     <ClInclude Include="..\Common\Projects\PsLayer.h" />
     <ClInclude Include="..\Common\Projects\PsMatrix.h" />
     <ClInclude Include="..\Common\Projects\PsPattern.h" />
-    <ClInclude Include="..\Common\Projects\PsProject.h" />
+    <ClInclude Include="..\Common\Projects\PsProjectController.h" />
     <ClInclude Include="..\Common\Projects\PsProjectLoad.h" />
     <ClInclude Include="..\Common\Projects\PsProjectSave.h" />
     <ClInclude Include="..\Common\Projects\PsShape.h" />

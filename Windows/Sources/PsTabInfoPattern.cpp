@@ -19,7 +19,7 @@
 #include "PatternshopView.h"
 #include "PsTabInfoPattern.h"
 #include "PsDlgDocument.h"
-#include "PsProject.h"
+#include "PsProjectController.h"
 #include "PsController.h"
 
 IMPLEMENT_DYNAMIC(PsTabInfoPattern, CPropertyPage)

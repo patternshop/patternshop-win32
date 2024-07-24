@@ -18,7 +18,7 @@
 #include "PatternshopView.h"
 #include "PsWinOverview.h"
 #include "PsDlgDocument.h"
-#include "PsProject.h"
+#include "PsProjectController.h"
 #include "PsController.h"
 
 PsWinOverview* PsWinOverview::instance = 0;

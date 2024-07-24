@@ -170,7 +170,7 @@
     <ClInclude Include="..\Common\Projects\PsPattern.h">
       <Filter>Common\Projects</Filter>
     </ClInclude>
-    <ClInclude Include="..\Common\Projects\PsProject.h">
+    <ClInclude Include="..\Common\Projects\PsProjectController.h">
       <Filter>Common\Projects</Filter>
     </ClInclude>
     <ClInclude Include="..\Common\Projects\PsShape.h">

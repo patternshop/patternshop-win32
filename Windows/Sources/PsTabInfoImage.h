@@ -17,7 +17,7 @@
 #pragma once
 #include "afxwin.h"
 
-#include "PsProject.h"
+#include "PsProjectController.h"
 #include "afxext.h"
 #include <atlimage.h>
 

@@ -15,7 +15,7 @@
  * along with Patternshop.  If not, see <http://www.gnu.org/licenses/>
 */
 
-#include "PsProject.h"
+#include "PsProjectController.h"
 #include "Patternshop.h"
 #include "PsWinTools.h"
 #include "PsWinOverview.h"
