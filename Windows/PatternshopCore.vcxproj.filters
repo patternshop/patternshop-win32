@@ -72,7 +72,7 @@
     <ClCompile Include="..\Common\Projects\PsPattern.cpp">
       <Filter>Common\Projects</Filter>
     </ClCompile>
-    <ClCompile Include="..\Common\Projects\PsProject.cpp">
+    <ClCompile Include="..\Common\Projects\PsProject1.cpp">
       <Filter>Common\Projects</Filter>
     </ClCompile>
     <ClCompile Include="..\Common\Projects\PsShape.cpp">
@@ -83,6 +83,15 @@
     </ClCompile>
     <ClCompile Include="..\Common\Projects\PsAction.cpp">
       <Filter>Common\Logs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Projects\PsProject2.cpp">
+      <Filter>Common\Projects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Projects\PsProject3.cpp">
+      <Filter>Common\Projects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Projects\PsProject4.cpp">
+      <Filter>Common\Projects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
