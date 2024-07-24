@@ -42,7 +42,7 @@ public:
 	void UpdateContentSize();
 
 protected:
-	virtual void UpdateInformation(PsProject*);
+	virtual void UpdateInformation(PsProjectController*);
 	virtual void UpdateMatrixInformation(PsMatrix*);
 	virtual void UpdateImageInformation(PsImage*);
 	virtual void UpdatePatternInformation();

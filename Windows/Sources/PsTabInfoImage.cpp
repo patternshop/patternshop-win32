@@ -105,7 +105,7 @@ void PsTabInfoImage::Update(PsImage* image)
 
 	if (!X) return;
 
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 
 	if (!project) return;
 
@@ -181,7 +181,7 @@ void PsTabInfoImage::OnEnChangeX2()
 {
 	CWnd* c = GetFocus();
 	if (c != &X) return;
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	if (X.IsTopParentActive() && project && project->image)
 	{
 		char buffer[1024];
@@ -203,7 +203,7 @@ void PsTabInfoImage::OnEnChangeY2()
 {
 	CWnd* c = GetFocus();
 	if (c != &Y) return;
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	if (project && project->image)
 	{
 		char buffer[1024];
@@ -225,7 +225,7 @@ void PsTabInfoImage::OnEnChangeAngle2()
 {
 	CWnd* c = GetFocus();
 	if (c != &R) return;
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	if (project && project->image)
 	{
 		char buffer[1024];
@@ -240,7 +240,7 @@ void PsTabInfoImage::OnEnChangeW()
 {
 	CWnd* c = GetFocus();
 	if (c != &W) return;
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	if (project && project->image)
 	{
 		PsImage* image = project->image;
@@ -267,7 +267,7 @@ void PsTabInfoImage::OnEnChangeH()
 {
 	CWnd* c = GetFocus();
 	if (c != &H) return;
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	if (project && project->image)
 	{
 		PsImage* image = project->image;

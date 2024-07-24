@@ -105,6 +105,9 @@
     <ClInclude Include="resource.h">
       <Filter>Resources</Filter>
     </ClInclude>
+    <ClInclude Include="..\Common\Projects\PsLogController.h">
+      <Filter>Windows\Main</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\ChildFrm.cpp">
@@ -181,6 +184,9 @@
     </ClCompile>
     <ClCompile Include="Sources\PsWinTools.cpp">
       <Filter>Windows\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Projects\PsLogController.cpp">
+      <Filter>Windows\Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

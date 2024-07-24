@@ -84,7 +84,7 @@ BOOL PsDlgPrint::OnInitDialog()
 {
 	if (!PsController::Instance().project)
 		return FALSE;
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 
 	CDialog::OnInitDialog();
 	SetAvaibleUnits(Y_combo);

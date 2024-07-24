@@ -155,7 +155,7 @@ int CPatternshopView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	DragAcceptFiles(true);
 	SetTimer(0, 25, NULL);
 	PsController::Instance().SetActive(this);
-	project = new PsProject();
+	project = new PsProjectController();
 	return 0;
 }
 
@@ -651,7 +651,7 @@ void  CPatternshopView::OnMouseMove(UINT nFlags, CPoint point)
 void  CPatternshopView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	CView::OnKeyDown(nChar, nRepCnt, nFlags);
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	switch (nChar)
 	{
 	case 'V':
@@ -836,7 +836,7 @@ void CPatternshopView::OnTimer(UINT_PTR nIDEvent)
 	PsController::Instance().SetOption(PsController::OPTION_CONSTRAIN, ::GetKeyState(VK_SHIFT) < 0);
 
 	// FIXME: forward save warning
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	if (project)
 	{
 		CPatternshopDoc* pDoc = (CPatternshopDoc*)GetDocument();

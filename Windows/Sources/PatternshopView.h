@@ -24,7 +24,7 @@
 
 #include "resource.h"
 
-class	PsProject;
+class	PsProjectController;
 
 class	CPatternshopView : public CView
 {
@@ -32,7 +32,7 @@ public:
 	CDocument* GetDocument() const;
 	virtual void	OnDraw(CDC* pDC);
 
-	PsProject* project;
+	PsProjectController* project;
 	std::string		name;
 
 	bool			updated;

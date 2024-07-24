@@ -170,6 +170,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Common\Projects\PsLogController.h" />
     <ClInclude Include="..\Foreign\wglext.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Sources\ChildFrm.h" />
@@ -200,6 +201,7 @@
     <ClInclude Include="Sources\stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Common\Projects\PsLogController.cpp" />
     <ClCompile Include="Sources\ChildFrm.cpp" />
     <ClCompile Include="Sources\MainFrm.cpp" />
     <ClCompile Include="Sources\MultiDocTemplate.cpp" />

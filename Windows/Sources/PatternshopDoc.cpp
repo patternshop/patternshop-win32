@@ -80,7 +80,7 @@ BOOL CPatternshopDoc::OnSaveDocument(LPCTSTR lpszPathName)
 {
 	if (PsController::Instance().active && PsController::Instance().active->project)
 	{
-		PsProject& project = *PsController::Instance().project;
+		PsProjectController& project = *PsController::Instance().project;
 		PsProjectSave& saver = PsProjectSave(project);
 		GetError(saver.saveProject(lpszPathName));
 	}

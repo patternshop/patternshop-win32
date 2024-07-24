@@ -70,7 +70,7 @@ void PsWinProperties::AddControlPages()
 	AddPage(&m_PatternProperties);
 }
 
-void PsWinProperties::UpdateInformation(PsProject* proj)
+void PsWinProperties::UpdateInformation(PsProjectController* proj)
 {
 	if (proj)
 	{

@@ -61,7 +61,7 @@ END_MESSAGE_MAP()
 void PsWinImage::OnPaint()
 {
 	CPaintDC dc(this); // device context for painting
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	CImage* img = NULL;
 	if (project && project->image)
 	{

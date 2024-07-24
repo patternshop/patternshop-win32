@@ -208,7 +208,7 @@ PsLayer* PsTabInfoPattern::GetCurrentLayer()
 {
 	if (!PsController::Instance().project)
 		return NULL;
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	if (!project->pattern)
 		return NULL;
 	return project->pattern->aLayers[project->iLayerId];

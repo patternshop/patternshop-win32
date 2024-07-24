@@ -98,7 +98,7 @@ void PsTabInfoMatrix::OnEnChangeX2()
 	CWnd* c = GetFocus();
 	if (c != &X) return;
 	if (!PsController::Instance().project) return;
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	PsMatrix* matrix = project->matrix;
 	if (X.IsTopParentActive() && matrix)
 	{
@@ -115,7 +115,7 @@ void PsTabInfoMatrix::OnEnChangeY2()
 	CWnd* c = GetFocus();
 	if (c != &Y) return;
 	if (!PsController::Instance().project) return;
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	PsMatrix* matrix = project->matrix;
 	if (matrix)
 	{
@@ -132,7 +132,7 @@ void PsTabInfoMatrix::OnEnChangeAngle2()
 	CWnd* c = GetFocus();
 	if (c != &R) return;
 	if (!PsController::Instance().project) return;
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	PsMatrix* matrix = project->matrix;
 	if (matrix)
 	{
@@ -178,7 +178,7 @@ void PsTabInfoMatrix::OnEnChangeW()
 	CWnd* c = GetFocus();
 	if (c != &W) return;
 	if (!PsController::Instance().project) return;
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	PsMatrix* matrix = project->matrix;
 	if (matrix)
 	{
@@ -201,7 +201,7 @@ void PsTabInfoMatrix::OnEnChangeH()
 	CWnd* c = GetFocus();
 	if (c != &H) return;
 	if (!PsController::Instance().project) return;
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	PsMatrix* matrix = project->matrix;
 	if (matrix)
 	{
@@ -224,7 +224,7 @@ void PsTabInfoMatrix::OnEnChangeW2()
 	CWnd* c = GetFocus();
 	if (c != &WP) return;
 	if (!PsController::Instance().project) return;
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	PsMatrix* matrix = project->matrix;
 	if (matrix)
 	{
@@ -248,7 +248,7 @@ void PsTabInfoMatrix::OnEnChangeH2()
 	CWnd* c = GetFocus();
 	if (c != &HP) return;
 	if (!PsController::Instance().project) return;
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	PsMatrix* matrix = project->matrix;
 	if (matrix)
 	{

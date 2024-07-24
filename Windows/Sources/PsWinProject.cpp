@@ -249,7 +249,7 @@ void PsWinProject::Update()
 void PsWinProject::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	PsWin32::OnKeyDown(nChar, nRepCnt, nFlags);
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	sKeyList.insert(nChar);
 	/*
 	char buffer[1024];
@@ -261,7 +261,7 @@ void PsWinProject::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 void PsWinProject::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	PsWin32::OnKeyDown(nChar, nRepCnt, nFlags);
-	PsProject* project = PsController::Instance().project;
+	PsProjectController* project = PsController::Instance().project;
 	CPatternshopView* active = PsController::Instance().active;
 	if (!active) return;
 
