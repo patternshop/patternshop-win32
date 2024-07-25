@@ -61,40 +61,40 @@ END_MESSAGE_MAP()
 void PsWinImage::OnPaint()
 {
 	CPaintDC dc(this); // device context for painting
-	PsProjectController* project = PsController::Instance().project;
+	PsProjectController* project_controller = PsController::Instance().project_controller;
 	CImage* img = NULL;
-	if (project && project->image)
+	if (project_controller && project_controller->image)
 	{
-		img = imageList[project->image];
+		img = imageList[project_controller->image];
 		if (!img)
 		{
 			int bpp;
 			uint8* data =
-				project->image->GetTexture().GetBufferUncompressed(bpp);
+				project_controller->image->GetTexture().GetBufferUncompressed(bpp);
 			img = new CImage;
-			img->Create(project->image->GetTexture().width,
-				project->image->GetTexture().height, bpp * 8);
-			for (int j = 0; j < project->image->GetTexture().height; j++)
+			img->Create(project_controller->image->GetTexture().width,
+				project_controller->image->GetTexture().height, bpp * 8);
+			for (int j = 0; j < project_controller->image->GetTexture().height; j++)
 			{
-				for (int i = 0; i < project->image->GetTexture().width; i++)
+				for (int i = 0; i < project_controller->image->GetTexture().width; i++)
 				{
 					if (bpp == 4 && data[(i + j *
-						project->image->GetTexture().width) * bpp + 3] < 200)
+						project_controller->image->GetTexture().width) * bpp + 3] < 200)
 					{
-						img->SetPixelRGB(i, project->image->GetTexture().height - j - 1,
+						img->SetPixelRGB(i, project_controller->image->GetTexture().height - j - 1,
 							255, 255, 255);
 					}
 					else
 					{
-						img->SetPixelRGB(i, project->image->GetTexture().height - j - 1,
-							data[(i + j * project->image->GetTexture().width) * bpp + 2],
-							data[(i + j * project->image->GetTexture().width) * bpp + 1],
-							data[(i + j * project->image->GetTexture().width) * bpp]);
+						img->SetPixelRGB(i, project_controller->image->GetTexture().height - j - 1,
+							data[(i + j * project_controller->image->GetTexture().width) * bpp + 2],
+							data[(i + j * project_controller->image->GetTexture().width) * bpp + 1],
+							data[(i + j * project_controller->image->GetTexture().width) * bpp]);
 					}
 				}
 			}
 			delete[] data;
-			imageList[project->image] = img;
+			imageList[project_controller->image] = img;
 		}
 		if (imgC != img)
 		{

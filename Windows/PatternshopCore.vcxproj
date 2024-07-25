@@ -121,6 +121,7 @@
     <ClCompile Include="..\Common\Projects\PsAction.cpp" />
     <ClCompile Include="..\Common\Projects\PsImage.cpp" />
     <ClCompile Include="..\Common\Projects\PsLayer.cpp" />
+    <ClCompile Include="..\Common\Projects\PsLogController.cpp" />
     <ClCompile Include="..\Common\Projects\PsMatrix.cpp" />
     <ClCompile Include="..\Common\Projects\PsPattern.cpp" />
     <ClCompile Include="..\Common\Projects\PsProject1.cpp" />
@@ -151,8 +152,10 @@
     <ClInclude Include="..\Common\Projects\PsAction.h" />
     <ClInclude Include="..\Common\Projects\PsImage.h" />
     <ClInclude Include="..\Common\Projects\PsLayer.h" />
+    <ClInclude Include="..\Common\Projects\PsLogController.h" />
     <ClInclude Include="..\Common\Projects\PsMatrix.h" />
     <ClInclude Include="..\Common\Projects\PsPattern.h" />
+    <ClInclude Include="..\Common\Projects\PsProject.h" />
     <ClInclude Include="..\Common\Projects\PsProjectController.h" />
     <ClInclude Include="..\Common\Projects\PsProjectLoad.h" />
     <ClInclude Include="..\Common\Projects\PsProjectSave.h" />

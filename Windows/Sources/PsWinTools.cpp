@@ -103,8 +103,8 @@ void	PsWinTools::OnBnClickedTool3()
 
 void	PsWinTools::OnBnDoubleClickedTool3()
 {
-	if (PsController::Instance().project)
-		PsController::Instance().project->renderer.zoom = 1.0f;
+	if (PsController::Instance().project_controller)
+		PsController::Instance().project_controller->renderer.zoom = 1.0f;
 
 	if (PsController::Instance().active)
 		PsController::Instance().active->Update();

@@ -32,7 +32,7 @@ public:
 	CDocument* GetDocument() const;
 	virtual void	OnDraw(CDC* pDC);
 
-	PsProjectController* project;
+	PsProjectController* project_controller;
 	std::string		name;
 
 	bool			updated;

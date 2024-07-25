@@ -82,9 +82,9 @@ int PsDlgPrint::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 BOOL PsDlgPrint::OnInitDialog()
 {
-	if (!PsController::Instance().project)
+	if (!PsController::Instance().project_controller)
 		return FALSE;
-	PsProjectController* project = PsController::Instance().project;
+	PsProjectController* project_controller = PsController::Instance().project_controller;
 
 	CDialog::OnInitDialog();
 	SetAvaibleUnits(Y_combo);
@@ -95,13 +95,13 @@ BOOL PsDlgPrint::OnInitDialog()
 
 	x = 0;
 	y = 0;
-	w = project->GetWidth();
-	h = project->GetHeight();
+	w = project_controller->GetWidth();
+	h = project_controller->GetHeight();
 	z = 100;
 
 	// Format A4 vertical (FIXME)
-	format_w = 8.2666667 * project->GetDpi();
-	format_h = 11.693333 * project->GetDpi();
+	format_w = 8.2666667 * project_controller->GetDpi();
+	format_h = 11.693333 * project_controller->GetDpi();
 
 	// Auto fit
 	//---------
@@ -148,10 +148,10 @@ void PsDlgPrint::OnPaint()
 
 void PsDlgPrint::PrepareMiniImage()
 {
-	if (!PsController::Instance().project)
+	if (!PsController::Instance().project_controller)
 		return;
 
-	PsRender& renderer = PsController::Instance().project->renderer;
+	PsRender& renderer = PsController::Instance().project_controller->renderer;
 
 	int size_x = renderer.size_x;
 	int size_y = renderer.size_y;
@@ -283,7 +283,7 @@ void PsDlgPrint::UpdateValue(int px, CEdit& e, CComboBox& c)
 	if (c_ == &e) return;
 	float v;
 	char buffer[1024];
-	float dpi = PsController::Instance().project->GetDpi();
+	float dpi = PsController::Instance().project_controller->GetDpi();
 	switch (c.GetCurSel())
 	{
 	case 0:
@@ -322,7 +322,7 @@ int PsDlgPrint::GetValue(CEdit& e, CComboBox& c)
 	char buffer[1024];
 	e.GetWindowText(buffer, 1024);
 	float v = atof(buffer);
-	float dpi = PsController::Instance().project->renderer.dpi;
+	float dpi = PsController::Instance().project_controller->renderer.dpi;
 	switch (c.GetCurSel())
 	{
 	case 0: return v * dpi; break;

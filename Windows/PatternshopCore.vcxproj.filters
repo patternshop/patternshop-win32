@@ -126,6 +126,9 @@
     <ClCompile Include="..\Common\Projects\PsProjectLoad.cpp">
       <Filter>Common\Projects</Filter>
     </ClCompile>
+    <ClCompile Include="..\Common\Projects\PsLogController.cpp">
+      <Filter>Common\Logs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\Engine\PsMaths.h">
@@ -195,6 +198,12 @@
       <Filter>Common\Projects</Filter>
     </ClInclude>
     <ClInclude Include="..\Common\Projects\PsProjectLoad.h">
+      <Filter>Common\Projects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Projects\PsLogController.h">
+      <Filter>Common\Logs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Projects\PsProject.h">
       <Filter>Common\Projects</Filter>
     </ClInclude>
   </ItemGroup>

@@ -105,9 +105,9 @@ void PsTabInfoImage::Update(PsImage* image)
 
 	if (!X) return;
 
-	PsProjectController* project = PsController::Instance().project;
+	PsProjectController* project_controller = PsController::Instance().project_controller;
 
-	if (!project) return;
+	if (!project_controller) return;
 
 	if (image)
 	{
@@ -122,12 +122,12 @@ void PsTabInfoImage::Update(PsImage* image)
 		if (image->parent)
 		{
 			sprintf(buffer, "%.2f", image->x / (SHAPE_SIZE * 2)
-				* project->matrix->w
-				+ project->matrix->w / 2);
+				* project_controller->matrix->w
+				+ project_controller->matrix->w / 2);
 			X.SetWindowTextA(buffer);
 			sprintf(buffer, "%.2f", image->y / (SHAPE_SIZE * 2)
-				* project->matrix->h
-				+ project->matrix->h / 2);
+				* project_controller->matrix->h
+				+ project_controller->matrix->h / 2);
 			Y.SetWindowTextA(buffer);
 		}
 		else
@@ -181,20 +181,20 @@ void PsTabInfoImage::OnEnChangeX2()
 {
 	CWnd* c = GetFocus();
 	if (c != &X) return;
-	PsProjectController* project = PsController::Instance().project;
-	if (X.IsTopParentActive() && project && project->image)
+	PsProjectController* project_controller = PsController::Instance().project_controller;
+	if (X.IsTopParentActive() && project_controller && project_controller->image)
 	{
 		char buffer[1024];
 		X.GetWindowTextA(buffer, 1024);
 		float value = atof(buffer);
-		if (project->image->parent)
+		if (project_controller->image->parent)
 			if (value < 0.f) value = 0.f;
-			else if (value > project->matrix->w) value = project->matrix->w;
+			else if (value > project_controller->matrix->w) value = project_controller->matrix->w;
 		float x, y;
-		project->image->GetPosition(x, y);
-		project->LogAdd(new LogMove(*project, project->image, x, y));
-		if (project->image->parent) project->image->x = (value - project->matrix->w / 2) / project->matrix->w * (SHAPE_SIZE * 2);
-		else project->image->x = value;
+		project_controller->image->GetPosition(x, y);
+		project_controller->LogAdd(new LogMove(*project_controller, project_controller->image, x, y));
+		if (project_controller->image->parent) project_controller->image->x = (value - project_controller->matrix->w / 2) / project_controller->matrix->w * (SHAPE_SIZE * 2);
+		else project_controller->image->x = value;
 		PsController::Instance().UpdateWindow();
 	}
 }
@@ -203,20 +203,20 @@ void PsTabInfoImage::OnEnChangeY2()
 {
 	CWnd* c = GetFocus();
 	if (c != &Y) return;
-	PsProjectController* project = PsController::Instance().project;
-	if (project && project->image)
+	PsProjectController* project_controller = PsController::Instance().project_controller;
+	if (project_controller && project_controller->image)
 	{
 		char buffer[1024];
 		Y.GetWindowTextA(buffer, 1024);
 		float value = atof(buffer);
-		if (project->image->parent)
+		if (project_controller->image->parent)
 			if (value < 0.f) value = 0.f;
-			else if (value > project->matrix->h) value = project->matrix->h;
+			else if (value > project_controller->matrix->h) value = project_controller->matrix->h;
 		float x, y;
-		project->image->GetPosition(x, y);
-		project->LogAdd(new LogMove(*project, project->image, x, y));
-		if (project->image->parent) project->image->y = (value - project->matrix->h / 2) / project->matrix->h * (SHAPE_SIZE * 2);
-		else project->image->y = value;
+		project_controller->image->GetPosition(x, y);
+		project_controller->LogAdd(new LogMove(*project_controller, project_controller->image, x, y));
+		if (project_controller->image->parent) project_controller->image->y = (value - project_controller->matrix->h / 2) / project_controller->matrix->h * (SHAPE_SIZE * 2);
+		else project_controller->image->y = value;
 		PsController::Instance().UpdateWindow();
 	}
 }
@@ -225,13 +225,13 @@ void PsTabInfoImage::OnEnChangeAngle2()
 {
 	CWnd* c = GetFocus();
 	if (c != &R) return;
-	PsProjectController* project = PsController::Instance().project;
-	if (project && project->image)
+	PsProjectController* project_controller = PsController::Instance().project_controller;
+	if (project_controller && project_controller->image)
 	{
 		char buffer[1024];
 		R.GetWindowTextA(buffer, 1024);
-		project->LogAdd(new LogRotate(*project, project->image, project->image->r));
-		project->image->r = (atof(buffer) * 3.14159265) / 180.0;
+		project_controller->LogAdd(new LogRotate(*project_controller, project_controller->image, project_controller->image->r));
+		project_controller->image->r = (atof(buffer) * 3.14159265) / 180.0;
 		PsController::Instance().UpdateWindow();
 	}
 }
@@ -240,13 +240,13 @@ void PsTabInfoImage::OnEnChangeW()
 {
 	CWnd* c = GetFocus();
 	if (c != &W) return;
-	PsProjectController* project = PsController::Instance().project;
-	if (project && project->image)
+	PsProjectController* project_controller = PsController::Instance().project_controller;
+	if (project_controller && project_controller->image)
 	{
-		PsImage* image = project->image;
+		PsImage* image = project_controller->image;
 		float x, y;
 		image->GetPosition(x, y);
-		project->LogAdd(new LogResize(*project, image, x, y, image->w, image->h));
+		project_controller->LogAdd(new LogResize(*project_controller, image, x, y, image->w, image->h));
 		char buffer[1024];
 		W.GetWindowTextA(buffer, 1024);
 		image->w = atof(buffer);
@@ -267,13 +267,13 @@ void PsTabInfoImage::OnEnChangeH()
 {
 	CWnd* c = GetFocus();
 	if (c != &H) return;
-	PsProjectController* project = PsController::Instance().project;
-	if (project && project->image)
+	PsProjectController* project_controller = PsController::Instance().project_controller;
+	if (project_controller && project_controller->image)
 	{
-		PsImage* image = project->image;
+		PsImage* image = project_controller->image;
 		float x, y;
 		image->GetPosition(x, y);
-		project->LogAdd(new LogResize(*project, image, x, y, image->w, image->h));
+		project_controller->LogAdd(new LogResize(*project_controller, image, x, y, image->w, image->h));
 		char buffer[1024];
 		H.GetWindowTextA(buffer, 1024);
 		image->h = atof(buffer);
@@ -294,12 +294,12 @@ void PsTabInfoImage::OnEnChangeW2()
 {
 	CWnd* c = GetFocus();
 	if (c != &W2) return;
-	if (PsController::Instance().project
-		&& PsController::Instance().project->image)
+	if (PsController::Instance().project_controller
+		&& PsController::Instance().project_controller->image)
 	{
 		char buffer[1024];
 		W2.GetWindowTextA(buffer, 1024);
-		PsImage* image = PsController::Instance().project->image;
+		PsImage* image = PsController::Instance().project_controller->image;
 		image->w = atof(buffer) * image->GetTexture().width / 100;
 		sprintf(buffer, "%.2f", image->w);
 		W.SetWindowTextA(buffer);
@@ -319,12 +319,12 @@ void PsTabInfoImage::OnEnChangeH2()
 {
 	CWnd* c = GetFocus();
 	if (c != &H2) return;
-	if (PsController::Instance().project
-		&& PsController::Instance().project->image)
+	if (PsController::Instance().project_controller
+		&& PsController::Instance().project_controller->image)
 	{
 		char buffer[1024];
 		H2.GetWindowTextA(buffer, 1024);
-		PsImage* image = PsController::Instance().project->image;
+		PsImage* image = PsController::Instance().project_controller->image;
 		image->h = atof(buffer) * image->GetTexture().height / 100;
 		sprintf(buffer, "%.2f", image->h);
 		H.SetWindowTextA(buffer);
@@ -349,9 +349,9 @@ void PsTabInfoImage::OnBnClickedButton1()
 
 void PsTabInfoImage::OnBnClickedButton3()
 {
-	if (PsController::Instance().project)
+	if (PsController::Instance().project_controller)
 	{
-		PsImage* image = PsController::Instance().project->image;
+		PsImage* image = PsController::Instance().project_controller->image;
 		if (image)
 		{
 			if (!image->constraint)
@@ -392,16 +392,16 @@ void PsTabInfoImage::OnBnClickedButton3()
 void PsTabInfoImage::OnShowWindow(BOOL bShow, UINT nStatus)
 {
 	CPropertyPage::OnShowWindow(bShow, nStatus);
-	if (bShow && (!PsController::Instance().project ||
-		(PsController::Instance().project && !PsController::Instance().project->image)))
+	if (bShow && (!PsController::Instance().project_controller ||
+		(PsController::Instance().project_controller && !PsController::Instance().project_controller->image)))
 	{
 		Disable();
 	}
 	else
 	{
 		Enable();
-		if (PsController::Instance().project)
-			Update(PsController::Instance().project->image);
+		if (PsController::Instance().project_controller)
+			Update(PsController::Instance().project_controller->image);
 	}
 }
 

@@ -128,7 +128,7 @@ BEGIN_MESSAGE_MAP(CPatternshopView, CView)
 END_MESSAGE_MAP()
 
 CPatternshopView::CPatternshopView() :
-	project(0)
+	project_controller(0)
 {
 	m_hDib = NULL;
 	m_hOldDC = NULL;
@@ -142,9 +142,9 @@ CPatternshopView::CPatternshopView() :
 
 CPatternshopView::~CPatternshopView()
 {
-	if (project)
-		delete project;
-	project = 0;
+	if (project_controller)
+		delete project_controller;
+	project_controller = 0;
 	PsWinOverview::Instance().Invalidate();
 }
 
@@ -155,7 +155,7 @@ int CPatternshopView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	DragAcceptFiles(true);
 	SetTimer(0, 25, NULL);
 	PsController::Instance().SetActive(this);
-	project = new PsProjectController();
+	project_controller = new PsProjectController();
 	return 0;
 }
 
@@ -175,7 +175,7 @@ void  CPatternshopView::MenuFileImage()
 
 	if (dialog.DoModal() == IDOK)
 	{
-		GetError(project->NewMotif((LPCTSTR)dialog.GetPathName()));
+		GetError(project_controller->NewMotif((LPCTSTR)dialog.GetPathName()));
 		Update();
 	}
 }
@@ -192,7 +192,7 @@ void  CPatternshopView::MenuFilePattern()
 
 	if (dialog.DoModal() == IDOK)
 	{
-		GetError(project->NewPattern((LPCTSTR)dialog.GetPathName()));
+		GetError(project_controller->NewPattern((LPCTSTR)dialog.GetPathName()));
 		//Update();
 		//dlgPropreties->FocusMatrixInformation();
 		PsController::Instance().UpdateDialogProject();
@@ -213,7 +213,7 @@ void CPatternshopView::OnFichierImporteruneimagelibre()
 
 	if (dialog.DoModal() == IDOK)
 	{
-		GetError(project->NewImage((LPCTSTR)dialog.GetPathName()));
+		GetError(project_controller->NewImage((LPCTSTR)dialog.GetPathName()));
 		Update();
 	}
 }
@@ -228,7 +228,7 @@ void      CPatternshopView::OnDropFiles(HDROP hDropInfo)
 		DragQueryFile(hDropInfo, i, fic, taille);
 		//--
 
-		GetError(project->NewMotif((LPCTSTR)fic));
+		GetError(project_controller->NewMotif((LPCTSTR)fic));
 
 		//--
 		delete fic;
@@ -244,7 +244,7 @@ void CPatternshopView::SetAutoPosition()
 
 	// ajustement de la taille de la fenetre
 	float max = 800;
-	float ratio = (float)project->GetWidth() / (float)project->GetWidth();
+	float ratio = (float)project_controller->GetWidth() / (float)project_controller->GetWidth();
 	r.right = (LONG)(r.bottom * ratio);
 	if (r.right > max)
 	{
@@ -259,13 +259,13 @@ void CPatternshopView::SetAutoPosition()
 		r.bottom *= ratio;
 	}
 	GetParentFrame()->SetWindowPos(NULL, r.left + 200, r.top, r.right, r.bottom, 0);
-	project->renderer.CenterView();
+	project_controller->renderer.CenterView();
 }
 
 void CPatternshopView::SetProjectSize(int w, int h, int dpi)
 {
-	project->renderer.SetDocSize(w, h);
-	project->renderer.dpi = dpi;
+	project_controller->renderer.SetDocSize(w, h);
+	project_controller->renderer.dpi = dpi;
 	Update();
 }
 
@@ -273,7 +273,7 @@ BOOL  CPatternshopView::MenuFileLoad(const char* name)
 {
 	ErrID r;
 
-	PsProjectLoad& loader = PsProjectLoad(*project);
+	PsProjectLoad& loader = PsProjectLoad(*project_controller);
 	r = loader.loadProject(name);
 
 	if (r != ERROR_NONE)
@@ -282,14 +282,14 @@ BOOL  CPatternshopView::MenuFileLoad(const char* name)
 		return FALSE;
 	}
 
-	SetProjectSize(project->GetWidth(), project->renderer.doc_y, project->renderer.dpi);
+	SetProjectSize(project_controller->GetWidth(), project_controller->renderer.doc_y, project_controller->renderer.dpi);
 	SetAutoPosition();
 
 	PsController::Instance().SetActive(this);
-	project->matrix = NULL;
-	project->image = NULL;
+	project_controller->matrix = NULL;
+	project_controller->image = NULL;
 	//-- sélection automatique de la première matrice
-	if (project->matrices.size() != 0) project->SelectMatrix(*(project->matrices.begin()));
+	if (project_controller->matrices.size() != 0) project_controller->SelectMatrix(*(project_controller->matrices.begin()));
 	//--
 	Update();
 	dlgPropreties->FocusMatrixInformation();
@@ -306,8 +306,8 @@ void  CPatternshopView::MenuFileExport()
 	PsDlgOpen  dialog(false, ".tif", 0, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT, _T(buffer3));
 	if (dialog.DoModal() == IDOK)
 	{
-		project->renderer.GetDocSize(x, y);
-		project->RenderToFile(dialog.GetPathName(), x, y);
+		project_controller->renderer.GetDocSize(x, y);
+		project_controller->RenderToFile(dialog.GetPathName(), x, y);
 	}
 }
 
@@ -316,7 +316,7 @@ void  CPatternshopView::MenuFileExportRaccord()
 	PsDlgExport dialogExport;
 
 	//-- vérification qu'une matrice est bien sélectionnée
-	if (!project || !project->matrix)
+	if (!project_controller || !project_controller->matrix)
 	{
 		GetError(ERROR_MATRIX_SELECT);
 		return;
@@ -324,7 +324,7 @@ void  CPatternshopView::MenuFileExportRaccord()
 	//--
 
 	//-- vérification qu'il n'y a pas de torsion
-	if (project->matrix->HasTorsion())
+	if (project_controller->matrix->HasTorsion())
 	{
 		GetError(ERROR_MATRIX_NO_EXPORTABLE);
 		return;
@@ -336,17 +336,17 @@ void  CPatternshopView::MenuFileExportRaccord()
 
 void    CPatternshopView::MenuEditClone()
 {
-	if (project)
+	if (project_controller)
 	{
-		if (project->image)
+		if (project_controller->image)
 		{
 
-			GetError(project->CloneImage());
+			GetError(project_controller->CloneImage());
 
 			PsController::Instance().UpdateDialogProject();
 			Update();
 		}
-		else if (project->matrix)
+		else if (project_controller->matrix)
 		{
 			MenuMatrixClone();
 		}
@@ -366,13 +366,13 @@ void  CPatternshopView::MenuEditReplace()
 	dialog.m_ofn.lpstrInitialDir = tmpbuffer;
 
 
-	if (project && project->image)
+	if (project_controller && project_controller->image)
 	{
 		if (dialog.DoModal() == IDOK)
 		{
 
-			PsWinProject::Instance().relaseThumb(&(project->image->GetTexture()));
-			GetError(project->ReplaceImage(dialog.GetPathName()));
+			PsWinProject::Instance().relaseThumb(&(project_controller->image->GetTexture()));
+			GetError(project_controller->ReplaceImage(dialog.GetPathName()));
 
 			Update();
 			PsController::Instance().UpdateDialogProject();
@@ -382,17 +382,17 @@ void  CPatternshopView::MenuEditReplace()
 
 void  CPatternshopView::MenuImageDel()
 {
-	if (project)
+	if (project_controller)
 	{
-		if (project->image)
+		if (project_controller->image)
 		{
 			if (GetQuestion(QUESTION_DELETE_IMAGE))
 			{
-				GetError(project->DelImage());
+				GetError(project_controller->DelImage());
 				Update();
 			}
 		}
-		else if (project->matrix)
+		else if (project_controller->matrix)
 		{
 			MenuMatrixDel();
 		}
@@ -401,11 +401,11 @@ void  CPatternshopView::MenuImageDel()
 
 void  CPatternshopView::MenuLogRedo()
 {
-	if (project)
+	if (project_controller)
 	{
-		project->LogRedo();
+		project_controller->LogRedo();
 		Update();
-		dlgPropreties->UpdateInformation(project);
+		dlgPropreties->UpdateInformation(project_controller);
 	}
 }
 
@@ -413,10 +413,10 @@ void    CPatternshopView::OnUpdateEditRedo(CCmdUI* pCmdUI)
 {
 	char  buffer[256];
 
-	if (project->LogCanRedo())
+	if (project_controller->LogCanRedo())
 	{
 		pCmdUI->Enable(true);
-		sprintf(buffer, "&Refaire %s\tCtrl+Y", project->LogRedoLastName());
+		sprintf(buffer, "&Refaire %s\tCtrl+Y", project_controller->LogRedoLastName());
 	}
 	else
 	{
@@ -429,11 +429,11 @@ void    CPatternshopView::OnUpdateEditRedo(CCmdUI* pCmdUI)
 
 void  CPatternshopView::MenuLogUndo()
 {
-	if (project)
+	if (project_controller)
 	{
-		project->LogUndo();
+		project_controller->LogUndo();
 		Update();
-		dlgPropreties->UpdateInformation(project);
+		dlgPropreties->UpdateInformation(project_controller);
 	}
 }
 
@@ -441,10 +441,10 @@ void    CPatternshopView::OnUpdateEditUndo(CCmdUI* pCmdUI)
 {
 	char  buffer[256];
 
-	if (project->LogCanUndo())
+	if (project_controller->LogCanUndo())
 	{
 		pCmdUI->Enable(true);
-		sprintf(buffer, "&Annuler %s\tCtrl+Z", project->LogUndoLastName());
+		sprintf(buffer, "&Annuler %s\tCtrl+Z", project_controller->LogUndoLastName());
 	}
 	else
 	{
@@ -457,10 +457,10 @@ void    CPatternshopView::OnUpdateEditUndo(CCmdUI* pCmdUI)
 
 void  CPatternshopView::MenuMatrixClone()
 {
-	if (project)
+	if (project_controller)
 	{
 
-		GetError(project->CloneMatrix());
+		GetError(project_controller->CloneMatrix());
 
 		PsController::Instance().UpdateDialogProject();
 		Update();
@@ -469,20 +469,20 @@ void  CPatternshopView::MenuMatrixClone()
 
 void  CPatternshopView::MenuMatrixColor()
 {
-	if (project)
+	if (project_controller)
 	{
-		GetError(project->MatrixColor());
+		GetError(project_controller->MatrixColor());
 		Update();
 	}
 }
 
 void  CPatternshopView::MenuMatrixDel()
 {
-	if (project && project->matrix)
+	if (project_controller && project_controller->matrix)
 	{
 		if (GetQuestion(QUESTION_DELETE_MATRIX))
 		{
-			GetError(project->DelMatrix());
+			GetError(project_controller->DelMatrix());
 			Update();
 		}
 	}
@@ -490,16 +490,16 @@ void  CPatternshopView::MenuMatrixDel()
 
 void  CPatternshopView::MenuMatrixNew()
 {
-	if (project)
+	if (project_controller)
 	{
-		GetError(project->NewMatrix());
+		GetError(project_controller->NewMatrix());
 		Update();
 	}
 }
 
 void  CPatternshopView::MenuMatrixReset()
 {
-	GetError(project->MatrixReset());
+	GetError(project_controller->MatrixReset());
 	Update();
 }
 
@@ -566,8 +566,8 @@ void CPatternshopView::OnPrint(CDC* pDC, CPrintInfo* pInfo)
 		y = 0;
 	CImage   printBackbuffer;
 
-	project->renderer.GetDocSize(x, y);
-	project->RenderToFile("printer.png", x, y);
+	project_controller->renderer.GetDocSize(x, y);
+	project_controller->RenderToFile("printer.png", x, y);
 	printBackbuffer.Load("printer.png");
 
 	// Get the real print area size
@@ -589,9 +589,9 @@ void CPatternshopView::OnPrint(CDC* pDC, CPrintInfo* pInfo)
 
 void  CPatternshopView::SetRenderSize(int cx, int cy)
 {
-	if (project)
+	if (project_controller)
 	{
-		project->renderer.SetSize(cx, cy);
+		project_controller->renderer.SetSize(cx, cy);
 	}
 }
 
@@ -651,7 +651,7 @@ void  CPatternshopView::OnMouseMove(UINT nFlags, CPoint point)
 void  CPatternshopView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	CView::OnKeyDown(nChar, nRepCnt, nFlags);
-	PsProjectController* project = PsController::Instance().project;
+	PsProjectController* project_controller = PsController::Instance().project_controller;
 	switch (nChar)
 	{
 	case 'V':
@@ -673,66 +673,66 @@ void  CPatternshopView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		break;
 
 	case VK_LEFT:
-		if (project)
+		if (project_controller)
 		{
-			if (project->image)
+			if (project_controller->image)
 			{
 				float x, y;
-				project->image->GetPosition(x, y);
-				project->image->SetPosition(x - 1, y);
+				project_controller->image->GetPosition(x, y);
+				project_controller->image->SetPosition(x - 1, y);
 			}
-			else if (project->matrix)
-				project->matrix->SetPosition(project->matrix->x - 1, project->matrix->y);
+			else if (project_controller->matrix)
+				project_controller->matrix->SetPosition(project_controller->matrix->x - 1, project_controller->matrix->y);
 			Update();
-			dlgPropreties->UpdateInformation(project);
+			dlgPropreties->UpdateInformation(project_controller);
 		}
 		break;
 
 	case VK_RIGHT:
-		if (project)
+		if (project_controller)
 		{
-			if (project->image)
+			if (project_controller->image)
 			{
 				float x, y;
-				project->image->GetPosition(x, y);
-				project->image->SetPosition(x + 1, y);
+				project_controller->image->GetPosition(x, y);
+				project_controller->image->SetPosition(x + 1, y);
 			}
-			else if (project->matrix)
-				project->matrix->SetPosition(project->matrix->x + 1, project->matrix->y);
+			else if (project_controller->matrix)
+				project_controller->matrix->SetPosition(project_controller->matrix->x + 1, project_controller->matrix->y);
 			Update();
-			dlgPropreties->UpdateInformation(project);
+			dlgPropreties->UpdateInformation(project_controller);
 		}
 		break;
 
 	case VK_UP:
-		if (project)
+		if (project_controller)
 		{
-			if (project->image)
+			if (project_controller->image)
 			{
 				float x, y;
-				project->image->GetPosition(x, y);
-				project->image->SetPosition(x, y - 1);
+				project_controller->image->GetPosition(x, y);
+				project_controller->image->SetPosition(x, y - 1);
 			}
-			else if (project->matrix)
-				project->matrix->SetPosition(project->matrix->x, project->matrix->y - 1);
+			else if (project_controller->matrix)
+				project_controller->matrix->SetPosition(project_controller->matrix->x, project_controller->matrix->y - 1);
 			Update();
-			dlgPropreties->UpdateInformation(project);
+			dlgPropreties->UpdateInformation(project_controller);
 		}
 		break;
 
 	case VK_DOWN:
-		if (project)
+		if (project_controller)
 		{
-			if (project->image)
+			if (project_controller->image)
 			{
 				float x, y;
-				project->image->GetPosition(x, y);
-				project->image->SetPosition(x, y + 1);
+				project_controller->image->GetPosition(x, y);
+				project_controller->image->SetPosition(x, y + 1);
 			}
-			else if (project->matrix)
-				project->matrix->SetPosition(project->matrix->x, project->matrix->y + 1);
+			else if (project_controller->matrix)
+				project_controller->matrix->SetPosition(project_controller->matrix->x, project_controller->matrix->y + 1);
 			Update();
-			dlgPropreties->UpdateInformation(project);
+			dlgPropreties->UpdateInformation(project_controller);
 		}
 		break;
 	}
@@ -800,7 +800,7 @@ BOOL CPatternshopView::OnSetCursor(CWnd* /*pWnd*/, UINT /*nHitTest*/, UINT /*mes
 void CPatternshopView::UpdateNow()
 {
 	static BOOL bBusy = FALSE;
-	if (bBusy || !project || !hardwareRenderer.IsLoad())
+	if (bBusy || !project_controller || !hardwareRenderer.IsLoad())
 		return;
 
 #ifdef _DEBUG
@@ -808,7 +808,7 @@ void CPatternshopView::UpdateNow()
 #endif /* _DEBUG */
 
 	bBusy = TRUE;
-	project->RenderToScreen();
+	project_controller->RenderToScreen();
 	hardwareRenderer.CopyToSoftBuffer(m_buffer);
 	bBusy = FALSE;
 	Invalidate(true);
@@ -836,11 +836,11 @@ void CPatternshopView::OnTimer(UINT_PTR nIDEvent)
 	PsController::Instance().SetOption(PsController::OPTION_CONSTRAIN, ::GetKeyState(VK_SHIFT) < 0);
 
 	// FIXME: forward save warning
-	PsProjectController* project = PsController::Instance().project;
-	if (project)
+	PsProjectController* project_controller = PsController::Instance().project_controller;
+	if (project_controller)
 	{
 		CPatternshopDoc* pDoc = (CPatternshopDoc*)GetDocument();
-		pDoc->SetModifiedFlag(project->bNeedSave);
+		pDoc->SetModifiedFlag(project_controller->bNeedSave);
 	}
 }
 
@@ -853,13 +853,13 @@ void CPatternshopView::OnDestroy()
 
 void CPatternshopView::OnProjetTailledelazonedetravail()
 {
-	if (project)
+	if (project_controller)
 	{
 		PsDlgDocument dlgDimensions;
 		dlgDimensions.bNoDefault = true;
-		dlgDimensions.w = project->GetWidth();
-		dlgDimensions.h = project->GetHeight();
-		dlgDimensions.dpi = project->GetDpi();
+		dlgDimensions.w = project_controller->GetWidth();
+		dlgDimensions.h = project_controller->GetHeight();
+		dlgDimensions.dpi = project_controller->GetDpi();
 		if (dlgDimensions.DoModal() == IDOK)
 			SetProjectSize(dlgDimensions.w, dlgDimensions.h, dlgDimensions.dpi);
 	}

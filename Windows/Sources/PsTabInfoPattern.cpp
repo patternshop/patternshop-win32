@@ -127,7 +127,7 @@ void PsTabInfoPattern::UpdateMiniImage()
 void PsTabInfoPattern::UpdateNow()
 {
 	if (PsController::Instance().active &&
-		PsController::Instance().project)
+		PsController::Instance().project_controller)
 	{
 		UpdateMiniImage();
 	}
@@ -141,7 +141,7 @@ void PsTabInfoPattern::FastUpdate()
 	dc.CreateCompatibleDC(NULL);
 	dc.SelectObject(window_buffer);
 
-	if (!PsController::Instance().project)
+	if (!PsController::Instance().project_controller)
 		CleanBackground();
 
 	window_buffer2.BitBlt(dc.GetSafeHdc(), 0, 0);
@@ -206,12 +206,12 @@ void PsTabInfoPattern::OnNMReleasedcaptureSlider1(NMHDR* pNMHDR, LRESULT* pResul
 
 PsLayer* PsTabInfoPattern::GetCurrentLayer()
 {
-	if (!PsController::Instance().project)
+	if (!PsController::Instance().project_controller)
 		return NULL;
-	PsProjectController* project = PsController::Instance().project;
-	if (!project->pattern)
+	PsProjectController* project_controller = PsController::Instance().project_controller;
+	if (!project_controller->pattern)
 		return NULL;
-	return project->pattern->aLayers[project->iLayerId];
+	return project_controller->pattern->aLayers[project_controller->iLayerId];
 }
 
 void PsTabInfoPattern::OnChangeTX()

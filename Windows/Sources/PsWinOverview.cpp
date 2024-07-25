@@ -82,7 +82,7 @@ END_MESSAGE_MAP()
 
 void PsWinOverview::DrawRedSelection()
 {
-	if (!PsController::Instance().project)
+	if (!PsController::Instance().project_controller)
 		return;
 
 	PsRect z =
@@ -102,7 +102,7 @@ void PsWinOverview::DrawRedSelection()
 void PsWinOverview::UpdateNow()
 {
 	if (PsController::Instance().active &&
-		PsController::Instance().project)
+		PsController::Instance().project_controller)
 	{
 		UpdateMiniImage();
 		Invalidate(true);
@@ -159,7 +159,7 @@ void PsWinOverview::OnTimer(UINT_PTR nIDEvent)
 
 void PsWinOverview::UpdateMiniImage()
 {
-	PsRender& renderer = PsController::Instance().project->renderer;
+	PsRender& renderer = PsController::Instance().project_controller->renderer;
 
 	float size_x = renderer.size_x;
 	float size_y = renderer.size_y;
@@ -175,7 +175,7 @@ void PsWinOverview::UpdateMiniImage()
 	renderer.SetSize(window_buffer2.GetWidth(), height);
 	renderer.CenterView();
 
-	PsController::Instance().project->RenderToScreen();
+	PsController::Instance().project_controller->RenderToScreen();
 	hardwareRenderer.CopyToSoftBuffer(m_RenduImage);
 
 	PsRect z; // calcul de la zone de l'image

@@ -74,7 +74,7 @@ void PsDlgInfoLight::Update()
 	sprintf(buffer, "%2.f", r);
 	R.SetWindowText(buffer);
 
-	PsController::Instance().project->pattern->SetLinearLight(p, e);
+	PsController::Instance().project_controller->pattern->SetLinearLight(p, e);
 	PsController::Instance().UpdateWindow();
 }
 

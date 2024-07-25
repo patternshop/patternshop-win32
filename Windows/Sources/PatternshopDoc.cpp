@@ -61,7 +61,7 @@ BOOL CPatternshopDoc::OnNewDocument()
 		pView->SetProjectSize(dlg.w, dlg.h, dlg.dpi);
 		pView->SetAutoPosition();
 		PsController::Instance().SetActive(pView);
-		PsController::Instance().project = pView->project;
+		PsController::Instance().project_controller = pView->project_controller;
 		PsController::Instance().UpdateDialogProject();
 		return TRUE;
 	}
@@ -78,10 +78,10 @@ BOOL CPatternshopDoc::OnOpenDocument(LPCTSTR lpszPathName)
 
 BOOL CPatternshopDoc::OnSaveDocument(LPCTSTR lpszPathName)
 {
-	if (PsController::Instance().active && PsController::Instance().active->project)
+	if (PsController::Instance().active && PsController::Instance().active->project_controller)
 	{
-		PsProjectController& project = *PsController::Instance().project;
-		PsProjectSave& saver = PsProjectSave(project);
+		PsProjectController& project_controller = *PsController::Instance().project_controller;
+		PsProjectSave& saver = PsProjectSave(project_controller);
 		GetError(saver.saveProject(lpszPathName));
 	}
 	return TRUE;
